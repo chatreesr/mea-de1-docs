@@ -9,9 +9,13 @@ theme:
 nav:
   - Home: index.md
   - Apache Airflow:
-      - apache-airflow/index.md
+      - apache-airflow/use.md
       - Databases: apache-airflow/databases.md
-      - Source: apache-airflow/source.md
+  - Docker 1:
+      - docker/use.md
+      - Volumes: docker/volumes.md
+      - Networks: docker/networks.md
+      - Images: docker/images.md
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true

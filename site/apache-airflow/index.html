@@ -1,0 +1,1441 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.3">
+    
+    
+      
+        <title>Basics - Data Engineering Team 1</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e8d9bf0c.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Krub:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Krub";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#basics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Data Engineering Team 1" class="md-header__button md-logo" aria-label="Data Engineering Team 1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Data Engineering Team 1
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Basics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Data Engineering Team 1" class="md-nav__button md-logo" aria-label="Data Engineering Team 1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Data Engineering Team 1
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Apache Airflow
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Apache Airflow" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Apache Airflow
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Basics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Basics
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#airflow-architecture" class="md-nav__link">
+    Airflow Architecture
+  </a>
+  
+    <nav class="md-nav" aria-label="Airflow Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    จุดสำคัญ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    กระบวนงานพื้นฐาน
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-simple-dag" class="md-nav__link">
+    Example 1 - Simple DAG
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 1 - Simple DAG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-dags" class="md-nav__link">
+    Create DAGs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    Objective
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-dags" class="md-nav__link">
+    Deploy DAGs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-dags" class="md-nav__link">
+    Manage DAGs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    Results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-read-from-minio" class="md-nav__link">
+    Example 2 - Read from MinIO
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 2 - Read from MinIO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_1" class="md-nav__link">
+    Objective
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-files" class="md-nav__link">
+    Upload files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-dag" class="md-nav__link">
+    Create DAG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-dag" class="md-nav__link">
+    Deploy DAG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-dag" class="md-nav__link">
+    Manage DAG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results_1" class="md-nav__link">
+    Results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-3-pandas-rest-api" class="md-nav__link">
+    Example 3 - Pandas &amp; REST API
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 3 - Pandas &amp; REST API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_2" class="md-nav__link">
+    Objective
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-dag_1" class="md-nav__link">
+    Create DAG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results_2" class="md-nav__link">
+    Results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="databases/" class="md-nav__link">
+        Databases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="source/" class="md-nav__link">
+        Source
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#airflow-architecture" class="md-nav__link">
+    Airflow Architecture
+  </a>
+  
+    <nav class="md-nav" aria-label="Airflow Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    จุดสำคัญ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    กระบวนงานพื้นฐาน
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-simple-dag" class="md-nav__link">
+    Example 1 - Simple DAG
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 1 - Simple DAG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-dags" class="md-nav__link">
+    Create DAGs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    Objective
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-dags" class="md-nav__link">
+    Deploy DAGs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-dags" class="md-nav__link">
+    Manage DAGs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    Results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-read-from-minio" class="md-nav__link">
+    Example 2 - Read from MinIO
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 2 - Read from MinIO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_1" class="md-nav__link">
+    Objective
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-files" class="md-nav__link">
+    Upload files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-dag" class="md-nav__link">
+    Create DAG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-dag" class="md-nav__link">
+    Deploy DAG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-dag" class="md-nav__link">
+    Manage DAG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results_1" class="md-nav__link">
+    Results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-3-pandas-rest-api" class="md-nav__link">
+    Example 3 - Pandas &amp; REST API
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 3 - Pandas &amp; REST API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_2" class="md-nav__link">
+    Objective
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-dag_1" class="md-nav__link">
+    Create DAG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results_2" class="md-nav__link">
+    Results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="basics">Basics</h1>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>ทักษะพื้นฐานที่ควรมี</p>
+<ul>
+<li>Python 3.6+</li>
+<li>Basic Apache Airflow</li>
+<li>Basic databases</li>
+<li>Linux</li>
+</ul>
+<h2 id="airflow-architecture">Airflow Architecture</h2>
+<p><img alt="Airflow Architecture" src="images/airflow_architecture.png" /></p>
+<h3 id="_1">จุดสำคัญ</h3>
+<ul>
+<li>Airflow อ่าน DAGs จาก Bucket ชื่อ <code>dags</code> ใน MinIO มีการซิงค์ข้อมูลทุกๆ 1 นาที</li>
+<li>Airflow เชื่อมต่อกับ Data Platform Services หลังบ้าน เช่น Hive, Impala, HBase, Spark</li>
+<li>Airflow เชื่อมต่อกับฐานข้อมูลใน MEA บางส่วน เช่น SAP SFTP, AMR Oracle Database, OT MSSQL Database, etc.</li>
+<li>Airflow ใช้งาน Docker และติดตั้งแบบ Celery Executor มี 15 Workers</li>
+<li>Airflow Server มี 92 vCPUs และ 312 GB RAM</li>
+</ul>
+<h3 id="_2">กระบวนงานพื้นฐาน</h3>
+<ol>
+<li>เขียน DAGs ด้วยภาษา Python</li>
+<li>Log in เข้าใช้งาน <a href="http://172.17.113.251:9000">MinIO Server</a> และให้อัพโหลดไฟล์ <code>.py</code> เข้าไปที่ Bucket ชื่อ <code>dags</code>.</li>
+<li>ถ้าไม่มีข้อผิดพลาด Airflow จะทำการซิงค์ DAGs ภายใน 2 - 3 นาที ถ้ามีความผิดพลาดหน้าต่าง UI จะแจ้ง</li>
+<li>เข้าไปตรวจสอบและบริหารจัดการ DAGs ได้ที่ <a href="http://airflow.mea.or.th:8080">Airflow Web UI</a>.</li>
+</ol>
+<h2 id="example-1-simple-dag">Example 1 - Simple DAG</h2>
+<h3 id="create-dags">Create DAGs</h3>
+<p>Copy code ด้านล่างและเซฟเป็นชื่อ <code>dpd_training_&lt;name&gt;.py</code></p>
+<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">dpd_training_chatree.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">airflow</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">airflow</span> <span class="kn">import</span> <span class="n">DAG</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kn">from</span> <span class="nn">airflow.operators.dummy</span> <span class="kn">import</span> <span class="n">DummyOperator</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="c1"># Initialize the DAG</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="k">with</span> <span class="n">DAG</span><span class="p">(</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="n">dag_id</span><span class="o">=</span><span class="s2">&quot;dpd_training_chatree&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;DAG for learning Apache Airflow&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    <span class="n">start_date</span><span class="o">=</span><span class="n">airflow</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">dates</span><span class="o">.</span><span class="n">days_ago</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>    <span class="n">schedule_interval</span><span class="o">=</span><span class="s2">&quot;@daily&quot;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">)</span> <span class="k">as</span> <span class="n">dag</span><span class="p">:</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>    <span class="n">task1</span> <span class="o">=</span> <span class="n">DummyOperator</span><span class="p">(</span><span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;task1&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>    <span class="n">task2</span> <span class="o">=</span> <span class="n">DummyOperator</span><span class="p">(</span><span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;task2&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>    <span class="n">task3</span> <span class="o">=</span> <span class="n">DummyOperator</span><span class="p">(</span><span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;task3&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>    <span class="n">task4</span> <span class="o">=</span> <span class="n">DummyOperator</span><span class="p">(</span><span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;task4&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>    <span class="n">task1</span> <span class="o">&gt;&gt;</span> <span class="n">task2</span> <span class="o">&gt;&gt;</span> <span class="n">task3</span> <span class="o">&gt;&gt;</span> <span class="n">task4</span>
+</code></pre></div>
+</td></tr></table>
+<p>จุดสำคัญ</p>
+<ul>
+<li><strong>Line 8</strong>: DAG ID ต้อง<strong>ไม่ซ้ำกัน</strong> (Globally unique)</li>
+<li><strong>Line 10</strong>: <code>start_date</code> คือวันที่ต้องการให้ DAG เริ่มทำงาน ใช้ <code>datetime</code> หรือ <code>airflow.utils.dates</code> ก็ได้</li>
+<li><strong>Line 11</strong>: <code>schedule_interval</code> คือรอบการรัน DAG เช่น <code>@daily</code> คือ ให้รันรายวัน, <code>@monthly</code> คือรันรายเดือน</li>
+</ul>
+<h3 id="objective">Objective</h3>
+<p>ต้องการสร้าง DAG ที่รันได้ แต่ไม่มีฟังก์ชั่นใดๆ</p>
+<h3 id="deploy-dags">Deploy DAGs</h3>
+<p>เปิดเว็บไซต์ของ MinIO ที่ <a href="http://172.17.113.251:9000">http://172.17.113.251:9000</a> และเลือกที่ Bucket <code>dags</code> จากนั้นลากไฟล์ <code>dpd_training_&lt;name&gt;.py</code> บนเครื่องไปใส่ใน <code>dags</code></p>
+<p><img alt="Deploy DAG" src="images/deploy_dag.png" /></p>
+<h3 id="manage-dags">Manage DAGs</h3>
+<p>เปิดเว็บไซต์ Airflow UI ที่ <a href="http://airflow.mea.or.th">http://airflow.mea.or.th</a> รอประมาณ 2 - 3 นาที แล้วลองค้นหา DAG ด้วยชื่อ <code>dpd_training</code> จะเห็น DAG ที่อัพโหลดเข้าไป บริหารจัดการ เปิดปิด DAG ได้เลย</p>
+<p><img alt="Manage DAG" src="images/manage_dag.png" /></p>
+<h3 id="results">Results</h3>
+<p>กด Switch ข้างซ้ายเพื่อเปิดการทำงานของ DAG และ ดูผลลัพธ์</p>
+<p><img alt="Result 0" src="images/result_0.png" /></p>
+<p><img alt="Result 1" src="images/result_1.png" /></p>
+<h2 id="example-2-read-from-minio">Example 2 - Read from MinIO</h2>
+<p>ถ้าต้องการนำไฟล์พวก CSV, JSON หรือ อื่นๆ เข้าไปประมวลผลใน Airflow ขั้นตอนคือ</p>
+<ol>
+<li>อัพโหลดไฟล์ใน Bucket ชื่อ <code>airflow</code> (เฉพาะ Data Engineer) หรือ <code>public</code> (เห็นได้ทุกคน)</li>
+<li>เขียน DAG ให้ดาวโหลดไฟล์จาก MinIO</li>
+<li>Deploy DAG บน MinIO Bucket <code>dags</code></li>
+<li>บริหารจัดการ DAG บน Airflow UI</li>
+</ol>
+<h3 id="objective_1">Objective</h3>
+<p>ต้องการสร้าง DAG ที่ดาวโหลดข้อมูลจาก MinIO และส่งไฟล์ที่ดาวโหลดเข้าอีเมลล์พนักงาน กฟน.</p>
+<h3 id="upload-files">Upload files</h3>
+<p>เอาไฟล์ที่ต้องการโยนเข้าไปใน <code>airflow</code> Bucket</p>
+<p><img alt="Airflow Upload" src="images/airflow_upload.png" /></p>
+<h3 id="create-dag">Create DAG</h3>
+<p>Copy code ด้านล่างใส่ไฟล์ชื่อ <code>dpd_training_minio_&lt;name&gt;.py</code> ถ้าต้องการศึกษาเพิ่มเติมดูที่</p>
+<ul>
+<li><a href="https://dataplatform-portal.vercel.app/docs/use/minio#%E0%B8%94%E0%B8%B2%E0%B8%A7%E0%B9%82%E0%B8%AB%E0%B8%A5%E0%B8%94%E0%B9%84%E0%B8%9F%E0%B8%A5%E0%B9%8C">ตัวอย่างโดยละเอียดอ่านที่ ตัวอย่างการอ่านไฟล์ CSV จาก MinIO</a></li>
+<li><a href="https://docs.min.io/docs/python-client-api-reference.html">MinIO Python SDK</a></li>
+</ul>
+<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">dpd_training_minio_chatree.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span>
+<span class="normal"><a href="#__codelineno-1-23">23</a></span>
+<span class="normal"><a href="#__codelineno-1-24">24</a></span>
+<span class="normal"><a href="#__codelineno-1-25">25</a></span>
+<span class="normal"><a href="#__codelineno-1-26">26</a></span>
+<span class="normal"><a href="#__codelineno-1-27">27</a></span>
+<span class="normal"><a href="#__codelineno-1-28">28</a></span>
+<span class="normal"><a href="#__codelineno-1-29">29</a></span>
+<span class="normal"><a href="#__codelineno-1-30">30</a></span>
+<span class="normal"><a href="#__codelineno-1-31">31</a></span>
+<span class="normal"><a href="#__codelineno-1-32">32</a></span>
+<span class="normal"><a href="#__codelineno-1-33">33</a></span>
+<span class="normal"><a href="#__codelineno-1-34">34</a></span>
+<span class="normal"><a href="#__codelineno-1-35">35</a></span>
+<span class="normal"><a href="#__codelineno-1-36">36</a></span>
+<span class="normal"><a href="#__codelineno-1-37">37</a></span>
+<span class="normal"><a href="#__codelineno-1-38">38</a></span>
+<span class="normal"><a href="#__codelineno-1-39">39</a></span>
+<span class="normal"><a href="#__codelineno-1-40">40</a></span>
+<span class="normal"><a href="#__codelineno-1-41">41</a></span>
+<span class="normal"><a href="#__codelineno-1-42">42</a></span>
+<span class="normal"><a href="#__codelineno-1-43">43</a></span>
+<span class="normal"><a href="#__codelineno-1-44">44</a></span>
+<span class="normal"><a href="#__codelineno-1-45">45</a></span>
+<span class="normal"><a href="#__codelineno-1-46">46</a></span>
+<span class="normal"><a href="#__codelineno-1-47">47</a></span>
+<span class="normal"><a href="#__codelineno-1-48">48</a></span>
+<span class="normal"><a href="#__codelineno-1-49">49</a></span>
+<span class="normal"><a href="#__codelineno-1-50">50</a></span>
+<span class="normal"><a href="#__codelineno-1-51">51</a></span>
+<span class="normal"><a href="#__codelineno-1-52">52</a></span>
+<span class="normal"><a href="#__codelineno-1-53">53</a></span>
+<span class="normal"><a href="#__codelineno-1-54">54</a></span>
+<span class="normal"><a href="#__codelineno-1-55">55</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">airflow</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">import</span> <span class="nn">urllib3</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kn">from</span> <span class="nn">minio</span> <span class="kn">import</span> <span class="n">Minio</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="kn">from</span> <span class="nn">airflow</span> <span class="kn">import</span> <span class="n">DAG</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="kn">from</span> <span class="nn">airflow.models</span> <span class="kn">import</span> <span class="n">Variable</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="kn">from</span> <span class="nn">airflow.operators.email</span> <span class="kn">import</span> <span class="n">EmailOperator</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="kn">from</span> <span class="nn">airflow.operators.python</span> <span class="kn">import</span> <span class="n">PythonOperator</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="c1"># Initialize the DAG</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="k">with</span> <span class="n">DAG</span><span class="p">(</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>    <span class="n">dag_id</span><span class="o">=</span><span class="s2">&quot;dpd_training_minio_chatree&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Download file from MinIO to Airflow Cluster&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a>    <span class="n">start_date</span><span class="o">=</span><span class="n">airflow</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">dates</span><span class="o">.</span><span class="n">days_ago</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a>    <span class="n">schedule_interval</span><span class="o">=</span><span class="s2">&quot;@daily&quot;</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="p">)</span> <span class="k">as</span> <span class="n">dag</span><span class="p">:</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a>    <span class="c1"># define python function to be used with PythonOperator</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a>    <span class="k">def</span> <span class="nf">_read_file_from_minio</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">bucket</span><span class="p">,</span> <span class="n">out</span><span class="p">):</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a>        <span class="n">client</span> <span class="o">=</span> <span class="n">Minio</span><span class="p">(</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a>            <span class="n">Variable</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;MINIO_HOST&#39;</span><span class="p">),</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a>            <span class="n">access_key</span><span class="o">=</span><span class="n">Variable</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;MINIO_SECRET_ACCESS_KEY&#39;</span><span class="p">),</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a>            <span class="n">secret_key</span><span class="o">=</span><span class="n">Variable</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;MINIO_SECRET_KEY&#39;</span><span class="p">),</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24"></a>            <span class="n">secure</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a>            <span class="n">http_client</span><span class="o">=</span><span class="n">urllib3</span><span class="o">.</span><span class="n">ProxyManager</span><span class="p">(</span><span class="s1">&#39;http://meaproxy.mea.or.th:80&#39;</span><span class="p">)</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a>        <span class="p">)</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27"></a>
+<a id="__codelineno-1-28" name="__codelineno-1-28"></a>        <span class="n">client</span><span class="o">.</span><span class="n">fget_object</span><span class="p">(</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29"></a>            <span class="n">bucket_name</span><span class="o">=</span><span class="n">bucket</span><span class="p">,</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30"></a>            <span class="n">object_name</span><span class="o">=</span><span class="n">obj</span><span class="p">,</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31"></a>            <span class="n">file_path</span><span class="o">=</span><span class="n">out</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32"></a>        <span class="p">)</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33"></a>
+<a id="__codelineno-1-34" name="__codelineno-1-34"></a>
+<a id="__codelineno-1-35" name="__codelineno-1-35"></a>    <span class="n">download_file</span> <span class="o">=</span> <span class="n">PythonOperator</span><span class="p">(</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36"></a>        <span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;download_file&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37"></a>        <span class="n">python_callable</span><span class="o">=</span><span class="n">_read_file_from_minio</span><span class="p">,</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38"></a>        <span class="n">op_kwargs</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39"></a>            <span class="s2">&quot;obj&quot;</span><span class="p">:</span> <span class="s1">&#39;DPD/crash_catalonia.csv&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40"></a>            <span class="s2">&quot;bucket&quot;</span><span class="p">:</span> <span class="s1">&#39;airflow&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41"></a>            <span class="s2">&quot;out&quot;</span><span class="p">:</span> <span class="s1">&#39;/shared/crash_catalonia.csv&#39;</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42"></a>        <span class="p">}</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43"></a>    <span class="p">)</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44"></a>
+<a id="__codelineno-1-45" name="__codelineno-1-45"></a>    <span class="n">send_file</span> <span class="o">=</span> <span class="n">EmailOperator</span><span class="p">(</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46"></a>        <span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;send_file&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-47" name="__codelineno-1-47"></a>        <span class="n">to</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;chatree.sr@mea.or.th&quot;</span><span class="p">],</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48"></a>        <span class="n">subject</span><span class="o">=</span><span class="s2">&quot;[{{ ds }}] File downloaded from MinIO&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-49" name="__codelineno-1-49"></a>        <span class="n">html_content</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50"></a><span class="s2">        &lt;p&gt;Please find attached&lt;/p&gt;</span>
+<a id="__codelineno-1-51" name="__codelineno-1-51"></a><span class="s2">        &quot;&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-52" name="__codelineno-1-52"></a>        <span class="n">files</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;/shared/crash_catalonia.csv&quot;</span><span class="p">]</span>
+<a id="__codelineno-1-53" name="__codelineno-1-53"></a>    <span class="p">)</span>
+<a id="__codelineno-1-54" name="__codelineno-1-54"></a>
+<a id="__codelineno-1-55" name="__codelineno-1-55"></a>    <span class="n">download_file</span> <span class="o">&gt;&gt;</span> <span class="n">send_file</span>
+</code></pre></div>
+</td></tr></table>
+<p>จุดสำคัญ</p>
+<ul>
+<li><strong>Line 5</strong>: ประกาศตัวแปรที่ไม่ต้องการเปิดเผยค่า เช่น Password, Key ผ่านหน้าต่าง Airflow UI &gt; Admin &gt; Variables</li>
+<li><strong>Line 6-7</strong>: Operator คือ Code ที่มีคนเขียนมาให้ ใช้แก้ปัญหาเฉพาะจุด เช่น <code>EmailOperator</code> ใช้ส่ง Email, <code>PythonOperator</code> ใช้รันโปรแกรม Python</li>
+<li><strong>Line 19-25</strong>: เขียน Function ใช้อ้างถึงตอนใช้งาน <code>PythonOperator</code> ตัว MinIO จะต้องใช้ <code>http_client=urllib3.ProxyManager</code> ด้วยเนื่องจาก Network กฟน. ต้องผ่าน Proxy</li>
+<li><strong>Line 38</strong>: Pass arguments ไปที่ <code>python_callable</code> ด้วย <code>op_kwargs={}</code></li>
+<li><strong>Line 41</strong>: Airflow มี Workers 15 ตัว แต่ละตัวมี File System ของตัวเอง สาเหตุที่ต้องใช้ Path <code>/shared</code> เพราะว่าเป็น Shared Path เดียวที่ Worker ทุกตัวเข้าถึงได้</li>
+<li><strong>Line 45</strong>: ส่งเมลล์พร้อมแนบไฟล์ได้เลย ไม่ต้อง Config SMTP (เพราะตั้งค่าหลังบ้านไว้หมดแล้ว)</li>
+<li><strong>Line 47</strong>: เปลี่ยนเป็น Email ของตัวเอง เพื่อตรวจสอบผลลัพธ์</li>
+<li><strong>Line 48</strong>: <code>{{ ds }}</code> คือ Jinja Template ที่ Airflow ใช้แทนค่าตัวแปรต่างๆ เช่น <code>ds</code> คือ Dag Run Date ตัวอย่างอื่นๆดูที่ <a href="https://airflow.apache.org/docs/apache-airflow/stable/templates-ref.html">Template Reference</a></li>
+</ul>
+<h3 id="deploy-dag">Deploy DAG</h3>
+<p>เปิดเว็บไซต์ของ MinIO ที่ <a href="http://172.17.113.251:9000">http://172.17.113.251:9000</a> และเลือกที่ Bucket <code>dags</code> จากนั้นลากไฟล์ <code>dpd_training_minio_&lt;name&gt;.py</code> บนเครื่องไปใส่ใน <code>dags</code></p>
+<h3 id="manage-dag">Manage DAG</h3>
+<p>เปิดเว็บไซต์ Airflow UI ที่ <a href="http://airflow.mea.or.th">http://airflow.mea.or.th</a> รอประมาณ 2 - 3 นาที แล้วลองค้นหา DAG ด้วยชื่อ <code>dpd_training</code> จะเห็น DAG ที่อัพโหลดเข้าไป บริหารจัดการ เปิดปิด DAG ได้เลย</p>
+<h3 id="results_1">Results</h3>
+<ul>
+<li>เช็คหน้าต่าง UI จะเห็นว่า Task รันเสร็จหมดแล้ว</li>
+<li>เช็คอีเมลล์ของตัวเอง ดูไฟล์ที่ส่งออกมาจาก Airflow</li>
+</ul>
+<p><img alt="Email Result" src="images/email_result.png" /></p>
+<h2 id="example-3-pandas-rest-api">Example 3 - Pandas &amp; REST API</h2>
+<p>ตังแต่ตัวอย่างนี้เป็นต้นไปจะไม่แสดงวิธีการ Deploy และ Manage DAG</p>
+<h3 id="objective_2">Objective</h3>
+<p>ต้องการสร้าง DAG ที่</p>
+<ol>
+<li>ดึงข้อมูลจาก EGAT API</li>
+<li>ประมวลผลด้วย Pandas</li>
+<li>บันทึกไฟล์เพื่อ Backup บน MinIO</li>
+<li>จัดเก็บข้อมูลใน Hive</li>
+<li>ส่งเมลล์พร้อมไฟล์แนบให้หน่วยงานที่เกี่ยวข้อง</li>
+</ol>
+<h3 id="create-dag_1">Create DAG</h3>
+<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">dpd_training_egat_chatree.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">  1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">  2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">  3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">  4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">  5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">  6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">  7</a></span>
+<span class="normal"><a href="#__codelineno-2-8">  8</a></span>
+<span class="normal"><a href="#__codelineno-2-9">  9</a></span>
+<span class="normal"><a href="#__codelineno-2-10"> 10</a></span>
+<span class="normal"><a href="#__codelineno-2-11"> 11</a></span>
+<span class="normal"><a href="#__codelineno-2-12"> 12</a></span>
+<span class="normal"><a href="#__codelineno-2-13"> 13</a></span>
+<span class="normal"><a href="#__codelineno-2-14"> 14</a></span>
+<span class="normal"><a href="#__codelineno-2-15"> 15</a></span>
+<span class="normal"><a href="#__codelineno-2-16"> 16</a></span>
+<span class="normal"><a href="#__codelineno-2-17"> 17</a></span>
+<span class="normal"><a href="#__codelineno-2-18"> 18</a></span>
+<span class="normal"><a href="#__codelineno-2-19"> 19</a></span>
+<span class="normal"><a href="#__codelineno-2-20"> 20</a></span>
+<span class="normal"><a href="#__codelineno-2-21"> 21</a></span>
+<span class="normal"><a href="#__codelineno-2-22"> 22</a></span>
+<span class="normal"><a href="#__codelineno-2-23"> 23</a></span>
+<span class="normal"><a href="#__codelineno-2-24"> 24</a></span>
+<span class="normal"><a href="#__codelineno-2-25"> 25</a></span>
+<span class="normal"><a href="#__codelineno-2-26"> 26</a></span>
+<span class="normal"><a href="#__codelineno-2-27"> 27</a></span>
+<span class="normal"><a href="#__codelineno-2-28"> 28</a></span>
+<span class="normal"><a href="#__codelineno-2-29"> 29</a></span>
+<span class="normal"><a href="#__codelineno-2-30"> 30</a></span>
+<span class="normal"><a href="#__codelineno-2-31"> 31</a></span>
+<span class="normal"><a href="#__codelineno-2-32"> 32</a></span>
+<span class="normal"><a href="#__codelineno-2-33"> 33</a></span>
+<span class="normal"><a href="#__codelineno-2-34"> 34</a></span>
+<span class="normal"><a href="#__codelineno-2-35"> 35</a></span>
+<span class="normal"><a href="#__codelineno-2-36"> 36</a></span>
+<span class="normal"><a href="#__codelineno-2-37"> 37</a></span>
+<span class="normal"><a href="#__codelineno-2-38"> 38</a></span>
+<span class="normal"><a href="#__codelineno-2-39"> 39</a></span>
+<span class="normal"><a href="#__codelineno-2-40"> 40</a></span>
+<span class="normal"><a href="#__codelineno-2-41"> 41</a></span>
+<span class="normal"><a href="#__codelineno-2-42"> 42</a></span>
+<span class="normal"><a href="#__codelineno-2-43"> 43</a></span>
+<span class="normal"><a href="#__codelineno-2-44"> 44</a></span>
+<span class="normal"><a href="#__codelineno-2-45"> 45</a></span>
+<span class="normal"><a href="#__codelineno-2-46"> 46</a></span>
+<span class="normal"><a href="#__codelineno-2-47"> 47</a></span>
+<span class="normal"><a href="#__codelineno-2-48"> 48</a></span>
+<span class="normal"><a href="#__codelineno-2-49"> 49</a></span>
+<span class="normal"><a href="#__codelineno-2-50"> 50</a></span>
+<span class="normal"><a href="#__codelineno-2-51"> 51</a></span>
+<span class="normal"><a href="#__codelineno-2-52"> 52</a></span>
+<span class="normal"><a href="#__codelineno-2-53"> 53</a></span>
+<span class="normal"><a href="#__codelineno-2-54"> 54</a></span>
+<span class="normal"><a href="#__codelineno-2-55"> 55</a></span>
+<span class="normal"><a href="#__codelineno-2-56"> 56</a></span>
+<span class="normal"><a href="#__codelineno-2-57"> 57</a></span>
+<span class="normal"><a href="#__codelineno-2-58"> 58</a></span>
+<span class="normal"><a href="#__codelineno-2-59"> 59</a></span>
+<span class="normal"><a href="#__codelineno-2-60"> 60</a></span>
+<span class="normal"><a href="#__codelineno-2-61"> 61</a></span>
+<span class="normal"><a href="#__codelineno-2-62"> 62</a></span>
+<span class="normal"><a href="#__codelineno-2-63"> 63</a></span>
+<span class="normal"><a href="#__codelineno-2-64"> 64</a></span>
+<span class="normal"><a href="#__codelineno-2-65"> 65</a></span>
+<span class="normal"><a href="#__codelineno-2-66"> 66</a></span>
+<span class="normal"><a href="#__codelineno-2-67"> 67</a></span>
+<span class="normal"><a href="#__codelineno-2-68"> 68</a></span>
+<span class="normal"><a href="#__codelineno-2-69"> 69</a></span>
+<span class="normal"><a href="#__codelineno-2-70"> 70</a></span>
+<span class="normal"><a href="#__codelineno-2-71"> 71</a></span>
+<span class="normal"><a href="#__codelineno-2-72"> 72</a></span>
+<span class="normal"><a href="#__codelineno-2-73"> 73</a></span>
+<span class="normal"><a href="#__codelineno-2-74"> 74</a></span>
+<span class="normal"><a href="#__codelineno-2-75"> 75</a></span>
+<span class="normal"><a href="#__codelineno-2-76"> 76</a></span>
+<span class="normal"><a href="#__codelineno-2-77"> 77</a></span>
+<span class="normal"><a href="#__codelineno-2-78"> 78</a></span>
+<span class="normal"><a href="#__codelineno-2-79"> 79</a></span>
+<span class="normal"><a href="#__codelineno-2-80"> 80</a></span>
+<span class="normal"><a href="#__codelineno-2-81"> 81</a></span>
+<span class="normal"><a href="#__codelineno-2-82"> 82</a></span>
+<span class="normal"><a href="#__codelineno-2-83"> 83</a></span>
+<span class="normal"><a href="#__codelineno-2-84"> 84</a></span>
+<span class="normal"><a href="#__codelineno-2-85"> 85</a></span>
+<span class="normal"><a href="#__codelineno-2-86"> 86</a></span>
+<span class="normal"><a href="#__codelineno-2-87"> 87</a></span>
+<span class="normal"><a href="#__codelineno-2-88"> 88</a></span>
+<span class="normal"><a href="#__codelineno-2-89"> 89</a></span>
+<span class="normal"><a href="#__codelineno-2-90"> 90</a></span>
+<span class="normal"><a href="#__codelineno-2-91"> 91</a></span>
+<span class="normal"><a href="#__codelineno-2-92"> 92</a></span>
+<span class="normal"><a href="#__codelineno-2-93"> 93</a></span>
+<span class="normal"><a href="#__codelineno-2-94"> 94</a></span>
+<span class="normal"><a href="#__codelineno-2-95"> 95</a></span>
+<span class="normal"><a href="#__codelineno-2-96"> 96</a></span>
+<span class="normal"><a href="#__codelineno-2-97"> 97</a></span>
+<span class="normal"><a href="#__codelineno-2-98"> 98</a></span>
+<span class="normal"><a href="#__codelineno-2-99"> 99</a></span>
+<span class="normal"><a href="#__codelineno-2-100">100</a></span>
+<span class="normal"><a href="#__codelineno-2-101">101</a></span>
+<span class="normal"><a href="#__codelineno-2-102">102</a></span>
+<span class="normal"><a href="#__codelineno-2-103">103</a></span>
+<span class="normal"><a href="#__codelineno-2-104">104</a></span>
+<span class="normal"><a href="#__codelineno-2-105">105</a></span>
+<span class="normal"><a href="#__codelineno-2-106">106</a></span>
+<span class="normal"><a href="#__codelineno-2-107">107</a></span>
+<span class="normal"><a href="#__codelineno-2-108">108</a></span>
+<span class="normal"><a href="#__codelineno-2-109">109</a></span>
+<span class="normal"><a href="#__codelineno-2-110">110</a></span>
+<span class="normal"><a href="#__codelineno-2-111">111</a></span>
+<span class="normal"><a href="#__codelineno-2-112">112</a></span>
+<span class="normal"><a href="#__codelineno-2-113">113</a></span>
+<span class="normal"><a href="#__codelineno-2-114">114</a></span>
+<span class="normal"><a href="#__codelineno-2-115">115</a></span>
+<span class="normal"><a href="#__codelineno-2-116">116</a></span>
+<span class="normal"><a href="#__codelineno-2-117">117</a></span>
+<span class="normal"><a href="#__codelineno-2-118">118</a></span>
+<span class="normal"><a href="#__codelineno-2-119">119</a></span>
+<span class="normal"><a href="#__codelineno-2-120">120</a></span>
+<span class="normal"><a href="#__codelineno-2-121">121</a></span>
+<span class="normal"><a href="#__codelineno-2-122">122</a></span>
+<span class="normal"><a href="#__codelineno-2-123">123</a></span>
+<span class="normal"><a href="#__codelineno-2-124">124</a></span>
+<span class="normal"><a href="#__codelineno-2-125">125</a></span>
+<span class="normal"><a href="#__codelineno-2-126">126</a></span>
+<span class="normal"><a href="#__codelineno-2-127">127</a></span>
+<span class="normal"><a href="#__codelineno-2-128">128</a></span>
+<span class="normal"><a href="#__codelineno-2-129">129</a></span>
+<span class="normal"><a href="#__codelineno-2-130">130</a></span>
+<span class="normal"><a href="#__codelineno-2-131">131</a></span>
+<span class="normal"><a href="#__codelineno-2-132">132</a></span>
+<span class="normal"><a href="#__codelineno-2-133">133</a></span>
+<span class="normal"><a href="#__codelineno-2-134">134</a></span>
+<span class="normal"><a href="#__codelineno-2-135">135</a></span>
+<span class="normal"><a href="#__codelineno-2-136">136</a></span>
+<span class="normal"><a href="#__codelineno-2-137">137</a></span>
+<span class="normal"><a href="#__codelineno-2-138">138</a></span>
+<span class="normal"><a href="#__codelineno-2-139">139</a></span>
+<span class="normal"><a href="#__codelineno-2-140">140</a></span>
+<span class="normal"><a href="#__codelineno-2-141">141</a></span>
+<span class="normal"><a href="#__codelineno-2-142">142</a></span>
+<span class="normal"><a href="#__codelineno-2-143">143</a></span>
+<span class="normal"><a href="#__codelineno-2-144">144</a></span>
+<span class="normal"><a href="#__codelineno-2-145">145</a></span>
+<span class="normal"><a href="#__codelineno-2-146">146</a></span>
+<span class="normal"><a href="#__codelineno-2-147">147</a></span>
+<span class="normal"><a href="#__codelineno-2-148">148</a></span>
+<span class="normal"><a href="#__codelineno-2-149">149</a></span>
+<span class="normal"><a href="#__codelineno-2-150">150</a></span>
+<span class="normal"><a href="#__codelineno-2-151">151</a></span>
+<span class="normal"><a href="#__codelineno-2-152">152</a></span>
+<span class="normal"><a href="#__codelineno-2-153">153</a></span>
+<span class="normal"><a href="#__codelineno-2-154">154</a></span>
+<span class="normal"><a href="#__codelineno-2-155">155</a></span>
+<span class="normal"><a href="#__codelineno-2-156">156</a></span>
+<span class="normal"><a href="#__codelineno-2-157">157</a></span>
+<span class="normal"><a href="#__codelineno-2-158">158</a></span>
+<span class="normal"><a href="#__codelineno-2-159">159</a></span>
+<span class="normal"><a href="#__codelineno-2-160">160</a></span>
+<span class="normal"><a href="#__codelineno-2-161">161</a></span>
+<span class="normal"><a href="#__codelineno-2-162">162</a></span>
+<span class="normal"><a href="#__codelineno-2-163">163</a></span>
+<span class="normal"><a href="#__codelineno-2-164">164</a></span>
+<span class="normal"><a href="#__codelineno-2-165">165</a></span>
+<span class="normal"><a href="#__codelineno-2-166">166</a></span>
+<span class="normal"><a href="#__codelineno-2-167">167</a></span>
+<span class="normal"><a href="#__codelineno-2-168">168</a></span>
+<span class="normal"><a href="#__codelineno-2-169">169</a></span>
+<span class="normal"><a href="#__codelineno-2-170">170</a></span>
+<span class="normal"><a href="#__codelineno-2-171">171</a></span>
+<span class="normal"><a href="#__codelineno-2-172">172</a></span>
+<span class="normal"><a href="#__codelineno-2-173">173</a></span>
+<span class="normal"><a href="#__codelineno-2-174">174</a></span>
+<span class="normal"><a href="#__codelineno-2-175">175</a></span>
+<span class="normal"><a href="#__codelineno-2-176">176</a></span>
+<span class="normal"><a href="#__codelineno-2-177">177</a></span>
+<span class="normal"><a href="#__codelineno-2-178">178</a></span>
+<span class="normal"><a href="#__codelineno-2-179">179</a></span>
+<span class="normal"><a href="#__codelineno-2-180">180</a></span>
+<span class="normal"><a href="#__codelineno-2-181">181</a></span>
+<span class="normal"><a href="#__codelineno-2-182">182</a></span>
+<span class="normal"><a href="#__codelineno-2-183">183</a></span>
+<span class="normal"><a href="#__codelineno-2-184">184</a></span>
+<span class="normal"><a href="#__codelineno-2-185">185</a></span>
+<span class="normal"><a href="#__codelineno-2-186">186</a></span>
+<span class="normal"><a href="#__codelineno-2-187">187</a></span>
+<span class="normal"><a href="#__codelineno-2-188">188</a></span>
+<span class="normal"><a href="#__codelineno-2-189">189</a></span>
+<span class="normal"><a href="#__codelineno-2-190">190</a></span>
+<span class="normal"><a href="#__codelineno-2-191">191</a></span>
+<span class="normal"><a href="#__codelineno-2-192">192</a></span>
+<span class="normal"><a href="#__codelineno-2-193">193</a></span>
+<span class="normal"><a href="#__codelineno-2-194">194</a></span>
+<span class="normal"><a href="#__codelineno-2-195">195</a></span>
+<span class="normal"><a href="#__codelineno-2-196">196</a></span>
+<span class="normal"><a href="#__codelineno-2-197">197</a></span>
+<span class="normal"><a href="#__codelineno-2-198">198</a></span>
+<span class="normal"><a href="#__codelineno-2-199">199</a></span>
+<span class="normal"><a href="#__codelineno-2-200">200</a></span>
+<span class="normal"><a href="#__codelineno-2-201">201</a></span>
+<span class="normal"><a href="#__codelineno-2-202">202</a></span>
+<span class="normal"><a href="#__codelineno-2-203">203</a></span>
+<span class="normal"><a href="#__codelineno-2-204">204</a></span>
+<span class="normal"><a href="#__codelineno-2-205">205</a></span>
+<span class="normal"><a href="#__codelineno-2-206">206</a></span>
+<span class="normal"><a href="#__codelineno-2-207">207</a></span>
+<span class="normal"><a href="#__codelineno-2-208">208</a></span>
+<span class="normal"><a href="#__codelineno-2-209">209</a></span>
+<span class="normal"><a href="#__codelineno-2-210">210</a></span>
+<span class="normal"><a href="#__codelineno-2-211">211</a></span>
+<span class="normal"><a href="#__codelineno-2-212">212</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">airflow</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kn">import</span> <span class="nn">json</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="kn">import</span> <span class="nn">urllib3</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="kn">import</span> <span class="nn">requests</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="kn">from</span> <span class="nn">minio</span> <span class="kn">import</span> <span class="n">Minio</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="kn">from</span> <span class="nn">airflow</span> <span class="kn">import</span> <span class="n">DAG</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="kn">from</span> <span class="nn">airflow.models</span> <span class="kn">import</span> <span class="n">Variable</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="kn">from</span> <span class="nn">airflow.operators.email</span> <span class="kn">import</span> <span class="n">EmailOperator</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="kn">from</span> <span class="nn">airflow.operators.python</span> <span class="kn">import</span> <span class="n">PythonOperator</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="kn">from</span> <span class="nn">airflow.providers.jdbc.operators.jdbc</span> <span class="kn">import</span> <span class="n">JdbcOperator</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="c1"># Custom MEA hooks</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="kn">from</span> <span class="nn">mea.hooks.webhdfs</span> <span class="kn">import</span> <span class="n">WebHDFSHook</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="c1"># Initialize the DAG</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="k">with</span> <span class="n">DAG</span><span class="p">(</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a>    <span class="n">dag_id</span><span class="o">=</span><span class="s2">&quot;dpd_training_minio_egat_chatree&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a>    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Store data from EGAT API to Data Platform &quot;</span><span class="p">,</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a>    <span class="n">start_date</span><span class="o">=</span><span class="n">airflow</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">dates</span><span class="o">.</span><span class="n">days_ago</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a>    <span class="n">template_searchpath</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;/shared&quot;</span><span class="p">],</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a>    <span class="n">schedule_interval</span><span class="o">=</span><span class="s2">&quot;@daily&quot;</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="p">)</span> <span class="k">as</span> <span class="n">dag</span><span class="p">:</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a>
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a>    <span class="c1">###############################################################################</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a>    <span class="c1">#               Utility functions; Should be in a separate file.              #</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a>    <span class="c1">###############################################################################</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a>    <span class="k">def</span> <span class="nf">_get_token</span><span class="p">():</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a>        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31"></a>            <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32"></a>        <span class="p">}</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33"></a>
+<a id="__codelineno-2-34" name="__codelineno-2-34"></a>        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35"></a>            <span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="n">Variable</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DPD_EGAT_API_ACCESS_KEY&#39;</span><span class="p">),</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36"></a>            <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="n">Variable</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DPD_EGAT_API_SECRET_KEY&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37"></a>        <span class="p">}</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38"></a>
+<a id="__codelineno-2-39" name="__codelineno-2-39"></a>        <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40"></a>            <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41"></a>                <span class="n">Variable</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DPD_EGAT_API_AUTH_URL&#39;</span><span class="p">),</span>
+<a id="__codelineno-2-42" name="__codelineno-2-42"></a>                <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+<a id="__codelineno-2-43" name="__codelineno-2-43"></a>                <span class="n">json</span><span class="o">=</span><span class="n">data</span>
+<a id="__codelineno-2-44" name="__codelineno-2-44"></a>            <span class="p">)</span>
+<a id="__codelineno-2-45" name="__codelineno-2-45"></a>            <span class="n">res</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<a id="__codelineno-2-46" name="__codelineno-2-46"></a>        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">HTTPError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-2-47" name="__codelineno-2-47"></a>            <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<a id="__codelineno-2-48" name="__codelineno-2-48"></a>
+<a id="__codelineno-2-49" name="__codelineno-2-49"></a>        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;access_token&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-50" name="__codelineno-2-50"></a>
+<a id="__codelineno-2-51" name="__codelineno-2-51"></a>    <span class="k">def</span> <span class="nf">_get_data</span><span class="p">(</span><span class="n">api_url</span><span class="p">,</span> <span class="n">feeder_name</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">outfile</span><span class="p">):</span>
+<a id="__codelineno-2-52" name="__codelineno-2-52"></a>        <span class="n">token</span> <span class="o">=</span> <span class="n">_get_token</span><span class="p">()</span>
+<a id="__codelineno-2-53" name="__codelineno-2-53"></a>
+<a id="__codelineno-2-54" name="__codelineno-2-54"></a>        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-2-55" name="__codelineno-2-55"></a>            <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-56" name="__codelineno-2-56"></a>            <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-2-57" name="__codelineno-2-57"></a>        <span class="p">}</span>
+<a id="__codelineno-2-58" name="__codelineno-2-58"></a>
+<a id="__codelineno-2-59" name="__codelineno-2-59"></a>        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-2-60" name="__codelineno-2-60"></a>            <span class="s2">&quot;linefeederName&quot;</span><span class="p">:</span> <span class="n">feeder_name</span><span class="p">,</span>
+<a id="__codelineno-2-61" name="__codelineno-2-61"></a>            <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="n">year</span><span class="p">,</span>
+<a id="__codelineno-2-62" name="__codelineno-2-62"></a>            <span class="s2">&quot;month&quot;</span><span class="p">:</span> <span class="n">month</span>
+<a id="__codelineno-2-63" name="__codelineno-2-63"></a>        <span class="p">}</span>
+<a id="__codelineno-2-64" name="__codelineno-2-64"></a>
+<a id="__codelineno-2-65" name="__codelineno-2-65"></a>        <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-2-66" name="__codelineno-2-66"></a>            <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+<a id="__codelineno-2-67" name="__codelineno-2-67"></a>                <span class="n">Variable</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">api_url</span><span class="p">),</span>
+<a id="__codelineno-2-68" name="__codelineno-2-68"></a>                <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+<a id="__codelineno-2-69" name="__codelineno-2-69"></a>                <span class="n">json</span><span class="o">=</span><span class="n">data</span>
+<a id="__codelineno-2-70" name="__codelineno-2-70"></a>            <span class="p">)</span>
+<a id="__codelineno-2-71" name="__codelineno-2-71"></a>        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">HTTPError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-2-72" name="__codelineno-2-72"></a>            <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<a id="__codelineno-2-73" name="__codelineno-2-73"></a>
+<a id="__codelineno-2-74" name="__codelineno-2-74"></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-2-75" name="__codelineno-2-75"></a>            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">(),</span> <span class="n">f</span><span class="p">)</span>
+<a id="__codelineno-2-76" name="__codelineno-2-76"></a>
+<a id="__codelineno-2-77" name="__codelineno-2-77"></a>    <span class="k">def</span> <span class="nf">_get_billing</span><span class="p">(</span><span class="n">feeder_name</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">outfile</span><span class="p">):</span>
+<a id="__codelineno-2-78" name="__codelineno-2-78"></a>        <span class="n">_get_data</span><span class="p">(</span><span class="s1">&#39;DPD_EGAT_API_BILLING_URL&#39;</span><span class="p">,</span> <span class="n">feeder_name</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
+<a id="__codelineno-2-79" name="__codelineno-2-79"></a>
+<a id="__codelineno-2-80" name="__codelineno-2-80"></a>    <span class="k">def</span> <span class="nf">_get_lp</span><span class="p">(</span><span class="n">feeder_name</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">outfile</span><span class="p">):</span>
+<a id="__codelineno-2-81" name="__codelineno-2-81"></a>        <span class="n">_get_data</span><span class="p">(</span><span class="s1">&#39;DPD_EGAT_API_LP_URL&#39;</span><span class="p">,</span> <span class="n">feeder_name</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
+<a id="__codelineno-2-82" name="__codelineno-2-82"></a>
+<a id="__codelineno-2-83" name="__codelineno-2-83"></a>    <span class="k">def</span> <span class="nf">_convert_json_to_csv</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">outfile</span><span class="p">):</span>
+<a id="__codelineno-2-84" name="__codelineno-2-84"></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-2-85" name="__codelineno-2-85"></a>            <span class="n">records</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<a id="__codelineno-2-86" name="__codelineno-2-86"></a>
+<a id="__codelineno-2-87" name="__codelineno-2-87"></a>        <span class="c1"># Convert JSON to DataFrame and save to CSV</span>
+<a id="__codelineno-2-88" name="__codelineno-2-88"></a>        <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="n">records</span><span class="p">)</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-2-89" name="__codelineno-2-89"></a>
+<a id="__codelineno-2-90" name="__codelineno-2-90"></a>    <span class="k">def</span> <span class="nf">_generate_hive_sql</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">outfile</span><span class="p">,</span> <span class="n">db_name</span><span class="p">,</span> <span class="n">table_name</span><span class="p">,</span> <span class="n">hdfs_path</span><span class="p">):</span>
+<a id="__codelineno-2-91" name="__codelineno-2-91"></a>        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
+<a id="__codelineno-2-92" name="__codelineno-2-92"></a>
+<a id="__codelineno-2-93" name="__codelineno-2-93"></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-2-94" name="__codelineno-2-94"></a>            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;CREATE EXTERNAL TABLE IF NOT EXISTS </span><span class="si">{</span><span class="n">db_name</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">table_name</span><span class="si">}</span><span class="s1">(</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-95" name="__codelineno-2-95"></a>            <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+<a id="__codelineno-2-96" name="__codelineno-2-96"></a>                <span class="k">if</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="nb">object</span><span class="p">:</span>
+<a id="__codelineno-2-97" name="__codelineno-2-97"></a>                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s1"> STRING&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-98" name="__codelineno-2-98"></a>
+<a id="__codelineno-2-99" name="__codelineno-2-99"></a>                <span class="k">if</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">:</span>
+<a id="__codelineno-2-100" name="__codelineno-2-100"></a>                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s1"> DOUBLE&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-101" name="__codelineno-2-101"></a>
+<a id="__codelineno-2-102" name="__codelineno-2-102"></a>                <span class="k">if</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">:</span>
+<a id="__codelineno-2-103" name="__codelineno-2-103"></a>                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s1"> DOUBLE&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-104" name="__codelineno-2-104"></a>
+<a id="__codelineno-2-105" name="__codelineno-2-105"></a>                <span class="k">if</span> <span class="n">col</span> <span class="o">!=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+<a id="__codelineno-2-106" name="__codelineno-2-106"></a>                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;,</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-107" name="__codelineno-2-107"></a>
+<a id="__codelineno-2-108" name="__codelineno-2-108"></a>            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;)</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-109" name="__codelineno-2-109"></a>            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;ROW FORMAT DELIMITED</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-110" name="__codelineno-2-110"></a>            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;FIELDS TERMINATED BY &#39;,&#39;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-111" name="__codelineno-2-111"></a>            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;STORED AS TEXTFILE</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-112" name="__codelineno-2-112"></a>            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;LOCATION &#39;</span><span class="si">{</span><span class="n">hdfs_path</span><span class="si">}</span><span class="s2">&#39;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-113" name="__codelineno-2-113"></a>            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;TBLPROPERTIES (&#39;skip.header.line.count&#39;=&#39;1&#39;);&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-114" name="__codelineno-2-114"></a>
+<a id="__codelineno-2-115" name="__codelineno-2-115"></a>    <span class="k">def</span> <span class="nf">_upload_file_to_hdfs</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">hdfs_path</span><span class="p">):</span>
+<a id="__codelineno-2-116" name="__codelineno-2-116"></a>        <span class="n">hdfs</span> <span class="o">=</span> <span class="n">WebHDFSHook</span><span class="p">(</span><span class="n">webhdfs_conn_id</span><span class="o">=</span><span class="s1">&#39;sys-hdfs&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-117" name="__codelineno-2-117"></a>        <span class="n">hdfs</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span>
+<a id="__codelineno-2-118" name="__codelineno-2-118"></a>            <span class="n">source</span><span class="o">=</span><span class="n">infile</span><span class="p">,</span>
+<a id="__codelineno-2-119" name="__codelineno-2-119"></a>            <span class="n">destination</span><span class="o">=</span><span class="n">hdfs_path</span><span class="p">,</span>
+<a id="__codelineno-2-120" name="__codelineno-2-120"></a>            <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span>
+<a id="__codelineno-2-121" name="__codelineno-2-121"></a>        <span class="p">)</span>
+<a id="__codelineno-2-122" name="__codelineno-2-122"></a>
+<a id="__codelineno-2-123" name="__codelineno-2-123"></a>    <span class="k">def</span> <span class="nf">_upload_file_to_minio</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">bucket</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+<a id="__codelineno-2-124" name="__codelineno-2-124"></a>        <span class="n">client</span> <span class="o">=</span> <span class="n">Minio</span><span class="p">(</span>
+<a id="__codelineno-2-125" name="__codelineno-2-125"></a>            <span class="n">Variable</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;MINIO_HOST&#39;</span><span class="p">),</span>
+<a id="__codelineno-2-126" name="__codelineno-2-126"></a>            <span class="n">access_key</span><span class="o">=</span><span class="n">Variable</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;MINIO_SECRET_ACCESS_KEY&#39;</span><span class="p">),</span>
+<a id="__codelineno-2-127" name="__codelineno-2-127"></a>            <span class="n">secret_key</span><span class="o">=</span><span class="n">Variable</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;MINIO_SECRET_KEY&#39;</span><span class="p">),</span>
+<a id="__codelineno-2-128" name="__codelineno-2-128"></a>            <span class="n">secure</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-2-129" name="__codelineno-2-129"></a>            <span class="n">http_client</span><span class="o">=</span><span class="n">urllib3</span><span class="o">.</span><span class="n">ProxyManager</span><span class="p">(</span><span class="s1">&#39;http://meaproxy.mea.or.th:80&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-130" name="__codelineno-2-130"></a>        <span class="p">)</span>
+<a id="__codelineno-2-131" name="__codelineno-2-131"></a>
+<a id="__codelineno-2-132" name="__codelineno-2-132"></a>        <span class="n">client</span><span class="o">.</span><span class="n">fput_object</span><span class="p">(</span>
+<a id="__codelineno-2-133" name="__codelineno-2-133"></a>            <span class="n">bucket_name</span><span class="o">=</span><span class="n">bucket</span><span class="p">,</span>
+<a id="__codelineno-2-134" name="__codelineno-2-134"></a>            <span class="n">object_name</span><span class="o">=</span><span class="n">obj</span><span class="p">,</span>
+<a id="__codelineno-2-135" name="__codelineno-2-135"></a>            <span class="n">file_path</span><span class="o">=</span><span class="n">file_path</span>
+<a id="__codelineno-2-136" name="__codelineno-2-136"></a>        <span class="p">)</span>
+<a id="__codelineno-2-137" name="__codelineno-2-137"></a>
+<a id="__codelineno-2-138" name="__codelineno-2-138"></a>
+<a id="__codelineno-2-139" name="__codelineno-2-139"></a>    <span class="c1">###############################################################################</span>
+<a id="__codelineno-2-140" name="__codelineno-2-140"></a>    <span class="c1">#                                    Tasks                                    #</span>
+<a id="__codelineno-2-141" name="__codelineno-2-141"></a>    <span class="c1">###############################################################################</span>
+<a id="__codelineno-2-142" name="__codelineno-2-142"></a>    <span class="n">get_egat_lp</span> <span class="o">=</span> <span class="n">PythonOperator</span><span class="p">(</span>
+<a id="__codelineno-2-143" name="__codelineno-2-143"></a>        <span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;get_egat_lp&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-144" name="__codelineno-2-144"></a>        <span class="n">python_callable</span><span class="o">=</span><span class="n">_get_lp</span><span class="p">,</span>
+<a id="__codelineno-2-145" name="__codelineno-2-145"></a>        <span class="n">op_kwargs</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-2-146" name="__codelineno-2-146"></a>            <span class="s2">&quot;feeder_name&quot;</span><span class="p">:</span> <span class="s2">&quot;BK/69 MEA#1 M&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-147" name="__codelineno-2-147"></a>            <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2021</span><span class="p">,</span>
+<a id="__codelineno-2-148" name="__codelineno-2-148"></a>            <span class="s2">&quot;month&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+<a id="__codelineno-2-149" name="__codelineno-2-149"></a>            <span class="s2">&quot;outfile&quot;</span><span class="p">:</span> <span class="s2">&quot;/shared/bk69_mea1_m.json&quot;</span>
+<a id="__codelineno-2-150" name="__codelineno-2-150"></a>        <span class="p">}</span>
+<a id="__codelineno-2-151" name="__codelineno-2-151"></a>    <span class="p">)</span>
+<a id="__codelineno-2-152" name="__codelineno-2-152"></a>
+<a id="__codelineno-2-153" name="__codelineno-2-153"></a>    <span class="n">convert_json_to_csv</span> <span class="o">=</span> <span class="n">PythonOperator</span><span class="p">(</span>
+<a id="__codelineno-2-154" name="__codelineno-2-154"></a>        <span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;convert_json_to_csv&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-155" name="__codelineno-2-155"></a>        <span class="n">python_callable</span><span class="o">=</span><span class="n">_convert_json_to_csv</span><span class="p">,</span>
+<a id="__codelineno-2-156" name="__codelineno-2-156"></a>        <span class="n">op_kwargs</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-2-157" name="__codelineno-2-157"></a>            <span class="s2">&quot;infile&quot;</span><span class="p">:</span> <span class="s2">&quot;/shared/bk69_mea1_m.json&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-158" name="__codelineno-2-158"></a>            <span class="s2">&quot;outfile&quot;</span><span class="p">:</span> <span class="s2">&quot;/shared/bk69_mea1_m.csv&quot;</span>
+<a id="__codelineno-2-159" name="__codelineno-2-159"></a>        <span class="p">}</span>
+<a id="__codelineno-2-160" name="__codelineno-2-160"></a>    <span class="p">)</span>
+<a id="__codelineno-2-161" name="__codelineno-2-161"></a>
+<a id="__codelineno-2-162" name="__codelineno-2-162"></a>    <span class="n">upload_file_to_hdfs</span> <span class="o">=</span> <span class="n">PythonOperator</span><span class="p">(</span>
+<a id="__codelineno-2-163" name="__codelineno-2-163"></a>        <span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;upload_file_to_hdfs&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-164" name="__codelineno-2-164"></a>        <span class="n">python_callable</span><span class="o">=</span><span class="n">_upload_file_to_hdfs</span><span class="p">,</span>
+<a id="__codelineno-2-165" name="__codelineno-2-165"></a>        <span class="n">op_kwargs</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-2-166" name="__codelineno-2-166"></a>            <span class="s2">&quot;infile&quot;</span><span class="p">:</span> <span class="s1">&#39;/shared/bk69_mea1_m.csv&#39;</span><span class="p">,</span>
+<a id="__codelineno-2-167" name="__codelineno-2-167"></a>            <span class="s2">&quot;hdfs_path&quot;</span><span class="p">:</span> <span class="s1">&#39;/user/airflow/dpd-training/egat/bk69_mea1_m.csv&#39;</span>
+<a id="__codelineno-2-168" name="__codelineno-2-168"></a>        <span class="p">}</span>
+<a id="__codelineno-2-169" name="__codelineno-2-169"></a>    <span class="p">)</span>
+<a id="__codelineno-2-170" name="__codelineno-2-170"></a>
+<a id="__codelineno-2-171" name="__codelineno-2-171"></a>    <span class="n">upload_backup_to_minio</span> <span class="o">=</span> <span class="n">PythonOperator</span><span class="p">(</span>
+<a id="__codelineno-2-172" name="__codelineno-2-172"></a>        <span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;upload_backup_to_minio&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-173" name="__codelineno-2-173"></a>        <span class="n">python_callable</span><span class="o">=</span><span class="n">_upload_file_to_minio</span><span class="p">,</span>
+<a id="__codelineno-2-174" name="__codelineno-2-174"></a>        <span class="n">op_kwargs</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-2-175" name="__codelineno-2-175"></a>            <span class="s1">&#39;bucket&#39;</span><span class="p">:</span> <span class="s1">&#39;airflow&#39;</span><span class="p">,</span>
+<a id="__codelineno-2-176" name="__codelineno-2-176"></a>            <span class="s1">&#39;obj&#39;</span><span class="p">:</span> <span class="s1">&#39;DPD/bk69_mea1_m.csv&#39;</span><span class="p">,</span>
+<a id="__codelineno-2-177" name="__codelineno-2-177"></a>            <span class="s1">&#39;file_path&#39;</span><span class="p">:</span> <span class="s1">&#39;/shared/bk69_mea1_m.csv&#39;</span>
+<a id="__codelineno-2-178" name="__codelineno-2-178"></a>        <span class="p">}</span>
+<a id="__codelineno-2-179" name="__codelineno-2-179"></a>    <span class="p">)</span>
+<a id="__codelineno-2-180" name="__codelineno-2-180"></a>
+<a id="__codelineno-2-181" name="__codelineno-2-181"></a>    <span class="n">generate_hive_sql</span> <span class="o">=</span> <span class="n">PythonOperator</span><span class="p">(</span>
+<a id="__codelineno-2-182" name="__codelineno-2-182"></a>        <span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;generate_hive_sql&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-183" name="__codelineno-2-183"></a>        <span class="n">python_callable</span><span class="o">=</span><span class="n">_generate_hive_sql</span><span class="p">,</span>
+<a id="__codelineno-2-184" name="__codelineno-2-184"></a>        <span class="n">op_kwargs</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-2-185" name="__codelineno-2-185"></a>            <span class="s2">&quot;infile&quot;</span><span class="p">:</span> <span class="s1">&#39;/shared/bk69_mea1_m.csv&#39;</span><span class="p">,</span>
+<a id="__codelineno-2-186" name="__codelineno-2-186"></a>            <span class="s2">&quot;outfile&quot;</span><span class="p">:</span> <span class="s1">&#39;/shared/bk69_mea1_m.sql&#39;</span><span class="p">,</span>
+<a id="__codelineno-2-187" name="__codelineno-2-187"></a>            <span class="s2">&quot;db_name&quot;</span><span class="p">:</span> <span class="s1">&#39;airflow&#39;</span><span class="p">,</span>
+<a id="__codelineno-2-188" name="__codelineno-2-188"></a>            <span class="s2">&quot;table_name&quot;</span><span class="p">:</span> <span class="s1">&#39;dpd_training_egat_chatree&#39;</span><span class="p">,</span>
+<a id="__codelineno-2-189" name="__codelineno-2-189"></a>            <span class="s2">&quot;hdfs_path&quot;</span><span class="p">:</span> <span class="s1">&#39;/user/airflow/dpd-training/egat/&#39;</span>
+<a id="__codelineno-2-190" name="__codelineno-2-190"></a>        <span class="p">}</span>
+<a id="__codelineno-2-191" name="__codelineno-2-191"></a>    <span class="p">)</span>
+<a id="__codelineno-2-192" name="__codelineno-2-192"></a>
+<a id="__codelineno-2-193" name="__codelineno-2-193"></a>    <span class="n">create_external_table</span> <span class="o">=</span> <span class="n">JdbcOperator</span><span class="p">(</span>
+<a id="__codelineno-2-194" name="__codelineno-2-194"></a>        <span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;create_external_table&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-195" name="__codelineno-2-195"></a>        <span class="n">jdbc_conn_id</span><span class="o">=</span><span class="s1">&#39;sys-jdbc-hive&#39;</span><span class="p">,</span>
+<a id="__codelineno-2-196" name="__codelineno-2-196"></a>        <span class="n">sql</span><span class="o">=</span><span class="s2">&quot;bk69_mea1_m.sql&quot;</span>
+<a id="__codelineno-2-197" name="__codelineno-2-197"></a>    <span class="p">)</span>
+<a id="__codelineno-2-198" name="__codelineno-2-198"></a>
+<a id="__codelineno-2-199" name="__codelineno-2-199"></a>    <span class="n">send_email</span> <span class="o">=</span> <span class="n">EmailOperator</span><span class="p">(</span>
+<a id="__codelineno-2-200" name="__codelineno-2-200"></a>        <span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;send_email&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-201" name="__codelineno-2-201"></a>        <span class="n">to</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;chatree.sr@mea.or.th&quot;</span><span class="p">],</span>
+<a id="__codelineno-2-202" name="__codelineno-2-202"></a>        <span class="n">subject</span><span class="o">=</span><span class="s2">&quot;[{{ ds }}] EGAT file saved!&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-203" name="__codelineno-2-203"></a>        <span class="n">html_content</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-2-204" name="__codelineno-2-204"></a><span class="s2">        &lt;h1 style=&quot;color: blue;&quot;&gt;Please find attached&lt;/h1&gt;</span>
+<a id="__codelineno-2-205" name="__codelineno-2-205"></a><span class="s2">        &lt;p&gt;Please find attached EGAT data as of {{ ds }}&lt;/p&gt;</span>
+<a id="__codelineno-2-206" name="__codelineno-2-206"></a><span class="s2">        &quot;&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-207" name="__codelineno-2-207"></a>        <span class="n">files</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;/shared/bk69_mea1_m.csv&quot;</span><span class="p">]</span>
+<a id="__codelineno-2-208" name="__codelineno-2-208"></a>    <span class="p">)</span>
+<a id="__codelineno-2-209" name="__codelineno-2-209"></a>
+<a id="__codelineno-2-210" name="__codelineno-2-210"></a>
+<a id="__codelineno-2-211" name="__codelineno-2-211"></a>    <span class="n">get_egat_lp</span> <span class="o">&gt;&gt;</span> <span class="n">convert_json_to_csv</span> <span class="o">&gt;&gt;</span> <span class="n">upload_file_to_hdfs</span> <span class="o">&gt;&gt;</span> <span class="n">generate_hive_sql</span> <span class="o">&gt;&gt;</span> <span class="n">create_external_table</span> <span class="o">&gt;&gt;</span> <span class="n">send_email</span>
+<a id="__codelineno-2-212" name="__codelineno-2-212"></a>    <span class="n">convert_json_to_csv</span> <span class="o">&gt;&gt;</span> <span class="n">upload_backup_to_minio</span> <span class="o">&gt;&gt;</span> <span class="n">send_email</span>
+</code></pre></div>
+</td></tr></table>
+<p>จุดสำคัญ</p>
+<ul>
+<li>อะไรที่ทำบน Python ได้ ทำบน Airflow ได้เหมือนกัน</li>
+<li>ส่วนใหญ่จะมี Operator เฉพาะกิจไว้ให้แล้ว ตรวจสอบรายการได้ที่ <a href="https://airflow.apache.org/docs/apache-airflow-providers/operators-and-hooks-ref/index.html">Airflow Operators &amp; Hooks</a></li>
+<li>ฝวท. พัฒนา Custom Hooks &amp; Operators บางส่วนเพื่อให้สามารถเชื่อมต่อ Data Platform ได้ เช่น <code>mea.hooks.webhdfs</code></li>
+</ul>
+<h3 id="results_2">Results</h3>
+<p><img alt="EGAT Result" src="images/egat_result_0.png" /></p>
+<p><img alt="EGAT Result" src="images/egat_result_1.png" /></p>
+<p><img alt="EGAT Result" src="images/egat_result_2.png" /></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="databases/" class="md-footer__link md-footer__link--next" aria-label="Next: Databases" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Databases
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.b88e97c5.min.js"></script>
+      
+    
+  </body>
+</html>
