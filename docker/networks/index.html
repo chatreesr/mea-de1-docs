@@ -1,0 +1,911 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>Networks - Data Engineering Team 1</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Krub:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Krub";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#networks" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Data Engineering Team 1" class="md-header__button md-logo" aria-label="Data Engineering Team 1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Data Engineering Team 1
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Networks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Data Engineering Team 1" class="md-nav__button md-logo" aria-label="Data Engineering Team 1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Data Engineering Team 1
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Apache Airflow
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Apache Airflow" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Apache Airflow
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apache-airflow/use/" class="md-nav__link">
+        Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apache-airflow/databases/" class="md-nav__link">
+        Databases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Docker 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Docker 1" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Docker 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use/" class="md-nav__link">
+        Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../volumes/" class="md-nav__link">
+        Volumes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Networks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Networks
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concept" class="md-nav__link">
+    Concept
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-networks" class="md-nav__link">
+    List Networks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-containers-in-networks" class="md-nav__link">
+    Check Containers in Networks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-network" class="md-nav__link">
+    Create a Network
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-database-dev" class="md-nav__link">
+    Example 1 - Database Dev
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 1 - Database Dev">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-database-network" class="md-nav__link">
+    Create a Database Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-a-web-ui-within-network" class="md-nav__link">
+    Run a Web UI within Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-a-postgresql-within-network" class="md-nav__link">
+    Run a PostgreSQL within Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check" class="md-nav__link">
+    Check
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-dns-round-robin" class="md-nav__link">
+    Example 2 - DNS Round Robin
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 2 - DNS Round Robin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-dns-network" class="md-nav__link">
+    Create a DNS Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-containers" class="md-nav__link">
+    Add Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-dns" class="md-nav__link">
+    Test DNS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-elastic-api" class="md-nav__link">
+    Call Elastic API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-3-wordpress" class="md-nav__link">
+    Example 3 - Wordpress
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 3 - Wordpress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-wordpress-network" class="md-nav__link">
+    Create a Wordpress Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-mysql" class="md-nav__link">
+    Deploy MySQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-wordpress" class="md-nav__link">
+    Deploy Wordpress
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-wordpress" class="md-nav__link">
+    Test Wordpress
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../images/" class="md-nav__link">
+        Images
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concept" class="md-nav__link">
+    Concept
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-networks" class="md-nav__link">
+    List Networks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-containers-in-networks" class="md-nav__link">
+    Check Containers in Networks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-network" class="md-nav__link">
+    Create a Network
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-database-dev" class="md-nav__link">
+    Example 1 - Database Dev
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 1 - Database Dev">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-database-network" class="md-nav__link">
+    Create a Database Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-a-web-ui-within-network" class="md-nav__link">
+    Run a Web UI within Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-a-postgresql-within-network" class="md-nav__link">
+    Run a PostgreSQL within Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check" class="md-nav__link">
+    Check
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-dns-round-robin" class="md-nav__link">
+    Example 2 - DNS Round Robin
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 2 - DNS Round Robin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-dns-network" class="md-nav__link">
+    Create a DNS Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-containers" class="md-nav__link">
+    Add Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-dns" class="md-nav__link">
+    Test DNS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-elastic-api" class="md-nav__link">
+    Call Elastic API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-3-wordpress" class="md-nav__link">
+    Example 3 - Wordpress
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 3 - Wordpress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-wordpress-network" class="md-nav__link">
+    Create a Wordpress Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-mysql" class="md-nav__link">
+    Deploy MySQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-wordpress" class="md-nav__link">
+    Deploy Wordpress
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-wordpress" class="md-nav__link">
+    Test Wordpress
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="networks">Networks</h1>
+<p>Network คือ ระบบสื่อสารของ Container ถ้าไม่ได้ระบุ Docker Engine จะให้ Container อยู่ที่ Default Bridge Network โดยอัตโนมัติ คำสั่งที่ใช้บริหารจัดการคือ <code>network</code> เช่น</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker network &lt;sub-command&gt; <span class="o">[</span>options<span class="o">]</span>
+</code></pre></div>
+<p>โดยปกติเรามักจะจับกลุ่มให้ Application เดียวกันอยู่ภายใต้ Network เดียวกัน</p>
+<h2 id="concept">Concept</h2>
+<p><img alt="Networking" src="../images/networking.png" /></p>
+<h2 id="list-networks">List Networks</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker network ls
+</code></pre></div>
+<h2 id="check-containers-in-networks">Check Containers in Networks</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker network inspect &lt;network_id&gt;
+</code></pre></div>
+<p>ดูที่ Section Containers จะเห็นว่า Container ไหนอยู่ใน Network ใด</p>
+<h2 id="create-a-network">Create a Network</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker network create &lt;network_name&gt;
+</code></pre></div>
+<ul>
+<li>Default Network Driver จะเป็น Bridge ในอนาคตเราจะมีการใช้งาน Docker Swarm ซึ่งใช้ Overlay Network</li>
+<li>Network ที่สร้างขึ้นมาเองจะมี DNS Resolver ให้อัตโนมัติ หมายความว่าสามารถใช้ชื่อ Container แทน IP Address ได้เลย (<strong>Default Network ไม่มี DNS Resolver ให้</strong>)</li>
+</ul>
+<h2 id="example-1-database-dev">Example 1 - Database Dev</h2>
+<p>สมมติว่าต้องการสร้าง Development Environment สำหรับทดลองใช้งาน Database</p>
+<ul>
+<li>มีหน้าเว็บ UI</li>
+<li>มีฐานข้อมูล PostgreSQL</li>
+</ul>
+<h3 id="create-a-database-network">Create a Database Network</h3>
+<p>เริ่มด้วยการสร้าง Network</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker network create db-dev
+</code></pre></div>
+<h3 id="run-a-web-ui-within-network">Run a Web UI within Network</h3>
+<p>รัน Cloudbeaver UI (ตัวบริหารจัดการ Database บน Web) ด้วย <code>--network</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker run <span class="se">\</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    --name cloudbeaver <span class="se">\</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    -d -it -p <span class="m">8090</span>:8978 <span class="se">\</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    --network db-dev <span class="se">\</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    dbeaver/cloudbeaver:latest
+</code></pre></div>
+<h3 id="run-a-postgresql-within-network">Run a PostgreSQL within Network</h3>
+<p>เหมือนด้านบน</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker container run <span class="se">\</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    --name mypostgres <span class="se">\</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    -d -p <span class="m">5432</span>:5432 <span class="se">\</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    -e <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>secretpassword <span class="se">\</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    -v postgresdb:/var/lib/postgresql/data <span class="se">\</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    --network db-dev <span class="se">\</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    postgres
+</code></pre></div>
+<h3 id="check">Check</h3>
+<p>ตรวจสอบโดยการเข้าเว็บ <a href="http://localhost:8090">http://localhost:8090</a> โดยเวลาระบุ hostname ให้ระบุชื่อ Container <code>mypostgres</code> ได้เลยเนื่องจาก Docker Engine จะทำการแปล <code>mypostgres</code> เป็น IP Address ให้อัตโนมัติ</p>
+<h2 id="example-2-dns-round-robin">Example 2 - DNS Round Robin</h2>
+<p>สมมติว่ามี Server Elasticsearch อยู่ 2 ตัว ต้องการทำ Load Balancer อย่างง่ายให้ Traffic ไปหา Server ทั้งคู่พอๆกัน ทำแบบหยาบๆสามารถใช้ <code>--net-alias</code> ของ Docker ได้ดังนี้</p>
+<h3 id="create-a-dns-network">Create a DNS Network</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker network create elastic-lb
+</code></pre></div>
+<h3 id="add-containers">Add Containers</h3>
+<p>ใส่คำสั่ง <strong>สองครั้ง</strong> เพื่อสร้าง 2 Containers</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker container run <span class="se">\</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    -d --network elastic-lb <span class="se">\</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    --net-alias search-cluster <span class="se">\</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    elasticsearch:2
+</code></pre></div>
+<p><code>--net-alias</code> คือการบอกว่าให้ Map ชื่อ Container นี้กับชื่อที่ระบุใน <code>--net-alias</code> ในกรณีนี้คือ <code>search-cluster</code> เวลามีการเรียกใช้ <code>search-cluster</code> Docker จะ Forward Traffic ไปหา Server ทั้งสองตัวแบบสุ่ม</p>
+<h3 id="test-dns">Test DNS</h3>
+<p>ใช้วิธี Attach Alpine Linux เข้าไปที่ Network <code>elastic-lb</code> แล้วก็รันคำสั่ง <code>nslookup search-cluster</code> ในการตรวจสอบหมายเลข IP Address ที่ผูกอยู่กับชื่อ <code>search-cluster</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker container run <span class="se">\</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    --rm --network elastic-lb <span class="se">\</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    alpine nslookup search-cluster
+</code></pre></div>
+<h3 id="call-elastic-api">Call Elastic API</h3>
+<p>ใช้วิธี Attach CentOS Linux เข้าไปที่ Network <code>elastic-lb</code> แล้วทดสอบการเรียกข้อมูลจาก Elasticsearch ด้วย <code>curl</code> (สาเหตุที่ใช้ CentOS เพราะว่ามี <code>curl</code> ติดตั้งมาแล้วพร้อมใช้ แต่ Alpine ไม่มี) <strong>ให้ทดสอบรันคำสั่งหลายๆครั้งเพื่อให้แน่ใจว่า Response มาจาก Server คนละตัว โดยสังเกตที่ name</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker container run <span class="se">\</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    --rm --network elastic-lb <span class="se">\</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    centos curl -s search-cluster:9200
+</code></pre></div>
+<h2 id="example-3-wordpress">Example 3 - Wordpress</h2>
+<p>ส่วนประกอบของ Wordpress คือ โปรแกรม Worpress ที่รันอยู่บน Webserver และ PHP กับ Database MySQL ขั้นตอนในการ Deploy คือ</p>
+<ul>
+<li>สร้าง Network สำหรับ App Wordpress</li>
+<li>Deploy <code>mysql</code> + ตั้งค่า Volume</li>
+<li>Deploy <code>wordpress</code> + ตั้งค่า Volume</li>
+</ul>
+<p>โดยปกติกรณีแบบนี้เราจะใช้ Docker Compose (อาทิตย์หน้า) ซึ่งจะบริหารจัดการง่ายกว่า แต่อันนี้เป็นตัวอย่างแบบไม่ใช้ Compose</p>
+<h3 id="create-a-wordpress-network">Create a Wordpress Network</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker network create wordpress-net
+</code></pre></div>
+<h3 id="deploy-mysql">Deploy MySQL</h3>
+<p>เริ่มจากการ Deploy Database MySQL ก่อนด้วยคำสั่ง</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>docker container run <span class="se">\</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    -d --name wordpress-db <span class="se">\</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    -e <span class="nv">MYSQL_DATABASE</span><span class="o">=</span>mywebsite-db <span class="se">\</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    -e <span class="nv">MYSQL_USER</span><span class="o">=</span>admin <span class="se">\</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    -e <span class="nv">MYSQL_PASSWORD</span><span class="o">=</span>wordpresspassword <span class="se">\</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>rootpassword <span class="se">\</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    -v wordpress-db:/var/lib/mysql <span class="se">\</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    --network wordpress-net <span class="se">\</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    mysql
+</code></pre></div>
+<h3 id="deploy-wordpress">Deploy Wordpress</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker container run <span class="se">\</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    -d -p <span class="m">8099</span>:80 <span class="se">\</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    --name wordpress-site <span class="se">\</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    -e <span class="nv">WORDPRESS_DB_HOST</span><span class="o">=</span>wordpress-db <span class="se">\</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    -e <span class="nv">WORDPRESS_DB_USER</span><span class="o">=</span>admin <span class="se">\</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    -e <span class="nv">WORDPRESS_DB_PASSWORD</span><span class="o">=</span>wordpresspassword <span class="se">\</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    -e <span class="nv">WORDPRESS_DB_NAME</span><span class="o">=</span>mywebsite-db <span class="se">\</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    -v wordpress:/var/www/html <span class="se">\</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>    --network wordpress-net <span class="se">\</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>    wordpress
+</code></pre></div>
+<h3 id="test-wordpress">Test Wordpress</h3>
+<ul>
+<li>เปิดเว็บที่ <a href="http://localhost:8099">http://localhost:8099</a></li>
+<li>ทำการ Setup ตามหน้าต่าง Wizard จนใช้งานได้</li>
+<li>ทดลองเขียน Post + เปลี่ยน Theme</li>
+</ul>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../volumes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Volumes" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Volumes
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../images/" class="md-footer__link md-footer__link--next" aria-label="Next: Images" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Images
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1063 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>Basics - Data Engineering Team 1</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Krub:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Krub";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#basics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Data Engineering Team 1" class="md-header__button md-logo" aria-label="Data Engineering Team 1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Data Engineering Team 1
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Basics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Data Engineering Team 1" class="md-nav__button md-logo" aria-label="Data Engineering Team 1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Data Engineering Team 1
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Apache Airflow
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Apache Airflow" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Apache Airflow
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apache-airflow/use/" class="md-nav__link">
+        Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apache-airflow/databases/" class="md-nav__link">
+        Databases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Docker 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Docker 1" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Docker 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Basics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Basics
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containers-vs-virtualization" class="md-nav__link">
+    Containers vs Virtualization
+  </a>
+  
+    <nav class="md-nav" aria-label="Containers vs Virtualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtualization" class="md-nav__link">
+    Virtualization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#containerization" class="md-nav__link">
+    Containerization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-containers" class="md-nav__link">
+    Running Containers
+  </a>
+  
+    <nav class="md-nav" aria-label="Running Containers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-containers" class="md-nav__link">
+    Starting Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-containers" class="md-nav__link">
+    Managing Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-containers" class="md-nav__link">
+    List Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop-containers" class="md-nav__link">
+    Stop Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-containers" class="md-nav__link">
+    Remove Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-logs" class="md-nav__link">
+    Container Logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-ports" class="md-nav__link">
+    Container Ports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-processes" class="md-nav__link">
+    Container Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-consumption" class="md-nav__link">
+    Resource Consumption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspect-containers" class="md-nav__link">
+    Inspect Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-containers" class="md-nav__link">
+    Access Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-up" class="md-nav__link">
+    Clean up
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-postgresql" class="md-nav__link">
+    Example 1 - PostgreSQL
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 1 - PostgreSQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-a-database" class="md-nav__link">
+    Starting a Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-psql" class="md-nav__link">
+    Accessing psql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-from-host" class="md-nav__link">
+    Connecting from Host
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stopping-the-database" class="md-nav__link">
+    Stopping the Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-the-database" class="md-nav__link">
+    Removing the Database
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-web-server" class="md-nav__link">
+    Example 2 - Web Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 2 - Web Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-a-web-server" class="md-nav__link">
+    Starting a Web Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-container" class="md-nav__link">
+    Checking Container
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-default-page" class="md-nav__link">
+    Changing Default Page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-the-web-server" class="md-nav__link">
+    Removing the Web Server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../volumes/" class="md-nav__link">
+        Volumes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networks/" class="md-nav__link">
+        Networks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../images/" class="md-nav__link">
+        Images
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containers-vs-virtualization" class="md-nav__link">
+    Containers vs Virtualization
+  </a>
+  
+    <nav class="md-nav" aria-label="Containers vs Virtualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtualization" class="md-nav__link">
+    Virtualization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#containerization" class="md-nav__link">
+    Containerization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-containers" class="md-nav__link">
+    Running Containers
+  </a>
+  
+    <nav class="md-nav" aria-label="Running Containers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-containers" class="md-nav__link">
+    Starting Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-containers" class="md-nav__link">
+    Managing Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-containers" class="md-nav__link">
+    List Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop-containers" class="md-nav__link">
+    Stop Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-containers" class="md-nav__link">
+    Remove Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-logs" class="md-nav__link">
+    Container Logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-ports" class="md-nav__link">
+    Container Ports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-processes" class="md-nav__link">
+    Container Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-consumption" class="md-nav__link">
+    Resource Consumption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspect-containers" class="md-nav__link">
+    Inspect Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-containers" class="md-nav__link">
+    Access Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-up" class="md-nav__link">
+    Clean up
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-postgresql" class="md-nav__link">
+    Example 1 - PostgreSQL
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 1 - PostgreSQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-a-database" class="md-nav__link">
+    Starting a Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-psql" class="md-nav__link">
+    Accessing psql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-from-host" class="md-nav__link">
+    Connecting from Host
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stopping-the-database" class="md-nav__link">
+    Stopping the Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-the-database" class="md-nav__link">
+    Removing the Database
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-web-server" class="md-nav__link">
+    Example 2 - Web Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 2 - Web Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-a-web-server" class="md-nav__link">
+    Starting a Web Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-container" class="md-nav__link">
+    Checking Container
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-default-page" class="md-nav__link">
+    Changing Default Page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-the-web-server" class="md-nav__link">
+    Removing the Web Server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="basics">Basics</h1>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Basic Networking</li>
+<li>Basic Command Line</li>
+<li>Basic Programming &amp; Software Development Process</li>
+</ul>
+<h2 id="containers-vs-virtualization">Containers vs Virtualization</h2>
+<h3 id="virtualization">Virtualization</h3>
+<p><img alt="Virtualization" src="../images/virtualization.png" /></p>
+<h3 id="containerization">Containerization</h3>
+<p><img alt="Containerization" src="../images/containers.png" /></p>
+<h2 id="running-containers">Running Containers</h2>
+<p>คำสั่งการใช้งาน Docker มีรูปแบบ</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker &lt;command&gt; &lt;sub-command&gt; [options]
+</code></pre></div>
+<h3 id="starting-containers">Starting Containers</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker container run --name mywebserver --detach --publish 8080:80 nginx
+</code></pre></div>
+<p>สิ่งที่เกิดขึ้นหลังป้อนคำสั่ง</p>
+<ul>
+<li>Docker ไปค้นหา Image (นึกถึงโปรแกรมสำเร็จรูปที่แพกเกจเรียบร้อย มีไลบรารี่ครบถ้วน พร้อมใช้งาน) บนเครื่องคอมที่เราใช้งาน</li>
+<li>ถ้าไม่เจอ Image Docker มันจะไปค้นหาที่ Docker Hub ซึ่งเป็น Repository กลางสำหรับเก็บ Image</li>
+<li>เมื่อพบ Image แล้ว Docker จะ Download มาเก็บที่เครื่องคอมเรา</li>
+<li>Docker Engine เอา Image มาทำงาน ผลลัพธ์ของการรัน Image คือ Container</li>
+<li><code>--name</code> คือการตั้งชื่อ Container ถ้าไม่ได้ตั้ง Docker จะให้ ID มาแทน</li>
+<li><code>-d หรือ --detach</code> คือให้คืน Prompt ไม่ต้องแสดง Logs ตอนรัน</li>
+<li><code>-p หรือ --publish</code> คือการบอกให้ Docker Engine เชื่อมต่อ Host Port 8080 กับ Container Port 80</li>
+<li>เข้า Web Browser ที่ <a href="http://localhost:8080">http://localhost:8080</a> เพื่อดู Nginx Welcome Page</li>
+</ul>
+<h3 id="managing-containers">Managing Containers</h3>
+<p>การบริหารจัดการ Container ใช้กลุ่มคำสั่ง <code>container</code> เช่น</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker container &lt;sub-command&gt;
+</code></pre></div>
+<h3 id="list-containers">List Containers</h3>
+<p>ดูเฉพาะ Container ที่ทำงานอยู่</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker container ls
+</code></pre></div>
+<p>ดู Container ทั้งหมด (ทำงาน และ หยุดทำงาน)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker container ls -a
+</code></pre></div>
+<h3 id="stop-containers">Stop Containers</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker container stop mywebserver
+</code></pre></div>
+<h3 id="remove-containers">Remove Containers</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker container rm mywebserver
+</code></pre></div>
+<h3 id="container-logs">Container Logs</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker container logs mywebserver
+</code></pre></div>
+<h3 id="container-ports">Container Ports</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker container port mywebserver
+</code></pre></div>
+<h3 id="container-processes">Container Processes</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker container top mywebserver
+</code></pre></div>
+<h3 id="resource-consumption">Resource Consumption</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker container stats mywebserver
+</code></pre></div>
+<h3 id="inspect-containers">Inspect Containers</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker container inspect mywebserver
+</code></pre></div>
+<p>ตรวจสอบ IP Address ด้วยคำสั่ง</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>docker container inspect <span class="se">\</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    --format <span class="s1">&#39;{{ .NetworkSettings.IPAddress }}&#39;</span> <span class="se">\</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    mywebserver
+</code></pre></div>
+<p><code>'{{ .NetworkSettings.IPAddress }}'</code> คือ Go Template</p>
+<h3 id="access-containers">Access Containers</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker container <span class="nb">exec</span> -it mywebserver bash
+</code></pre></div>
+<ul>
+<li><code>exec</code> คือคำสั่งให้รันโปรแกรมใน Container</li>
+<li><code>-it</code> คือ <code>interactive tty</code> นึกถึงการเข้าใช้งาน Shell</li>
+<li><code>bash</code> คือ ชื่อโปรแกรมที่ต้องการรันใน Container</li>
+</ul>
+<h3 id="clean-up">Clean up</h3>
+<p>ลบทุกสิ่งอย่าง (ยกเว้น Volume)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker system prune -a
+</code></pre></div>
+<h2 id="example-1-postgresql">Example 1 - PostgreSQL</h2>
+<h3 id="starting-a-database">Starting a Database</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>docker container run <span class="se">\</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    --name mypostgres <span class="se">\</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    -e <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>secretpassword <span class="se">\</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    -d -p <span class="m">5432</span>:5432 <span class="se">\</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    postgres
+</code></pre></div>
+<p><code>-e หรือ --env</code> คือ Environment Variables ที่ต้องใช้งานใน Container</p>
+<h3 id="accessing-psql">Accessing psql</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>docker container <span class="nb">exec</span> -it mypostgres psql -U postgres
+</code></pre></div>
+<p>คำสั่งพื้นฐาน <code>psql</code></p>
+<ol>
+<li><code>\l</code> หรือ <code>\l+</code> แสดงรายการ Database</li>
+<li><code>SELECT datname FROM pg_database;</code></li>
+<li><code>\dt</code> หรือ <code>\dt *</code> แสดงรายการ Relations (Tables)</li>
+<li><code>CREATE DATABASE airflow;</code> สร้าง Database ชื่อว่า Airflow</li>
+<li>ใช้คำสั่ง SQL ในการสร้างและทำงานกับข้อมูลได้เลย (จะใช้ CRUD กันจริงจังอีกที Session อื่น)</li>
+</ol>
+<h3 id="connecting-from-host">Connecting from Host</h3>
+<p>ใช้โปรแกรมบริหารจัดการ Database (เช่น dbeaver หรือ beekeeper-studio) ในการเชื่อมต่อ PostgreSQL โดยกำหนด</p>
+<ul>
+<li>Host = <code>localhost</code>, Port = <code>5432</code></li>
+<li>Username = <code>postgres</code>, Password = <code>secretpassword</code></li>
+</ul>
+<p><img alt="Connect" src="../images/database_connect.png" /></p>
+<h3 id="stopping-the-database">Stopping the Database</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>docker container stop mypostgres
+</code></pre></div>
+<h3 id="removing-the-database">Removing the Database</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>docker container rm mypostgres
+</code></pre></div>
+<h2 id="example-2-web-server">Example 2 - Web Server</h2>
+<h3 id="starting-a-web-server">Starting a Web Server</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>docker container run --name mywebserver -d -p <span class="m">8080</span>:80 nginx
+</code></pre></div>
+<h3 id="checking-container">Checking Container</h3>
+<p>เปิดเว็บ Browser <a href="http://localhost:8080">http://localhost:8080</a></p>
+<h3 id="changing-default-page">Changing Default Page</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>docker container <span class="nb">exec</span> -it mywebserver bash
+</code></pre></div>
+<ol>
+<li>ติดตั้ง Text Editor <code>vim</code> ด้วยคำสั่ง <code>apt update &amp;&amp; apt install vim -y</code></li>
+<li>แก้ไขไฟล์ html <code>vim /usr/share/nginx/html/index.html</code></li>
+<li>กด Refresh ที่ Browserเพื่อตรวจสอบการแก้ไข</li>
+</ol>
+<h3 id="removing-the-web-server">Removing the Web Server</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>docker container rm -f mywebserver
+</code></pre></div>
+<p><code>-f</code> คือ force บังคับ Remove โดยไม่ต้อง Stop ก่อน</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../apache-airflow/databases/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Databases" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Databases
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../volumes/" class="md-footer__link md-footer__link--next" aria-label="Next: Volumes" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Volumes
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>
