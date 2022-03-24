@@ -11,3 +11,5 @@
 |            | Kubernetes #1 - Basics                 | Waiting   |                                                                                                |
 |            | Kubernetes #2 - Application Deployment | Waiting   |                                                                                                |
 |            | Kubernetes #3 - Administration         | Waiting   |                                                                                                |
+
+## Planned Projects

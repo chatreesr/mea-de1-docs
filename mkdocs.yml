@@ -12,10 +12,16 @@ nav:
       - apache-airflow/use.md
       - Databases: apache-airflow/databases.md
   - Docker 1:
-      - docker/use.md
-      - Volumes: docker/volumes.md
-      - Networks: docker/networks.md
-      - Images: docker/images.md
+      - docker1/use.md
+      - Volumes: docker1/volumes.md
+      - Networks: docker1/networks.md
+      - Images: docker1/images.md
+  - Docker 2:
+      - MEA Cloud: docker2/meacloud.md
+      - Networks: docker2/networks.md
+      - Compose: docker2/compose.md
+      - Docker Swarm: docker2/swarm.md
+      - Docker Secrets: docker2/secrets.md
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
