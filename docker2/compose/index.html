@@ -1,0 +1,1387 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>Compose - Data Engineering Team 1</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Krub:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Krub";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#docker-compose" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Data Engineering Team 1" class="md-header__button md-logo" aria-label="Data Engineering Team 1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Data Engineering Team 1
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Compose
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Data Engineering Team 1" class="md-nav__button md-logo" aria-label="Data Engineering Team 1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Data Engineering Team 1
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Apache Airflow
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Apache Airflow" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Apache Airflow
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apache-airflow/use/" class="md-nav__link">
+        Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apache-airflow/databases/" class="md-nav__link">
+        Databases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Docker 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Docker 1" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Docker 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker1/use/" class="md-nav__link">
+        Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker1/volumes/" class="md-nav__link">
+        Volumes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker1/networks/" class="md-nav__link">
+        Networks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker1/images/" class="md-nav__link">
+        Images
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Docker 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Docker 2" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Docker 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meacloud/" class="md-nav__link">
+        MEA Cloud
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networks/" class="md-nav__link">
+        Networks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Compose
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Compose
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#compose-file" class="md-nav__link">
+    Compose File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    Structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-wordpress-app" class="md-nav__link">
+    Example 1 - Wordpress App
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 1 - Wordpress App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wordpress-architecture" class="md-nav__link">
+    Wordpress Architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compose-definition" class="md-nav__link">
+    Compose Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-compose" class="md-nav__link">
+    Start Compose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop-compose" class="md-nav__link">
+    Stop Compose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-logs" class="md-nav__link">
+    Read Logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execute-command" class="md-nav__link">
+    Execute Command
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-database-dev-environment" class="md-nav__link">
+    Example 2 - Database Dev Environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 2 - Database Dev Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#db-dev-architecture" class="md-nav__link">
+    DB Dev Architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db-dev-compose-file" class="md-nav__link">
+    DB Dev Compose File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-db-dev" class="md-nav__link">
+    Start DB Dev
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-dv-dev" class="md-nav__link">
+    Using DV Dev
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-3-apache-airflow" class="md-nav__link">
+    Example 3 - Apache Airflow
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 3 - Apache Airflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#airflow-architecture" class="md-nav__link">
+    Airflow Architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#airflow-compose" class="md-nav__link">
+    Airflow Compose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-apache-airflow" class="md-nav__link">
+    Start Apache Airflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-scheduler-logs" class="md-nav__link">
+    Check Scheduler Logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-webserver-logs" class="md-nav__link">
+    Check Webserver Logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-worker-logs" class="md-nav__link">
+    Check Worker Logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-monitoring-system" class="md-nav__link">
+    Check Monitoring System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-pythonshell-code" class="md-nav__link">
+    Test Python/Shell Code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-differences" class="md-nav__link">
+    Production Differences
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarm/" class="md-nav__link">
+        Docker Swarm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../secrets/" class="md-nav__link">
+        Docker Secrets
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#compose-file" class="md-nav__link">
+    Compose File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    Structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-wordpress-app" class="md-nav__link">
+    Example 1 - Wordpress App
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 1 - Wordpress App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wordpress-architecture" class="md-nav__link">
+    Wordpress Architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compose-definition" class="md-nav__link">
+    Compose Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-compose" class="md-nav__link">
+    Start Compose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop-compose" class="md-nav__link">
+    Stop Compose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-logs" class="md-nav__link">
+    Read Logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execute-command" class="md-nav__link">
+    Execute Command
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-database-dev-environment" class="md-nav__link">
+    Example 2 - Database Dev Environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 2 - Database Dev Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#db-dev-architecture" class="md-nav__link">
+    DB Dev Architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db-dev-compose-file" class="md-nav__link">
+    DB Dev Compose File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-db-dev" class="md-nav__link">
+    Start DB Dev
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-dv-dev" class="md-nav__link">
+    Using DV Dev
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-3-apache-airflow" class="md-nav__link">
+    Example 3 - Apache Airflow
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 3 - Apache Airflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#airflow-architecture" class="md-nav__link">
+    Airflow Architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#airflow-compose" class="md-nav__link">
+    Airflow Compose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-apache-airflow" class="md-nav__link">
+    Start Apache Airflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-scheduler-logs" class="md-nav__link">
+    Check Scheduler Logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-webserver-logs" class="md-nav__link">
+    Check Webserver Logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-worker-logs" class="md-nav__link">
+    Check Worker Logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-monitoring-system" class="md-nav__link">
+    Check Monitoring System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-pythonshell-code" class="md-nav__link">
+    Test Python/Shell Code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-differences" class="md-nav__link">
+    Production Differences
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="docker-compose">Docker Compose</h1>
+<p>Docker Compose คือ Tool ที่ใช้สำหรับ Define และ Run Applications ที่ใช้หลาย Containers เช่น Wordpress App Suite ที่ต้องมี Wordpress และ Database</p>
+<h2 id="compose-file">Compose File</h2>
+<p>วิธีการ Define Multi-container Applications เริ่มต้นด้วยการสร้างไฟล์ YAML ชื่อ <code>docker-compose.yml</code> (หรือชื่ออื่นๆ แต่ต้องระบุชื่อตอนรัน) และใส่นิยาม Containers ที่ต้องรันลงไปในไฟล์</p>
+<p>Compose File มีหลายเวอร์ชั่น แต่ละเวอร์ชั่นรองรับ Docker Engine เวอร์ชั่นต่างกัน แนะนำให้ใช้งานตั้งแต่ เวอร์ชั่น 2 ขึ้นไป <a href="https://docs.docker.com/compose/compose-file/compose-versioning/">ดูรายละเอียดของแต่ละเวอร์ชั่นที่นี่</a></p>
+<h2 id="structure">Structure</h2>
+<p>Compose file ประกอบด้วยชิ้นส่วนพื้นฐาน:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>version: &lt;compose_file_version&gt;
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>services:
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  &lt;service_name&gt;:
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    &lt;container_spec&gt;
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  &lt;service_name&gt;:
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    &lt;container_spec&gt;
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  ...
+</code></pre></div>
+<p>ในกรณีที่มีการใช้งาน Volumes หรือ User Defined Networks จะต้องมี Section <code>volumes</code> และ <code>networks</code> เพิ่ม รายละเอียดในตัวอย่าง</p>
+<h2 id="example-1-wordpress-app">Example 1 - Wordpress App</h2>
+<h3 id="wordpress-architecture">Wordpress Architecture</h3>
+<p><img alt="Wordpress Arch" src="../images/wordpress_arch.png" /></p>
+<h3 id="compose-definition">Compose Definition</h3>
+<p>ตัวอย่างอยู่ใน <code>docker-tutorial-2/wordpress/docker-compose.yml</code></p>
+<div class="highlight"><span class="filename">docker-compose.yml</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>version: &quot;3&quot;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>services:
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  db:
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    image: mysql:5.7
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    volumes:
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>      - db_data:/var/lib/mysql
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    restart: always
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    environment:
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>      MYSQL_ROOT_PASSWORD: wordpress
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>      MYSQL_DATABASE: wordpress
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>      MYSQL_USER: wordpress
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>      MYSQL_PASSWORD: wordpress
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>  wordpress:
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    depends_on:
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>      - db
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    image: wordpress:latest
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    volumes:
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>      - wordpress_data:/var/www/html
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    ports:
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>      - &quot;8088:80&quot;
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>    restart: always
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>    environment:
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>      WORDPRESS_DB_HOST: db
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>      WORDPRESS_DB_USER: wordpress
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>      WORDPRESS_DB_PASSWORD: wordpress
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>      WORDPRESS_DB_NAME: wordpress
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>volumes:
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>  db_data: {}
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>  wordpress_data: {}
+</code></pre></div>
+<h3 id="start-compose">Start Compose</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker compose up -d
+</code></pre></div>
+<p>โดย Default ถ้าไม่ระบุชื่อ Network ตัว Compose จะตั้งชื่อให้อัตโนมัติเป็น <code>foldername_default</code> เช่น ถ้าไฟล์ <code>docker-compose.yml</code> อยู่ใน Folder <code>wordpress</code> ชื่อ Network จะเป็น <code>wordpress_default</code> และใช้ Subnet Default หรือที่เราตั้งค่าไว้ใน Daemon แต่แรก หลังรันคำสั่งแล้ว รอให้ Service Up สักพักแล้วเปิดเว็บ <a href="http://localhost:8088">http://localhost:8088</a> เพื่อติดตั้ง Wordpress ต่อให้จบกระบวนการ</p>
+<h3 id="stop-compose">Stop Compose</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker compose down
+</code></pre></div>
+<p>หากต้องการทำลาย Volumes ด้วย</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker compose down -v
+</code></pre></div>
+<h3 id="read-logs">Read Logs</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker compose logs &lt;service_name&gt;
+</code></pre></div>
+<p>เช่น</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker compose logs db
+</code></pre></div>
+<h3 id="execute-command">Execute Command</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker compose <span class="nb">exec</span> &lt;service_name&gt; &lt;command&gt;
+</code></pre></div>
+<p>เช่น</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker compose <span class="nb">exec</span> wordpress bash
+</code></pre></div>
+<h2 id="example-2-database-dev-environment">Example 2 - Database Dev Environment</h2>
+<h3 id="db-dev-architecture">DB Dev Architecture</h3>
+<p><img alt="DB Dev Arch" src="../images/dbdev_arch.png" /></p>
+<h3 id="db-dev-compose-file">DB Dev Compose File</h3>
+<div class="highlight"><span class="filename">docker-compose.yml</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>version: &#39;3&#39;
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>services:
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  # PostgreSQL: SQL
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>  postgres:
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    image: postgres
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    restart: always
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    environment:
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>      POSTGRES_DB: dev
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>      POSTGRES_USER: dev
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>      POSTGRES_PASSWORD: devpassword
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    volumes:
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>      - postgres_data:/var/lib/postgresql/data
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>  cloudbeaver:
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>    image: dbeaver/cloudbeaver
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>    restart: always
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>    ports:
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>      - &#39;9999:8978&#39;
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>    volumes:
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>      - cloudbeaver_data:/opt/cloudbeaver/workspace
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>  # MongoDB: NoSQL
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>  mongo:
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>    image: mongo
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>    restart: always
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>    environment:
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>      MONGO_INITDB_ROOT_USERNAME: dev
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>      MONGO_INITDB_ROOT_PASSWORD: devpassword
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>    volumes:
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>      - mongo_data:/data/db
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>  adminmongo:
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>    image: mrvautin/adminmongo
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>    restart: always
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>    ports:
+<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>      - &#39;1234:1234&#39;
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>    environment:
+<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>      HOST: 0.0.0.0
+<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>
+<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a>  # Redis: Key-value store
+<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a>  redis:
+<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>    image: redis
+<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a>    restart: always
+<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a>    volumes:
+<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>      - redis_data:/data
+<a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a>
+<a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a>  insight:
+<a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a>    image: redislabs/redisinsight
+<a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a>    restart: always
+<a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a>    ports:
+<a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a>      - &#39;8001:8001&#39;
+<a id="__codelineno-9-53" name="__codelineno-9-53" href="#__codelineno-9-53"></a>    volumes:
+<a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a>      - insight_data:/db
+<a id="__codelineno-9-55" name="__codelineno-9-55" href="#__codelineno-9-55"></a>
+<a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a>  # Neo4j: Graph
+<a id="__codelineno-9-57" name="__codelineno-9-57" href="#__codelineno-9-57"></a>  neo4j:
+<a id="__codelineno-9-58" name="__codelineno-9-58" href="#__codelineno-9-58"></a>    image: neo4j
+<a id="__codelineno-9-59" name="__codelineno-9-59" href="#__codelineno-9-59"></a>    restart: always
+<a id="__codelineno-9-60" name="__codelineno-9-60" href="#__codelineno-9-60"></a>    ports:
+<a id="__codelineno-9-61" name="__codelineno-9-61" href="#__codelineno-9-61"></a>      - &#39;7474:7474&#39;
+<a id="__codelineno-9-62" name="__codelineno-9-62" href="#__codelineno-9-62"></a>      - &#39;7687:7687&#39;
+<a id="__codelineno-9-63" name="__codelineno-9-63" href="#__codelineno-9-63"></a>    volumes:
+<a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a>      - neo4j_data:/data
+<a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a>
+<a id="__codelineno-9-66" name="__codelineno-9-66" href="#__codelineno-9-66"></a>volumes:
+<a id="__codelineno-9-67" name="__codelineno-9-67" href="#__codelineno-9-67"></a>  cloudbeaver_data:
+<a id="__codelineno-9-68" name="__codelineno-9-68" href="#__codelineno-9-68"></a>  postgres_data:
+<a id="__codelineno-9-69" name="__codelineno-9-69" href="#__codelineno-9-69"></a>  mongo_data:
+<a id="__codelineno-9-70" name="__codelineno-9-70" href="#__codelineno-9-70"></a>  redis_data:
+<a id="__codelineno-9-71" name="__codelineno-9-71" href="#__codelineno-9-71"></a>  insight_data:
+<a id="__codelineno-9-72" name="__codelineno-9-72" href="#__codelineno-9-72"></a>  neo4j_data:
+</code></pre></div>
+<h3 id="start-db-dev">Start DB Dev</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker compose up -d
+</code></pre></div>
+<h3 id="using-dv-dev">Using DV Dev</h3>
+<p>ใน Compose มี Web UI สำหรับบริหารจัดการ Database แต่ละประเภทให้ ซึ่งทีมเราต้องเข้าไป Support</p>
+<p>Database ในองค์กรส่วนใหญ่เป็น SQL 90%, NoSQL 9% ที่เหลือ Key-Value กับ Graph ค่อนข้างน้อย ใน Session ถัดไปเราจะมาลงรายละเอียดวิธี CRUD DB แต่ละประเภทเพื่อซัพพอร์ตงานในอนาคต วิธีการเข้าใช้งาน Web UI</p>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Location</th>
+<th align="left">Username</th>
+<th align="left">Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Cloudbeaver</td>
+<td align="left"><a href="http://localhost:9999">http://localhost:9999</a></td>
+<td align="left">Set in App</td>
+<td align="left">Set in App</td>
+</tr>
+<tr>
+<td align="left">AdminMongo</td>
+<td align="left"><a href="http://localhost:1234">http://localhost:1234</a></td>
+<td align="left">None</td>
+<td align="left">None</td>
+</tr>
+<tr>
+<td align="left">Redis Insight</td>
+<td align="left"><a href="http://localhost:8001">http://localhost:8001</a></td>
+<td align="left">None</td>
+<td align="left">None</td>
+</tr>
+<tr>
+<td align="left">Neo4J UI</td>
+<td align="left"><a href="http://localhost:7474">http://localhost:7474</a></td>
+<td align="left">None</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<p>Default Database Credentials</p>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Connection</th>
+<th align="left">Username</th>
+<th align="left">Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">PostgreSQL</td>
+<td align="left">postgres:5432</td>
+<td align="left">dev</td>
+<td align="left">devpassword</td>
+</tr>
+<tr>
+<td align="left">MongoDB</td>
+<td align="left">mongo:27017</td>
+<td align="left">dev</td>
+<td align="left">devpassword</td>
+</tr>
+<tr>
+<td align="left">Redis</td>
+<td align="left">redis:6379</td>
+<td align="left">None</td>
+<td align="left">None</td>
+</tr>
+<tr>
+<td align="left">Neo4J</td>
+<td align="left">neo4j:7687</td>
+<td align="left">neo4j</td>
+<td align="left">neo4j</td>
+</tr>
+</tbody>
+</table>
+<p><strong>เก็บ Compose อันนี้ไว้ก่อน จะใช้ศึกษา Database ภายหลัง</strong></p>
+<h2 id="example-3-apache-airflow">Example 3 - Apache Airflow</h2>
+<p>Airflow สนับสนุนวิธีการ Deploy หลายแบบ ในองค์กรเราใช้ <a href="https://airflow.apache.org/docs/apache-airflow/stable/executor/celery.html">Celery Executor</a> ในอนาคตจะย้ายไป <a href="https://airflow.apache.org/docs/apache-airflow/stable/executor/kubernetes.html">Kubernetes Executor</a></p>
+<h3 id="airflow-architecture">Airflow Architecture</h3>
+<p><img alt="Airflow Arch" src="../images/airflow_arch.png" /></p>
+<h3 id="airflow-compose">Airflow Compose</h3>
+<div class="highlight"><span class="filename">docker-compose.yml</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>version: &#39;3.7&#39;
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a># ====================================== AIRFLOW ENVIRONMENT VARIABLES =======================================
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>x-environment: &amp;airflow_environment
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>  - AIRFLOW__CELERY__BROKER_URL=redis://redis:6379/1
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>  - AIRFLOW__CELERY__RESULT_BACKEND=db+postgresql://airflow:airflow@postgres:5432/airflow
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>  - AIRFLOW__CORE__EXECUTOR=CeleryExecutor
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>  - AIRFLOW__CORE__LOAD_DEFAULT_CONNECTIONS=False
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>  - AIRFLOW__CORE__LOAD_EXAMPLES=False
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>  - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql://airflow:airflow@postgres:5432/airflow
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>  - AIRFLOW__METRICS__STATSD_HOST=statsd_exporter
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>  - AIRFLOW__METRICS__STATSD_ON=True
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>  - AIRFLOW__METRICS__STATSD_PORT=9125
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>  - AIRFLOW__WEBSERVER__EXPOSE_CONFIG=True
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>x-airflow-image: &amp;airflow_image apache/airflow:2.0.0-python3.8
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a># ====================================== /AIRFLOW ENVIRONMENT VARIABLES ======================================
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>services:
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>  postgres:
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>    image: postgres:12-alpine
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>    environment:
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>      - POSTGRES_USER=airflow
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>      - POSTGRES_PASSWORD=airflow
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>      - POSTGRES_DB=airflow
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>    ports:
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>      - &quot;5432:5432&quot;
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>    volumes:
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>      - postgres_airflow:/var/lib/postgresql/data
+<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a>
+<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a>  init:
+<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a>    image: *airflow_image
+<a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a>    depends_on:
+<a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a>      - postgres
+<a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a>    environment: *airflow_environment
+<a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a>    entrypoint: /bin/bash
+<a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a>    command: -c &#39;airflow db init &amp;&amp; airflow users create --username admin --password admin --firstname Anonymous --lastname Admin --role Admin --email admin@example.org&#39;
+<a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a>
+<a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a>  webserver:
+<a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a>    image: *airflow_image
+<a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a>    restart: always
+<a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a>    depends_on:
+<a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a>      - postgres
+<a id="__codelineno-11-44" name="__codelineno-11-44" href="#__codelineno-11-44"></a>    ports:
+<a id="__codelineno-11-45" name="__codelineno-11-45" href="#__codelineno-11-45"></a>      - &quot;8080:8080&quot;
+<a id="__codelineno-11-46" name="__codelineno-11-46" href="#__codelineno-11-46"></a>    volumes:
+<a id="__codelineno-11-47" name="__codelineno-11-47" href="#__codelineno-11-47"></a>      - logs:/opt/airflow/logs
+<a id="__codelineno-11-48" name="__codelineno-11-48" href="#__codelineno-11-48"></a>    environment: *airflow_environment
+<a id="__codelineno-11-49" name="__codelineno-11-49" href="#__codelineno-11-49"></a>    command: webserver
+<a id="__codelineno-11-50" name="__codelineno-11-50" href="#__codelineno-11-50"></a>
+<a id="__codelineno-11-51" name="__codelineno-11-51" href="#__codelineno-11-51"></a>  scheduler:
+<a id="__codelineno-11-52" name="__codelineno-11-52" href="#__codelineno-11-52"></a>    image: *airflow_image
+<a id="__codelineno-11-53" name="__codelineno-11-53" href="#__codelineno-11-53"></a>    restart: always
+<a id="__codelineno-11-54" name="__codelineno-11-54" href="#__codelineno-11-54"></a>    depends_on:
+<a id="__codelineno-11-55" name="__codelineno-11-55" href="#__codelineno-11-55"></a>      - postgres
+<a id="__codelineno-11-56" name="__codelineno-11-56" href="#__codelineno-11-56"></a>    volumes:
+<a id="__codelineno-11-57" name="__codelineno-11-57" href="#__codelineno-11-57"></a>      - logs:/opt/airflow/logs
+<a id="__codelineno-11-58" name="__codelineno-11-58" href="#__codelineno-11-58"></a>      - ./dags:/opt/airflow/dags
+<a id="__codelineno-11-59" name="__codelineno-11-59" href="#__codelineno-11-59"></a>    environment: *airflow_environment
+<a id="__codelineno-11-60" name="__codelineno-11-60" href="#__codelineno-11-60"></a>    command: scheduler
+<a id="__codelineno-11-61" name="__codelineno-11-61" href="#__codelineno-11-61"></a>
+<a id="__codelineno-11-62" name="__codelineno-11-62" href="#__codelineno-11-62"></a>  # docker-compose -f docker-compose-celeryexecutor.yml up --scale worker=3 -d
+<a id="__codelineno-11-63" name="__codelineno-11-63" href="#__codelineno-11-63"></a>  worker:
+<a id="__codelineno-11-64" name="__codelineno-11-64" href="#__codelineno-11-64"></a>    image: *airflow_image
+<a id="__codelineno-11-65" name="__codelineno-11-65" href="#__codelineno-11-65"></a>    restart: always
+<a id="__codelineno-11-66" name="__codelineno-11-66" href="#__codelineno-11-66"></a>    depends_on:
+<a id="__codelineno-11-67" name="__codelineno-11-67" href="#__codelineno-11-67"></a>      - scheduler
+<a id="__codelineno-11-68" name="__codelineno-11-68" href="#__codelineno-11-68"></a>    volumes:
+<a id="__codelineno-11-69" name="__codelineno-11-69" href="#__codelineno-11-69"></a>      - logs:/opt/airflow/logs
+<a id="__codelineno-11-70" name="__codelineno-11-70" href="#__codelineno-11-70"></a>      - ./dags:/opt/airflow/dags
+<a id="__codelineno-11-71" name="__codelineno-11-71" href="#__codelineno-11-71"></a>    environment: *airflow_environment
+<a id="__codelineno-11-72" name="__codelineno-11-72" href="#__codelineno-11-72"></a>    command: celery worker
+<a id="__codelineno-11-73" name="__codelineno-11-73" href="#__codelineno-11-73"></a>
+<a id="__codelineno-11-74" name="__codelineno-11-74" href="#__codelineno-11-74"></a>  flower:
+<a id="__codelineno-11-75" name="__codelineno-11-75" href="#__codelineno-11-75"></a>    image: *airflow_image
+<a id="__codelineno-11-76" name="__codelineno-11-76" href="#__codelineno-11-76"></a>    restart: always
+<a id="__codelineno-11-77" name="__codelineno-11-77" href="#__codelineno-11-77"></a>    depends_on:
+<a id="__codelineno-11-78" name="__codelineno-11-78" href="#__codelineno-11-78"></a>      - worker
+<a id="__codelineno-11-79" name="__codelineno-11-79" href="#__codelineno-11-79"></a>    ports:
+<a id="__codelineno-11-80" name="__codelineno-11-80" href="#__codelineno-11-80"></a>      - &quot;5555:5555&quot;
+<a id="__codelineno-11-81" name="__codelineno-11-81" href="#__codelineno-11-81"></a>    environment: *airflow_environment
+<a id="__codelineno-11-82" name="__codelineno-11-82" href="#__codelineno-11-82"></a>    command: celery flower
+<a id="__codelineno-11-83" name="__codelineno-11-83" href="#__codelineno-11-83"></a>
+<a id="__codelineno-11-84" name="__codelineno-11-84" href="#__codelineno-11-84"></a>  statsd_exporter:
+<a id="__codelineno-11-85" name="__codelineno-11-85" href="#__codelineno-11-85"></a>    image: prom/statsd-exporter:v0.18.0
+<a id="__codelineno-11-86" name="__codelineno-11-86" href="#__codelineno-11-86"></a>    restart: always
+<a id="__codelineno-11-87" name="__codelineno-11-87" href="#__codelineno-11-87"></a>    volumes:
+<a id="__codelineno-11-88" name="__codelineno-11-88" href="#__codelineno-11-88"></a>      - ./files/statsd_mapping.yml:/tmp/statsd_mapping.yml
+<a id="__codelineno-11-89" name="__codelineno-11-89" href="#__codelineno-11-89"></a>    ports:
+<a id="__codelineno-11-90" name="__codelineno-11-90" href="#__codelineno-11-90"></a>      - &quot;9102:9102&quot;
+<a id="__codelineno-11-91" name="__codelineno-11-91" href="#__codelineno-11-91"></a>      - &quot;9125:9125/udp&quot;
+<a id="__codelineno-11-92" name="__codelineno-11-92" href="#__codelineno-11-92"></a>    command: --statsd.mapping-config=/tmp/statsd_mapping.yml
+<a id="__codelineno-11-93" name="__codelineno-11-93" href="#__codelineno-11-93"></a>
+<a id="__codelineno-11-94" name="__codelineno-11-94" href="#__codelineno-11-94"></a>  prometheus:
+<a id="__codelineno-11-95" name="__codelineno-11-95" href="#__codelineno-11-95"></a>    image: prom/prometheus:v2.22.0
+<a id="__codelineno-11-96" name="__codelineno-11-96" href="#__codelineno-11-96"></a>    restart: always
+<a id="__codelineno-11-97" name="__codelineno-11-97" href="#__codelineno-11-97"></a>    volumes:
+<a id="__codelineno-11-98" name="__codelineno-11-98" href="#__codelineno-11-98"></a>      - ./files/prometheus.yml:/etc/prometheus/prometheus.yml
+<a id="__codelineno-11-99" name="__codelineno-11-99" href="#__codelineno-11-99"></a>    ports:
+<a id="__codelineno-11-100" name="__codelineno-11-100" href="#__codelineno-11-100"></a>      - &quot;9090:9090&quot;
+<a id="__codelineno-11-101" name="__codelineno-11-101" href="#__codelineno-11-101"></a>    command:
+<a id="__codelineno-11-102" name="__codelineno-11-102" href="#__codelineno-11-102"></a>      - --web.enable-admin-api
+<a id="__codelineno-11-103" name="__codelineno-11-103" href="#__codelineno-11-103"></a>      - --web.enable-lifecycle
+<a id="__codelineno-11-104" name="__codelineno-11-104" href="#__codelineno-11-104"></a>      - --config.file=/etc/prometheus/prometheus.yml
+<a id="__codelineno-11-105" name="__codelineno-11-105" href="#__codelineno-11-105"></a>      - --storage.tsdb.path=/prometheus
+<a id="__codelineno-11-106" name="__codelineno-11-106" href="#__codelineno-11-106"></a>      - --web.console.libraries=/usr/share/prometheus/console_libraries
+<a id="__codelineno-11-107" name="__codelineno-11-107" href="#__codelineno-11-107"></a>      - --web.console.templates=/usr/share/prometheus/consoles
+<a id="__codelineno-11-108" name="__codelineno-11-108" href="#__codelineno-11-108"></a>
+<a id="__codelineno-11-109" name="__codelineno-11-109" href="#__codelineno-11-109"></a>  grafana:
+<a id="__codelineno-11-110" name="__codelineno-11-110" href="#__codelineno-11-110"></a>    image: grafana/grafana:7.2.1
+<a id="__codelineno-11-111" name="__codelineno-11-111" href="#__codelineno-11-111"></a>    restart: always
+<a id="__codelineno-11-112" name="__codelineno-11-112" href="#__codelineno-11-112"></a>    ports:
+<a id="__codelineno-11-113" name="__codelineno-11-113" href="#__codelineno-11-113"></a>      - &quot;3000:3000&quot;
+<a id="__codelineno-11-114" name="__codelineno-11-114" href="#__codelineno-11-114"></a>
+<a id="__codelineno-11-115" name="__codelineno-11-115" href="#__codelineno-11-115"></a>  redis:
+<a id="__codelineno-11-116" name="__codelineno-11-116" href="#__codelineno-11-116"></a>    image: redis:5-alpine
+<a id="__codelineno-11-117" name="__codelineno-11-117" href="#__codelineno-11-117"></a>
+<a id="__codelineno-11-118" name="__codelineno-11-118" href="#__codelineno-11-118"></a>  redis_exporter:
+<a id="__codelineno-11-119" name="__codelineno-11-119" href="#__codelineno-11-119"></a>    image: oliver006/redis_exporter:v1.5.2-alpine
+<a id="__codelineno-11-120" name="__codelineno-11-120" href="#__codelineno-11-120"></a>    ports:
+<a id="__codelineno-11-121" name="__codelineno-11-121" href="#__codelineno-11-121"></a>      - &quot;9121:9121&quot;
+<a id="__codelineno-11-122" name="__codelineno-11-122" href="#__codelineno-11-122"></a>    command: --redis.addr=redis://redis:6379
+<a id="__codelineno-11-123" name="__codelineno-11-123" href="#__codelineno-11-123"></a>
+<a id="__codelineno-11-124" name="__codelineno-11-124" href="#__codelineno-11-124"></a>volumes:
+<a id="__codelineno-11-125" name="__codelineno-11-125" href="#__codelineno-11-125"></a>  postgres_airflow:
+<a id="__codelineno-11-126" name="__codelineno-11-126" href="#__codelineno-11-126"></a>  logs:
+</code></pre></div>
+<h3 id="start-apache-airflow">Start Apache Airflow</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>docker compose up -d
+</code></pre></div>
+<h3 id="check-scheduler-logs">Check Scheduler Logs</h3>
+<p>ใช้ตรวจสอบขั้นตอนที่ Airflow จัดคิวในการประมวลผล Task ตรวจสอบ Logs 100 บรรทัดล่าสุด</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker compose logs --tail<span class="o">=</span><span class="m">100</span> scheduler
+</code></pre></div>
+<h3 id="check-webserver-logs">Check Webserver Logs</h3>
+<p>ตรวจสอบ Logs ของ Web UI</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker compose logs --tail<span class="o">=</span><span class="m">100</span> webserver
+</code></pre></div>
+<h3 id="check-worker-logs">Check Worker Logs</h3>
+<p>ตรวจสอบการรัน Task</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>docker compose logs --tail<span class="o">=</span><span class="m">100</span> worker
+</code></pre></div>
+<h3 id="check-monitoring-system">Check Monitoring System</h3>
+<ul>
+<li><strong>Queuing System</strong> <a href="http://localhost:5555">Celery Flower</a></li>
+<li><strong>Prometheus Metrics</strong> <a href="http://localhost:9090">Prometheus UI</a></li>
+<li><strong>Dashboard</strong> <a href="http://localhost:3000">Grafana</a></li>
+</ul>
+<h3 id="test-pythonshell-code">Test Python/Shell Code</h3>
+<p>ในบางกรณี อาจจะต้องทดสอบ Python/Shell Code ใน Worker วิธีการทดสอบง่ายที่สุดคือการ SSH เข้าไปที่ Worker และ Import Airflow มาใช้งานเพื่อทดสอบได้เลย ส่วนใหญ่ใช้ในกรณี</p>
+<ul>
+<li>ทดสอบว่า Worker สามารถต่อ Database ได้หรือไม่</li>
+<li>ทดสอบว่ามี Module ที่ต้องการหรือยัง</li>
+<li>ทดสอบว่า Worker มี System Library ที่ต้องการหรือยัง เช่น Oracle Database Libary</li>
+<li>ทดสอบว่า Worker สามารถอ่าน Config Bind Mounts ได้ถูกต้อง</li>
+</ul>
+<div class="highlight"><span class="filename">python</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>docker compose <span class="nb">exec</span> worker ipython
+</code></pre></div>
+<div class="highlight"><span class="filename">bash</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>docker compose <span class="nb">exec</span> worker bash
+</code></pre></div>
+<h3 id="production-differences">Production Differences</h3>
+<p>ความแตกต่างของตัวอย่างนี้กับ Production Airflow คือ ใน Production ...</p>
+<ul>
+<li>ติดตั้ง Common Python Modules และ Airflow Connection Plugins ทั้งหมดที่มี</li>
+<li>ใช้งาน Service ที่สร้างและ Refresh Kerberos Ticket สำหรับการสื่อสารกับ Cloudera Cluster</li>
+<li>ติดตั้ง Common Drivers เช่น Oracle, Hive JDBC, Impala JDBC, ODBC เป็นต้น</li>
+<li>Integrate กับ Active Directory (ตั้งค่าสิทธิผ่าน AD Group) และ Internal Email Server</li>
+<li>Integrate DAGs กับ MinIO และมีการ Backup &amp; Cleanup รายวัน</li>
+<li>มี Development Storage ให้ทดลอง PostgreSQL, MongoDB, MariaDB และ SFTP</li>
+<li>มีการ Optimize Scheduler &amp; Core Configuration สำหรับการทำงานแบบขนาน</li>
+<li>ใช้ Scheduler 3 ตัว และ Workers 15 ตัว บน vCPU 92 Cores และ RAM 312 GB</li>
+</ul>
+<p>ข้อเสียของ Production ปัจจุบัน</p>
+<ul>
+<li>ไม่มี Workload Isolation</li>
+<li>การ Scale ยังเป็น Manual ยังไม่สามารถ Auto Scale ตาม Workload</li>
+<li>ไม่มีการเซ็ต App-Level Logging System (Airflow สนับสนุน ELK, FluentD แต่ยังไม่ได้เซ็ต)</li>
+<li>ไม่ได้ Integrate กับ Git การพัฒนา DAG ลำบากและไม่ Smooth</li>
+<li>ไม่มีกระบวนการ Backup Database อัตโนมัติ</li>
+<li>มีแต่ App-Level ไม่มี VM-Level HA (High Availability)</li>
+</ul>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../networks/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Networks" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Networks
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../swarm/" class="md-footer__link md-footer__link--next" aria-label="Next: Docker Swarm" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Docker Swarm
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>
