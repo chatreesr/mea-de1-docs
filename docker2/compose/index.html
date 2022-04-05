@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
     
     
       
@@ -17,7 +17,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.644de097.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -578,6 +578,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scale-apache-airflow" class="md-nav__link">
+    Scale Apache Airflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#check-scheduler-logs" class="md-nav__link">
     Check Scheduler Logs
   </a>
@@ -833,6 +840,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scale-apache-airflow" class="md-nav__link">
+    Scale Apache Airflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#check-scheduler-logs" class="md-nav__link">
     Check Scheduler Logs
   </a>
@@ -915,7 +929,7 @@
 <p><img alt="Wordpress Arch" src="../images/wordpress_arch.png" /></p>
 <h3 id="compose-definition">Compose Definition</h3>
 <p>ตัวอย่างอยู่ใน <code>docker-tutorial-2/wordpress/docker-compose.yml</code></p>
-<div class="highlight"><span class="filename">docker-compose.yml</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>version: &quot;3&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>version: &quot;3&quot;
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>services:
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  db:
@@ -973,7 +987,7 @@
 <h3 id="db-dev-architecture">DB Dev Architecture</h3>
 <p><img alt="DB Dev Arch" src="../images/dbdev_arch.png" /></p>
 <h3 id="db-dev-compose-file">DB Dev Compose File</h3>
-<div class="highlight"><span class="filename">docker-compose.yml</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>version: &#39;3&#39;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>version: &#39;3&#39;
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>services:
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  # PostgreSQL: SQL
@@ -1131,7 +1145,7 @@
 <h3 id="airflow-architecture">Airflow Architecture</h3>
 <p><img alt="Airflow Arch" src="../images/airflow_arch.png" /></p>
 <h3 id="airflow-compose">Airflow Compose</h3>
-<div class="highlight"><span class="filename">docker-compose.yml</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>version: &#39;3.7&#39;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>version: &#39;3.7&#39;
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a># ====================================== AIRFLOW ENVIRONMENT VARIABLES =======================================
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>x-environment: &amp;airflow_environment
@@ -1192,86 +1206,101 @@
 <a id="__codelineno-11-59" name="__codelineno-11-59" href="#__codelineno-11-59"></a>    environment: *airflow_environment
 <a id="__codelineno-11-60" name="__codelineno-11-60" href="#__codelineno-11-60"></a>    command: scheduler
 <a id="__codelineno-11-61" name="__codelineno-11-61" href="#__codelineno-11-61"></a>
-<a id="__codelineno-11-62" name="__codelineno-11-62" href="#__codelineno-11-62"></a>  # docker-compose -f docker-compose-celeryexecutor.yml up --scale worker=3 -d
-<a id="__codelineno-11-63" name="__codelineno-11-63" href="#__codelineno-11-63"></a>  worker:
-<a id="__codelineno-11-64" name="__codelineno-11-64" href="#__codelineno-11-64"></a>    image: *airflow_image
-<a id="__codelineno-11-65" name="__codelineno-11-65" href="#__codelineno-11-65"></a>    restart: always
-<a id="__codelineno-11-66" name="__codelineno-11-66" href="#__codelineno-11-66"></a>    depends_on:
-<a id="__codelineno-11-67" name="__codelineno-11-67" href="#__codelineno-11-67"></a>      - scheduler
-<a id="__codelineno-11-68" name="__codelineno-11-68" href="#__codelineno-11-68"></a>    volumes:
-<a id="__codelineno-11-69" name="__codelineno-11-69" href="#__codelineno-11-69"></a>      - logs:/opt/airflow/logs
-<a id="__codelineno-11-70" name="__codelineno-11-70" href="#__codelineno-11-70"></a>      - ./dags:/opt/airflow/dags
-<a id="__codelineno-11-71" name="__codelineno-11-71" href="#__codelineno-11-71"></a>    environment: *airflow_environment
-<a id="__codelineno-11-72" name="__codelineno-11-72" href="#__codelineno-11-72"></a>    command: celery worker
-<a id="__codelineno-11-73" name="__codelineno-11-73" href="#__codelineno-11-73"></a>
-<a id="__codelineno-11-74" name="__codelineno-11-74" href="#__codelineno-11-74"></a>  flower:
-<a id="__codelineno-11-75" name="__codelineno-11-75" href="#__codelineno-11-75"></a>    image: *airflow_image
-<a id="__codelineno-11-76" name="__codelineno-11-76" href="#__codelineno-11-76"></a>    restart: always
-<a id="__codelineno-11-77" name="__codelineno-11-77" href="#__codelineno-11-77"></a>    depends_on:
-<a id="__codelineno-11-78" name="__codelineno-11-78" href="#__codelineno-11-78"></a>      - worker
-<a id="__codelineno-11-79" name="__codelineno-11-79" href="#__codelineno-11-79"></a>    ports:
-<a id="__codelineno-11-80" name="__codelineno-11-80" href="#__codelineno-11-80"></a>      - &quot;5555:5555&quot;
-<a id="__codelineno-11-81" name="__codelineno-11-81" href="#__codelineno-11-81"></a>    environment: *airflow_environment
-<a id="__codelineno-11-82" name="__codelineno-11-82" href="#__codelineno-11-82"></a>    command: celery flower
-<a id="__codelineno-11-83" name="__codelineno-11-83" href="#__codelineno-11-83"></a>
-<a id="__codelineno-11-84" name="__codelineno-11-84" href="#__codelineno-11-84"></a>  statsd_exporter:
-<a id="__codelineno-11-85" name="__codelineno-11-85" href="#__codelineno-11-85"></a>    image: prom/statsd-exporter:v0.18.0
-<a id="__codelineno-11-86" name="__codelineno-11-86" href="#__codelineno-11-86"></a>    restart: always
-<a id="__codelineno-11-87" name="__codelineno-11-87" href="#__codelineno-11-87"></a>    volumes:
-<a id="__codelineno-11-88" name="__codelineno-11-88" href="#__codelineno-11-88"></a>      - ./files/statsd_mapping.yml:/tmp/statsd_mapping.yml
-<a id="__codelineno-11-89" name="__codelineno-11-89" href="#__codelineno-11-89"></a>    ports:
-<a id="__codelineno-11-90" name="__codelineno-11-90" href="#__codelineno-11-90"></a>      - &quot;9102:9102&quot;
-<a id="__codelineno-11-91" name="__codelineno-11-91" href="#__codelineno-11-91"></a>      - &quot;9125:9125/udp&quot;
-<a id="__codelineno-11-92" name="__codelineno-11-92" href="#__codelineno-11-92"></a>    command: --statsd.mapping-config=/tmp/statsd_mapping.yml
-<a id="__codelineno-11-93" name="__codelineno-11-93" href="#__codelineno-11-93"></a>
-<a id="__codelineno-11-94" name="__codelineno-11-94" href="#__codelineno-11-94"></a>  prometheus:
-<a id="__codelineno-11-95" name="__codelineno-11-95" href="#__codelineno-11-95"></a>    image: prom/prometheus:v2.22.0
-<a id="__codelineno-11-96" name="__codelineno-11-96" href="#__codelineno-11-96"></a>    restart: always
-<a id="__codelineno-11-97" name="__codelineno-11-97" href="#__codelineno-11-97"></a>    volumes:
-<a id="__codelineno-11-98" name="__codelineno-11-98" href="#__codelineno-11-98"></a>      - ./files/prometheus.yml:/etc/prometheus/prometheus.yml
-<a id="__codelineno-11-99" name="__codelineno-11-99" href="#__codelineno-11-99"></a>    ports:
-<a id="__codelineno-11-100" name="__codelineno-11-100" href="#__codelineno-11-100"></a>      - &quot;9090:9090&quot;
-<a id="__codelineno-11-101" name="__codelineno-11-101" href="#__codelineno-11-101"></a>    command:
-<a id="__codelineno-11-102" name="__codelineno-11-102" href="#__codelineno-11-102"></a>      - --web.enable-admin-api
-<a id="__codelineno-11-103" name="__codelineno-11-103" href="#__codelineno-11-103"></a>      - --web.enable-lifecycle
-<a id="__codelineno-11-104" name="__codelineno-11-104" href="#__codelineno-11-104"></a>      - --config.file=/etc/prometheus/prometheus.yml
-<a id="__codelineno-11-105" name="__codelineno-11-105" href="#__codelineno-11-105"></a>      - --storage.tsdb.path=/prometheus
-<a id="__codelineno-11-106" name="__codelineno-11-106" href="#__codelineno-11-106"></a>      - --web.console.libraries=/usr/share/prometheus/console_libraries
-<a id="__codelineno-11-107" name="__codelineno-11-107" href="#__codelineno-11-107"></a>      - --web.console.templates=/usr/share/prometheus/consoles
-<a id="__codelineno-11-108" name="__codelineno-11-108" href="#__codelineno-11-108"></a>
-<a id="__codelineno-11-109" name="__codelineno-11-109" href="#__codelineno-11-109"></a>  grafana:
-<a id="__codelineno-11-110" name="__codelineno-11-110" href="#__codelineno-11-110"></a>    image: grafana/grafana:7.2.1
-<a id="__codelineno-11-111" name="__codelineno-11-111" href="#__codelineno-11-111"></a>    restart: always
-<a id="__codelineno-11-112" name="__codelineno-11-112" href="#__codelineno-11-112"></a>    ports:
-<a id="__codelineno-11-113" name="__codelineno-11-113" href="#__codelineno-11-113"></a>      - &quot;3000:3000&quot;
-<a id="__codelineno-11-114" name="__codelineno-11-114" href="#__codelineno-11-114"></a>
-<a id="__codelineno-11-115" name="__codelineno-11-115" href="#__codelineno-11-115"></a>  redis:
-<a id="__codelineno-11-116" name="__codelineno-11-116" href="#__codelineno-11-116"></a>    image: redis:5-alpine
-<a id="__codelineno-11-117" name="__codelineno-11-117" href="#__codelineno-11-117"></a>
-<a id="__codelineno-11-118" name="__codelineno-11-118" href="#__codelineno-11-118"></a>  redis_exporter:
-<a id="__codelineno-11-119" name="__codelineno-11-119" href="#__codelineno-11-119"></a>    image: oliver006/redis_exporter:v1.5.2-alpine
-<a id="__codelineno-11-120" name="__codelineno-11-120" href="#__codelineno-11-120"></a>    ports:
-<a id="__codelineno-11-121" name="__codelineno-11-121" href="#__codelineno-11-121"></a>      - &quot;9121:9121&quot;
-<a id="__codelineno-11-122" name="__codelineno-11-122" href="#__codelineno-11-122"></a>    command: --redis.addr=redis://redis:6379
-<a id="__codelineno-11-123" name="__codelineno-11-123" href="#__codelineno-11-123"></a>
-<a id="__codelineno-11-124" name="__codelineno-11-124" href="#__codelineno-11-124"></a>volumes:
-<a id="__codelineno-11-125" name="__codelineno-11-125" href="#__codelineno-11-125"></a>  postgres_airflow:
-<a id="__codelineno-11-126" name="__codelineno-11-126" href="#__codelineno-11-126"></a>  logs:
+<a id="__codelineno-11-62" name="__codelineno-11-62" href="#__codelineno-11-62"></a>  worker:
+<a id="__codelineno-11-63" name="__codelineno-11-63" href="#__codelineno-11-63"></a>    image: *airflow_image
+<a id="__codelineno-11-64" name="__codelineno-11-64" href="#__codelineno-11-64"></a>    restart: always
+<a id="__codelineno-11-65" name="__codelineno-11-65" href="#__codelineno-11-65"></a>    depends_on:
+<a id="__codelineno-11-66" name="__codelineno-11-66" href="#__codelineno-11-66"></a>      - scheduler
+<a id="__codelineno-11-67" name="__codelineno-11-67" href="#__codelineno-11-67"></a>    volumes:
+<a id="__codelineno-11-68" name="__codelineno-11-68" href="#__codelineno-11-68"></a>      - logs:/opt/airflow/logs
+<a id="__codelineno-11-69" name="__codelineno-11-69" href="#__codelineno-11-69"></a>      - ./dags:/opt/airflow/dags
+<a id="__codelineno-11-70" name="__codelineno-11-70" href="#__codelineno-11-70"></a>    environment: *airflow_environment
+<a id="__codelineno-11-71" name="__codelineno-11-71" href="#__codelineno-11-71"></a>    command: celery worker
+<a id="__codelineno-11-72" name="__codelineno-11-72" href="#__codelineno-11-72"></a>
+<a id="__codelineno-11-73" name="__codelineno-11-73" href="#__codelineno-11-73"></a>  flower:
+<a id="__codelineno-11-74" name="__codelineno-11-74" href="#__codelineno-11-74"></a>    image: *airflow_image
+<a id="__codelineno-11-75" name="__codelineno-11-75" href="#__codelineno-11-75"></a>    restart: always
+<a id="__codelineno-11-76" name="__codelineno-11-76" href="#__codelineno-11-76"></a>    depends_on:
+<a id="__codelineno-11-77" name="__codelineno-11-77" href="#__codelineno-11-77"></a>      - worker
+<a id="__codelineno-11-78" name="__codelineno-11-78" href="#__codelineno-11-78"></a>    ports:
+<a id="__codelineno-11-79" name="__codelineno-11-79" href="#__codelineno-11-79"></a>      - &quot;5555:5555&quot;
+<a id="__codelineno-11-80" name="__codelineno-11-80" href="#__codelineno-11-80"></a>    environment: *airflow_environment
+<a id="__codelineno-11-81" name="__codelineno-11-81" href="#__codelineno-11-81"></a>    command: celery flower
+<a id="__codelineno-11-82" name="__codelineno-11-82" href="#__codelineno-11-82"></a>
+<a id="__codelineno-11-83" name="__codelineno-11-83" href="#__codelineno-11-83"></a>  statsd_exporter:
+<a id="__codelineno-11-84" name="__codelineno-11-84" href="#__codelineno-11-84"></a>    image: prom/statsd-exporter:v0.18.0
+<a id="__codelineno-11-85" name="__codelineno-11-85" href="#__codelineno-11-85"></a>    restart: always
+<a id="__codelineno-11-86" name="__codelineno-11-86" href="#__codelineno-11-86"></a>    volumes:
+<a id="__codelineno-11-87" name="__codelineno-11-87" href="#__codelineno-11-87"></a>      - ./files/statsd_mapping.yml:/tmp/statsd_mapping.yml
+<a id="__codelineno-11-88" name="__codelineno-11-88" href="#__codelineno-11-88"></a>    ports:
+<a id="__codelineno-11-89" name="__codelineno-11-89" href="#__codelineno-11-89"></a>      - &quot;9102:9102&quot;
+<a id="__codelineno-11-90" name="__codelineno-11-90" href="#__codelineno-11-90"></a>      - &quot;9125:9125/udp&quot;
+<a id="__codelineno-11-91" name="__codelineno-11-91" href="#__codelineno-11-91"></a>    command: --statsd.mapping-config=/tmp/statsd_mapping.yml
+<a id="__codelineno-11-92" name="__codelineno-11-92" href="#__codelineno-11-92"></a>
+<a id="__codelineno-11-93" name="__codelineno-11-93" href="#__codelineno-11-93"></a>  prometheus:
+<a id="__codelineno-11-94" name="__codelineno-11-94" href="#__codelineno-11-94"></a>    image: prom/prometheus:v2.22.0
+<a id="__codelineno-11-95" name="__codelineno-11-95" href="#__codelineno-11-95"></a>    restart: always
+<a id="__codelineno-11-96" name="__codelineno-11-96" href="#__codelineno-11-96"></a>    volumes:
+<a id="__codelineno-11-97" name="__codelineno-11-97" href="#__codelineno-11-97"></a>      - ./files/prometheus.yml:/etc/prometheus/prometheus.yml
+<a id="__codelineno-11-98" name="__codelineno-11-98" href="#__codelineno-11-98"></a>    ports:
+<a id="__codelineno-11-99" name="__codelineno-11-99" href="#__codelineno-11-99"></a>      - &quot;9090:9090&quot;
+<a id="__codelineno-11-100" name="__codelineno-11-100" href="#__codelineno-11-100"></a>    command:
+<a id="__codelineno-11-101" name="__codelineno-11-101" href="#__codelineno-11-101"></a>      - --web.enable-admin-api
+<a id="__codelineno-11-102" name="__codelineno-11-102" href="#__codelineno-11-102"></a>      - --web.enable-lifecycle
+<a id="__codelineno-11-103" name="__codelineno-11-103" href="#__codelineno-11-103"></a>      - --config.file=/etc/prometheus/prometheus.yml
+<a id="__codelineno-11-104" name="__codelineno-11-104" href="#__codelineno-11-104"></a>      - --storage.tsdb.path=/prometheus
+<a id="__codelineno-11-105" name="__codelineno-11-105" href="#__codelineno-11-105"></a>      - --web.console.libraries=/usr/share/prometheus/console_libraries
+<a id="__codelineno-11-106" name="__codelineno-11-106" href="#__codelineno-11-106"></a>      - --web.console.templates=/usr/share/prometheus/consoles
+<a id="__codelineno-11-107" name="__codelineno-11-107" href="#__codelineno-11-107"></a>
+<a id="__codelineno-11-108" name="__codelineno-11-108" href="#__codelineno-11-108"></a>  grafana:
+<a id="__codelineno-11-109" name="__codelineno-11-109" href="#__codelineno-11-109"></a>    image: grafana/grafana:7.2.1
+<a id="__codelineno-11-110" name="__codelineno-11-110" href="#__codelineno-11-110"></a>    restart: always
+<a id="__codelineno-11-111" name="__codelineno-11-111" href="#__codelineno-11-111"></a>    ports:
+<a id="__codelineno-11-112" name="__codelineno-11-112" href="#__codelineno-11-112"></a>      - &quot;3000:3000&quot;
+<a id="__codelineno-11-113" name="__codelineno-11-113" href="#__codelineno-11-113"></a>
+<a id="__codelineno-11-114" name="__codelineno-11-114" href="#__codelineno-11-114"></a>  redis:
+<a id="__codelineno-11-115" name="__codelineno-11-115" href="#__codelineno-11-115"></a>    image: redis:5-alpine
+<a id="__codelineno-11-116" name="__codelineno-11-116" href="#__codelineno-11-116"></a>
+<a id="__codelineno-11-117" name="__codelineno-11-117" href="#__codelineno-11-117"></a>  redis_exporter:
+<a id="__codelineno-11-118" name="__codelineno-11-118" href="#__codelineno-11-118"></a>    image: oliver006/redis_exporter:v1.5.2-alpine
+<a id="__codelineno-11-119" name="__codelineno-11-119" href="#__codelineno-11-119"></a>    ports:
+<a id="__codelineno-11-120" name="__codelineno-11-120" href="#__codelineno-11-120"></a>      - &quot;9121:9121&quot;
+<a id="__codelineno-11-121" name="__codelineno-11-121" href="#__codelineno-11-121"></a>    command: --redis.addr=redis://redis:6379
+<a id="__codelineno-11-122" name="__codelineno-11-122" href="#__codelineno-11-122"></a>
+<a id="__codelineno-11-123" name="__codelineno-11-123" href="#__codelineno-11-123"></a>volumes:
+<a id="__codelineno-11-124" name="__codelineno-11-124" href="#__codelineno-11-124"></a>  postgres_airflow:
+<a id="__codelineno-11-125" name="__codelineno-11-125" href="#__codelineno-11-125"></a>  logs:
 </code></pre></div>
 <h3 id="start-apache-airflow">Start Apache Airflow</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>docker compose up -d
 </code></pre></div>
+<h3 id="scale-apache-airflow">Scale Apache Airflow</h3>
+<p>แก้ไขไฟล์ <code>docker-compose.yml</code> ใน Service ที่ต้องการ Scale เช่น Scale worker ด้วย</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>worker:
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>  image: *airflow_image
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>  restart: always
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="hll">  deploy:
+</span><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="hll">    replicas: 1
+</span><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>  depends_on:
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    - scheduler
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>  volumes:
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>    - logs:/opt/airflow/logs
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>    - ./dags:/opt/airflow/dags
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>  environment: *airflow_environment
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>  command: celery worker
+</code></pre></div>
+<p>จากนั้นให้ Issue คำสั่ง <code>docker compose up -d</code> อีกครั้ง</p>
 <h3 id="check-scheduler-logs">Check Scheduler Logs</h3>
 <p>ใช้ตรวจสอบขั้นตอนที่ Airflow จัดคิวในการประมวลผล Task ตรวจสอบ Logs 100 บรรทัดล่าสุด</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker compose logs --tail<span class="o">=</span><span class="m">100</span> scheduler
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker compose logs --tail<span class="o">=</span><span class="m">100</span> scheduler
 </code></pre></div>
 <h3 id="check-webserver-logs">Check Webserver Logs</h3>
 <p>ตรวจสอบ Logs ของ Web UI</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker compose logs --tail<span class="o">=</span><span class="m">100</span> webserver
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>docker compose logs --tail<span class="o">=</span><span class="m">100</span> webserver
 </code></pre></div>
 <h3 id="check-worker-logs">Check Worker Logs</h3>
 <p>ตรวจสอบการรัน Task</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>docker compose logs --tail<span class="o">=</span><span class="m">100</span> worker
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>docker compose logs --tail<span class="o">=</span><span class="m">100</span> worker
 </code></pre></div>
 <h3 id="check-monitoring-system">Check Monitoring System</h3>
 <ul>
@@ -1287,9 +1316,9 @@
 <li>ทดสอบว่า Worker มี System Library ที่ต้องการหรือยัง เช่น Oracle Database Libary</li>
 <li>ทดสอบว่า Worker สามารถอ่าน Config Bind Mounts ได้ถูกต้อง</li>
 </ul>
-<div class="highlight"><span class="filename">python</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>docker compose <span class="nb">exec</span> worker ipython
+<div class="highlight"><span class="filename">python</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>docker compose <span class="nb">exec</span> worker python
 </code></pre></div>
-<div class="highlight"><span class="filename">bash</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>docker compose <span class="nb">exec</span> worker bash
+<div class="highlight"><span class="filename">bash</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>docker compose <span class="nb">exec</span> worker bash
 </code></pre></div>
 <h3 id="production-differences">Production Differences</h3>
 <p>ความแตกต่างของตัวอย่างนี้กับ Production Airflow คือ ใน Production ...</p>
@@ -1377,10 +1406,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.467223ff.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c44cc438.min.js"></script>
       
     
   </body>
