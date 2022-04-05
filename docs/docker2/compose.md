@@ -35,7 +35,7 @@ services:
 
 ตัวอย่างอยู่ใน `docker-tutorial-2/wordpress/docker-compose.yml`
 
-```text title='docker-compose.yml'
+```text
 version: "3"
 
 services:
@@ -121,7 +121,7 @@ docker compose exec wordpress bash
 
 ### DB Dev Compose File
 
-```text title='docker-compose.yml'
+```text
 version: '3'
 
 services:
@@ -236,7 +236,7 @@ Airflow สนับสนุนวิธีการ Deploy หลายแบ�
 
 ### Airflow Compose
 
-```text title='docker-compose.yml'
+```text
 version: '3.7'
 
 # ====================================== AIRFLOW ENVIRONMENT VARIABLES =======================================
@@ -298,7 +298,6 @@ services:
     environment: *airflow_environment
     command: scheduler
 
-  # docker-compose -f docker-compose-celeryexecutor.yml up --scale worker=3 -d
   worker:
     image: *airflow_image
     restart: always
@@ -371,6 +370,27 @@ volumes:
 docker compose up -d
 ```
 
+### Scale Apache Airflow
+
+แก้ไขไฟล์ `docker-compose.yml` ใน Service ที่ต้องการ Scale เช่น Scale worker ด้วย
+
+```text hl_lines="4 5"
+worker:
+  image: *airflow_image
+  restart: always
+  deploy:
+    replicas: 1
+  depends_on:
+    - scheduler
+  volumes:
+    - logs:/opt/airflow/logs
+    - ./dags:/opt/airflow/dags
+  environment: *airflow_environment
+  command: celery worker
+```
+
+จากนั้นให้ Issue คำสั่ง `docker compose up -d` อีกครั้ง
+
 ### Check Scheduler Logs
 
 ใช้ตรวจสอบขั้นตอนที่ Airflow จัดคิวในการประมวลผล Task ตรวจสอบ Logs 100 บรรทัดล่าสุด
@@ -411,7 +431,7 @@ docker compose logs --tail=100 worker
 - ทดสอบว่า Worker สามารถอ่าน Config Bind Mounts ได้ถูกต้อง
 
 ```bash title='python'
-docker compose exec worker ipython
+docker compose exec worker python
 ```
 
 ```bash title='bash'

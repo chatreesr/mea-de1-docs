@@ -13,7 +13,7 @@
     
     
       
-        <title>Databases - Data Engineering Team 1</title>
+        <title>Networks - Data Engineering Team 1</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#databases" class="md-skip">
+        <a href="#docker-networks" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Databases
+              Networks
             
           </span>
         </div>
@@ -195,14 +195,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -225,7 +223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../use/" class="md-nav__link">
+      <a href="../../apache-airflow/use/" class="md-nav__link">
         Basics
       </a>
     </li>
@@ -237,59 +235,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Databases
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../apache-airflow/databases/" class="md-nav__link">
         Databases
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#databases_1" class="md-nav__link">
-    การเชื่อมต่อ Databases
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-platform" class="md-nav__link">
-    การเชื่อมต่อ Data Platform
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -397,12 +347,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -425,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docker2/meacloud/" class="md-nav__link">
+      <a href="../meacloud/" class="md-nav__link">
         MEA Cloud
       </a>
     </li>
@@ -437,11 +389,153 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../docker2/networks/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Networks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Networks
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-networks" class="md-nav__link">
+    Basic Networks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bridge-networks" class="md-nav__link">
+    Bridge Networks
+  </a>
+  
+    <nav class="md-nav" aria-label="Bridge Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inspect-bridge-network" class="md-nav__link">
+    Inspect Bridge Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-bridge-network" class="md-nav__link">
+    Create Bridge Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-bridge-network" class="md-nav__link">
+    Remove Bridge Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-containers-to-bridge" class="md-nav__link">
+    Connect Containers to Bridge
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#host-network" class="md-nav__link">
+    Host Network
+  </a>
+  
+    <nav class="md-nav" aria-label="Host Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect-containers-to-host" class="md-nav__link">
+    Connect Containers to Host
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#none-network" class="md-nav__link">
+    None Network
+  </a>
+  
+    <nav class="md-nav" aria-label="None Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect-containers-to-none" class="md-nav__link">
+    Connect Containers to None
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overlay" class="md-nav__link">
+    Overlay
+  </a>
+  
+    <nav class="md-nav" aria-label="Overlay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-an-overlay-network" class="md-nav__link">
+    Creating an Overlay Network
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -453,7 +547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docker2/compose/" class="md-nav__link">
+      <a href="../compose/" class="md-nav__link">
         Compose
       </a>
     </li>
@@ -467,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docker2/swarm/" class="md-nav__link">
+      <a href="../swarm/" class="md-nav__link">
         Docker Swarm
       </a>
     </li>
@@ -481,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docker2/secrets/" class="md-nav__link">
+      <a href="../secrets/" class="md-nav__link">
         Docker Secrets
       </a>
     </li>
@@ -522,16 +616,110 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#databases_1" class="md-nav__link">
-    การเชื่อมต่อ Databases
+  <a href="#basic-networks" class="md-nav__link">
+    Basic Networks
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-platform" class="md-nav__link">
-    การเชื่อมต่อ Data Platform
+  <a href="#bridge-networks" class="md-nav__link">
+    Bridge Networks
   </a>
+  
+    <nav class="md-nav" aria-label="Bridge Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inspect-bridge-network" class="md-nav__link">
+    Inspect Bridge Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-bridge-network" class="md-nav__link">
+    Create Bridge Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-bridge-network" class="md-nav__link">
+    Remove Bridge Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-containers-to-bridge" class="md-nav__link">
+    Connect Containers to Bridge
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#host-network" class="md-nav__link">
+    Host Network
+  </a>
+  
+    <nav class="md-nav" aria-label="Host Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect-containers-to-host" class="md-nav__link">
+    Connect Containers to Host
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#none-network" class="md-nav__link">
+    None Network
+  </a>
+  
+    <nav class="md-nav" aria-label="None Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect-containers-to-none" class="md-nav__link">
+    Connect Containers to None
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overlay" class="md-nav__link">
+    Overlay
+  </a>
+  
+    <nav class="md-nav" aria-label="Overlay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-an-overlay-network" class="md-nav__link">
+    Creating an Overlay Network
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -549,39 +737,58 @@
                 
 
 
-<h1 id="databases">Databases</h1>
-<h2 id="databases_1">การเชื่อมต่อ Databases</h2>
-<p>วิธีการเชื่อมต่อ</p>
-<p><strong> เขียน Python Function และใช้กับ <code>PythonOperator</code> </strong></p>
+<h1 id="docker-networks">Docker Networks</h1>
+<h2 id="basic-networks">Basic Networks</h2>
+<p>หลังจากติดตั้ง Docker บนเครื่องแล้ว จะมี Networks อยู่ 3 แบบ</p>
 <ul>
-<li><strong>แนะนำ</strong> ใช้ <code>sqlalchemy</code> ใช้ได้กับหลาย Database เช่น PostgreSQL, MySQL, Oracle, MSSQL</li>
-<li>PostgreSQL ใช้ <code>psycopg2</code></li>
-<li>MSSQL ใช้ <code>pymssql</code></li>
-<li>MySQL ใช้ <code>mysql-connector-python</code></li>
-<li>MongoDB ใช้ <code>pymongo</code></li>
-<li>Neo4j ใช้ <code>neo4j</code></li>
-<li>Redis ใช้ <code>redis</code></li>
-<li>ถ้า Database สนับสนุน ODBC ใช้ <code>pyodbc</code></li>
-<li>ฐานข้อมูล TIBCO Data Virtualization ใช้ <code>pyodbc</code></li>
+<li><strong>Bridge</strong> ทำงานเหมือน NAT (Network Address Translation)</li>
+<li><strong>Host</strong> ใช้ IP/Port ร่วมกับ Host</li>
+<li><strong>None</strong> ไม่เชื่อมต่ออะไรเลย มีแค่ Loopback Address เท่านั้น</li>
 </ul>
-<p><strong> ใช้ Airflow Operators </strong></p>
+<p>นอกจากนี้ Docker (บน Linux เท่านั้น) ยังสนับสนุน Network <strong>MACVLAN</strong> กับ <strong>IPVLAN</strong> ในการให้ Container ใช้ IP Address Space เดียวกับ External Network ซึ่งจะไม่อธิบายวิธีการใช้งาน เนื่องจาก Use Case ของเราไม่น่าจะได้ใช้ สำหรับในกรณีที่ใช้งาน Docker Swarm เราจะใช้ <strong>Overlay Network</strong> ในการคุยข้าม Docker Host</p>
+<p><img alt="Basic Networks" src="../images/basic_networks.png" /></p>
+<h2 id="bridge-networks">Bridge Networks</h2>
+<p>จุดสำคัญของ Bridge Networks</p>
 <ul>
-<li><a href="https://airflow.apache.org/docs/apache-airflow-providers-postgres/2.2.0/operators/postgres_operator_howto_guide.html">PostgreSQL</a></li>
-<li><a href="https://airflow.apache.org/docs/apache-airflow-providers/operators-and-hooks-ref/software.html#mongodb">MongoDB</a></li>
-<li><a href="https://airflow.apache.org/docs/apache-airflow-providers/operators-and-hooks-ref/software.html#microsoft-sql-server-mssql">MSSQL</a></li>
-<li><a href="https://airflow.apache.org/docs/apache-airflow-providers/operators-and-hooks-ref/software.html#mysql">MySQL</a></li>
-<li><a href="https://airflow.apache.org/docs/apache-airflow-providers/operators-and-hooks-ref/software.html#redis">Redis</a></li>
-<li><a href="https://airflow.apache.org/docs/apache-airflow-providers/operators-and-hooks-ref/software.html#neo4j">Neo4j</a></li>
+<li><strong>Default Bridge Network</strong> Containers สื่อสารกันด้วย IP Address เท่านั้น ไม่สามารถใช้ชื่อ หรือ DNS Resolution ได้</li>
+<li><strong>Default Bridge Network</strong> เริ่มต้นที่วง IP 172.17.0.0/16 ซึ่งชนกับ IP Address Space ของ Private Cloud กฟน. จำเป็นต้องแก้ไขหากติดตั้ง Docker บน VM</li>
+<li><strong>User Defined Bridge Network</strong> สามารถใช้ DNS Resolution ได้ หมายถึง สามารถใช้ชื่อ Container แทน IP Address ได้</li>
 </ul>
-<h2 id="data-platform">การเชื่อมต่อ Data Platform</h2>
-<p>รายละเอียดอ่านที่ <a href="https://dataplatform-portal.vercel.app/docs/use/apache-airflow">Data Platform Apache Airflow</a> แต่โดยปกติ Operators ของ Airflow จะใช้กับระบบเราไม่ได้ เพราะติดปัญหาเรื่อง Policies และ Security Kerberos โดยสรุป</p>
+<h3 id="inspect-bridge-network">Inspect Bridge Network</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker network inspect &lt;network_name&gt;
+</code></pre></div>
+<h3 id="create-bridge-network">Create Bridge Network</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker network create &lt;network_name&gt;
+</code></pre></div>
+<h3 id="remove-bridge-network">Remove Bridge Network</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker network rm &lt;network_name&gt;
+</code></pre></div>
+<h3 id="connect-containers-to-bridge">Connect Containers to Bridge</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker container run --network &lt;network_name&gt; ...
+</code></pre></div>
+<h2 id="host-network">Host Network</h2>
+<p>Host Network คือ ระบบสื่อสารที่ Container ใช้ IP และ Port ของเครื่อง Docker Host เลย</p>
+<h3 id="connect-containers-to-host">Connect Containers to Host</h3>
+<p>วิธีการ Run Container ไม่จำเป็นต้องระบุ <code>--publish</code> หรือ <code>-p</code> เช่น</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker container run -d --network host nginx
+</code></pre></div>
+<p>สามารถเข้าเว็บได้ที่ <code>localhost:80</code> หรือ <code>ip_address_docker_host:80</code> ได้เลย</p>
+<h2 id="none-network">None Network</h2>
+<p>Container ไม่เชื่อมต่อกับ External Network และ ไม่สามารถคุยกับ Container อื่นได้</p>
+<h3 id="connect-containers-to-none">Connect Containers to None</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker container run -d --network none nginx
+</code></pre></div>
+<h2 id="overlay">Overlay</h2>
+<p>เป็นระบบสื่อสารที่ Container ใช้คุยกันข้าม Docker Hosts จะใช้ Overlay Network ตอนทำงานกับ Container Orchestration ด้วย Docker Swarm
+โดยปกติเราจะเลือกใช้ Kubernetes เป็นส่วนใหญ่ แต่ในบางกรณี Docker Swarm มันใช้ง่ายกว่าและติดตั้งภายใต้ Infrastructure ภายในเร็วกว่า</p>
+<p><strong>ข้อจำกัดของ Swarm Mode</strong> รายละเอียดอ่านที่ <a href="https://github.com/moby/moby/issues/30820">Github</a></p>
 <ul>
-<li>HDFS ใช้ <a href="https://airflow.apache.org/docs/apache-airflow-providers/operators-and-hooks-ref/apache.html#webhdfs">WebHDFS Hook</a></li>
-<li>Hive/Impala ใช้ <a href="https://airflow.apache.org/docs/apache-airflow-providers/operators-and-hooks-ref/protocol.html#java-database-connectivity-jdbc">JDBCOperator</a></li>
-<li>Spark ใช้ <a href="https://airflow.apache.org/docs/apache-airflow-providers/operators-and-hooks-ref/apache.html#apache-livy">LivyOperator</a></li>
-<li>Sqoop ใช้ <a href="https://airflow.apache.org/docs/apache-airflow-providers/operators-and-hooks-ref/protocol.html#secure-shell-ssh">SSHOperator</a></li>
-<li>HBase ใช้ <code>PythonOperator</code> ร่วมกับ HBase REST API หรือใช้งานผ่าน Apache Phoenix ด้วย <code>phoenixdb</code></li>
+<li>สร้าง Overlay Network โดยใช้ Subnet <code>/24</code> (Default) หากต้องการ IP Addresses มากกว่า 256 Addresses ให้สร้าง Overlay Network ย่อยๆ แทนการขยาย Subnet</li>
 </ul>
+<p><img alt="Overlay Network" src="../images/overlay_networks.png" /></p>
+<h3 id="creating-an-overlay-network">Creating an Overlay Network</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker network create -d overlay &lt;network_name&gt;
+</code></pre></div>
 
               
             </article>
@@ -595,7 +802,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../use/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Basics" rel="prev">
+        <a href="../meacloud/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MEA Cloud" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -604,20 +811,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Basics
+              MEA Cloud
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../docker1/use/" class="md-footer__link md-footer__link--next" aria-label="Next: Basics" rel="next">
+        <a href="../compose/" class="md-footer__link md-footer__link--next" aria-label="Next: Compose" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Basics
+              Compose
             </div>
           </div>
           <div class="md-footer__button md-icon">
