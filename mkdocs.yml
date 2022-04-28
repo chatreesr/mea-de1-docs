@@ -9,10 +9,10 @@ theme:
 nav:
   - Home: index.md
   - Apache Airflow:
-      - apache-airflow/use.md
+      - Basics: apache-airflow/use.md
       - Databases: apache-airflow/databases.md
   - Docker 1:
-      - docker1/use.md
+      - Basics: docker1/use.md
       - Volumes: docker1/volumes.md
       - Networks: docker1/networks.md
       - Images: docker1/images.md
@@ -22,11 +22,15 @@ nav:
       - Compose: docker2/compose.md
       - Docker Swarm: docker2/swarm.md
       - Docker Secrets: docker2/secrets.md
+  - Databases:
+      - PostgreSQL: databases/postgres.md
+      - MongoDB: databases/mongo.md
+      - Redis: databases/redis.md
+      - Neo4J: databases/neo4j.md
 markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
+  # - pymdownx.highlight:
+  #     anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
   - attr_list
-  - md_in_html

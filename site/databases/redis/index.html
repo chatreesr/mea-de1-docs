@@ -13,7 +13,7 @@
     
     
       
-        <title>Volumes - Data Engineering Team 1</title>
+        <title>Redis - Data Engineering Team 1</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#volumes" class="md-skip">
+        <a href="#redis" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Volumes
+              Redis
             
           </span>
         </div>
@@ -257,14 +257,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -287,7 +285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../use/" class="md-nav__link">
+      <a href="../../docker1/use/" class="md-nav__link">
         Basics
       </a>
     </li>
@@ -299,162 +297,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Volumes
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../docker1/volumes/" class="md-nav__link">
         Volumes
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#adding-volumes-to-database" class="md-nav__link">
-    Adding volumes to database
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#list-volumes" class="md-nav__link">
-    List Volumes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inspect-volumes" class="md-nav__link">
-    Inspect Volumes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-1-persisting-data" class="md-nav__link">
-    Example 1 - Persisting Data
-  </a>
-  
-    <nav class="md-nav" aria-label="Example 1 - Persisting Data">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-a-database-container" class="md-nav__link">
-    Create a Database Container
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-database-airflow" class="md-nav__link">
-    Create a Database 'airflow`
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#removing-postgresql" class="md-nav__link">
-    Removing PostgreSQL
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recreating-postgresql" class="md-nav__link">
-    Recreating PostgreSQL
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-2-using-data" class="md-nav__link">
-    Example 2 - Using Data
-  </a>
-  
-    <nav class="md-nav" aria-label="Example 2 - Using Data">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#creating-management-ui" class="md-nav__link">
-    Creating Management UI
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#accessing-data" class="md-nav__link">
-    Accessing Data
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bind-mounts" class="md-nav__link">
-    Bind Mounts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-3-nginx-bind-mounts" class="md-nav__link">
-    Example 3 - Nginx Bind Mounts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bind-mounting-nginx" class="md-nav__link">
-    Bind Mounting NGINX
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modifying-html" class="md-nav__link">
-    Modifying HTML
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -466,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../networks/" class="md-nav__link">
+      <a href="../../docker1/networks/" class="md-nav__link">
         Networks
       </a>
     </li>
@@ -480,7 +327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../images/" class="md-nav__link">
+      <a href="../../docker1/images/" class="md-nav__link">
         Images
       </a>
     </li>
@@ -604,12 +451,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -632,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../databases/postgres/" class="md-nav__link">
+      <a href="../postgres/" class="md-nav__link">
         PostgreSQL
       </a>
     </li>
@@ -646,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../databases/mongo/" class="md-nav__link">
+      <a href="../mongo/" class="md-nav__link">
         MongoDB
       </a>
     </li>
@@ -658,11 +507,148 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../databases/redis/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Redis
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Redis
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    Use Cases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis-cli" class="md-nav__link">
+    Redis CLI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createupdateread" class="md-nav__link">
+    Create/Update/Read
+  </a>
+  
+    <nav class="md-nav" aria-label="Create/Update/Read">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setget" class="md-nav__link">
+    SET/GET
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespaces" class="md-nav__link">
+    Namespaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maths" class="md-nav__link">
+    Maths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditions" class="md-nav__link">
+    Conditions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-invalidation" class="md-nav__link">
+    Cache Invalidation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    Delete
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    Data Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    Lists
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashes" class="md-nav__link">
+    Hashes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sets" class="md-nav__link">
+    Sets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -674,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../databases/neo4j/" class="md-nav__link">
+      <a href="../neo4j/" class="md-nav__link">
         Neo4J
       </a>
     </li>
@@ -715,58 +701,58 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#adding-volumes-to-database" class="md-nav__link">
-    Adding volumes to database
+  <a href="#use-cases" class="md-nav__link">
+    Use Cases
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#list-volumes" class="md-nav__link">
-    List Volumes
+  <a href="#redis-cli" class="md-nav__link">
+    Redis CLI
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inspect-volumes" class="md-nav__link">
-    Inspect Volumes
+  <a href="#createupdateread" class="md-nav__link">
+    Create/Update/Read
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-1-persisting-data" class="md-nav__link">
-    Example 1 - Persisting Data
-  </a>
-  
-    <nav class="md-nav" aria-label="Example 1 - Persisting Data">
+    <nav class="md-nav" aria-label="Create/Update/Read">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create-a-database-container" class="md-nav__link">
-    Create a Database Container
+  <a href="#setget" class="md-nav__link">
+    SET/GET
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-a-database-airflow" class="md-nav__link">
-    Create a Database 'airflow`
+  <a href="#namespaces" class="md-nav__link">
+    Namespaces
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#removing-postgresql" class="md-nav__link">
-    Removing PostgreSQL
+  <a href="#maths" class="md-nav__link">
+    Maths
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#recreating-postgresql" class="md-nav__link">
-    Recreating PostgreSQL
+  <a href="#conditions" class="md-nav__link">
+    Conditions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-invalidation" class="md-nav__link">
+    Cache Invalidation
   </a>
   
 </li>
@@ -777,57 +763,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-2-using-data" class="md-nav__link">
-    Example 2 - Using Data
+  <a href="#delete" class="md-nav__link">
+    Delete
   </a>
   
-    <nav class="md-nav" aria-label="Example 2 - Using Data">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    Data Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Types">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#creating-management-ui" class="md-nav__link">
-    Creating Management UI
+  <a href="#lists" class="md-nav__link">
+    Lists
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#accessing-data" class="md-nav__link">
-    Accessing Data
+  <a href="#hashes" class="md-nav__link">
+    Hashes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sets" class="md-nav__link">
+    Sets
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bind-mounts" class="md-nav__link">
-    Bind Mounts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-3-nginx-bind-mounts" class="md-nav__link">
-    Example 3 - Nginx Bind Mounts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bind-mounting-nginx" class="md-nav__link">
-    Bind Mounting NGINX
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modifying-html" class="md-nav__link">
-    Modifying HTML
-  </a>
   
 </li>
       
@@ -845,115 +817,79 @@
                 
 
 
-<h1 id="volumes">Volumes</h1>
-<p>Volumes คือ File System ที่ Docker ใช้เก็บข้อมูลสำหรับ Container เช่น เก็บข้อมูลจาก Database</p>
-<h2 id="adding-volumes-to-database">Adding volumes to database</h2>
-<div class="highlight"><pre><span></span><code>docker container run <span class="se">\</span>
-    --name mypostgres <span class="se">\</span>
-    -d -p <span class="m">5432</span>:5432 <span class="se">\</span>
-    -e <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>secretpassword <span class="se">\</span>
-    -v postgresdb:/var/lib/postgresql/data <span class="se">\</span>
-    postgres
-</code></pre></div>
-<p>จุดสำคัญ</p>
+<h1 id="redis">Redis</h1>
+<p>Redis = In-memory Database/Cache</p>
+<h2 id="use-cases">Use Cases</h2>
 <ul>
-<li><code>-v</code> คือการระบุ Volume ที่ต้องการใช้งานกับ Database PostgreSQL <code>postgresdb</code> เป็นชื่อ Docker Volume ที่ตั้งเองได้เลย <code>/var/lib/postgresql/data</code> คือ Path ที่ Database เขียนข้อมูลลงไป การระบุ <code>-v postgresdb:/var/lib/postgresql/data</code> หมายถึง ข้อมูลที่ Database เขียนลง <code>/var/lib/postgresql/data</code> จะถูกเก็บไว้บน Host ภายใต้ Volume ที่ชื่อ <code>postgresdb</code></li>
-<li>การบริหารจัดการ Volumes ใช้กลุ่มคำสั่ง <code>volume</code> เช่น</li>
+<li>ใช้เก็บ Cache จากการ Query Database เพื่อลด Workload</li>
+<li>ใช้เป็น Message Queue (เช่นที่ใช้กับ Apache Airflow)</li>
+<li>เก็บข้อมูล Session ในการใช้งานเว็บ เช่น จำนวน Page View, User Profiles, Credentials, User-Specific Data</li>
+<li>ใช้ร่วมกับ Apache Kafka ในการทำ Real-time Analytics</li>
 </ul>
-<div class="highlight"><pre><span></span><code>docker volume &lt;sub-command&gt; <span class="o">[</span>options<span class="o">]</span>
+<h2 id="redis-cli">Redis CLI</h2>
+<div class="highlight"><pre><span></span><code>docker compose <span class="nb">exec</span> redis redis-cli
 </code></pre></div>
-<h2 id="list-volumes">List Volumes</h2>
-<div class="highlight"><pre><span></span><code>docker volume ls
+<h2 id="createupdateread">Create/Update/Read</h2>
+<h3 id="setget">SET/GET</h3>
+<p>ครอบคลุมการใช้งาน Redis &gt; 70%</p>
+<div class="highlight"><pre><span></span><code>SET name &quot;Jonathan&quot;
+GET name
 </code></pre></div>
-<h2 id="inspect-volumes">Inspect Volumes</h2>
-<div class="highlight"><pre><span></span><code>docker volume inspect postgresdb
+<h3 id="namespaces">Namespaces</h3>
+<p>Redis มี Data Structure หลายแบบแต่ส่วนใหญ่ก็จะใช้งาน SET/GET เราสามารถแบ่ง Namespace เพื่อป้องกันชื่อ Key ซ้ำได้ โดยใช้ <code>:</code> (เป็น Convention ที่ใช้กัน ไม่ใช่สิ่งที่กำหนดตายตัวใน Redis)</p>
+<div class="highlight"><pre><span></span><code>SET user:jonathan:department DPD
+SET user:jonathan:age 46
+SET user:jonathan:vehicle Camry
 </code></pre></div>
-<p>หรือ ตรวจสอบจาก Container ก็ได้</p>
-<div class="highlight"><pre><span></span><code>docker container inspect --format <span class="s1">&#39;{{ index .HostConfig.Binds 0 }}&#39;</span> mypostgres
+<h3 id="maths">Maths</h3>
+<p>ใช้ฟังก์ชั่นคณิตศาสตร์พื้นฐานกับ Redis ได้เช่น</p>
+<div class="highlight"><pre><span></span><code>SET satisfactory_score 80
+INCR satisfactory_score
+DECR satisfactory_score
+
+INCRBY satisfactory_score 40
+DECRBY satisfactory_score 170
 </code></pre></div>
-<h2 id="example-1-persisting-data">Example 1 - Persisting Data</h2>
-<h3 id="create-a-database-container">Create a Database Container</h3>
-<div class="highlight"><pre><span></span><code>docker container run <span class="se">\</span>
-    --name mypostgres <span class="se">\</span>
-    -d -p <span class="m">5432</span>:5432 <span class="se">\</span>
-    -e <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>secretpassword <span class="se">\</span>
-    -v postgresdb:/var/lib/postgresql/data <span class="se">\</span>
-    postgres
-</code></pre></div>
-<p>ตรวจสอบ Logs การ Init Database ด้วย</p>
-<div class="highlight"><pre><span></span><code>docker container logs mypostgres
-</code></pre></div>
-<h3 id="create-a-database-airflow">Create a Database 'airflow`</h3>
-<div class="highlight"><pre><span></span><code>docker container <span class="nb">exec</span> -it mypostgres psql -U postgres
-</code></pre></div>
-<p>จากนั้นใส่คำสั่ง</p>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">airflow</span><span class="p">;</span><span class="w"></span>
-</code></pre></div>
-<p>เปลี่ยน Database มาเป็น <code>airflow</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="se">\c</span> airflow<span class="p">;</span>
-</code></pre></div>
-<p>สร้างตาราง</p>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">test</span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">customer_name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"></span>
-<span class="p">);</span><span class="w"></span>
-</code></pre></div>
-<p>ทดลองใส่ข้อมูล</p>
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">test</span><span class="p">(</span><span class="n">customer_name</span><span class="p">)</span><span class="w"></span>
-<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Jonathan Montgomery&#39;</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-<p>ทดลองเรียกข้อมูล</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">test</span><span class="p">;</span><span class="w"></span>
-</code></pre></div>
-<h3 id="removing-postgresql">Removing PostgreSQL</h3>
-<p>ทดสอบทำลาย Container แล้ว สร้างขึ้นมาใหม่เพื่อดูว่าข้อมูลยังอยู่ไหม</p>
-<div class="highlight"><pre><span></span><code>docker container rm -f mypostgres
-</code></pre></div>
-<h3 id="recreating-postgresql">Recreating PostgreSQL</h3>
-<p>สร้าง Container ขึ้นมาใหม่โดยใช้ Volume ชื่อเดิม และ ทดสอบ Query ว่าข้อมูลเดิมยังอยู่ไหม</p>
-<div class="highlight"><pre><span></span><code>docker container run <span class="se">\</span>
-    --name mypostgres <span class="se">\</span>
-    -d -p <span class="m">5432</span>:5432 <span class="se">\</span>
-    -e <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>secretpassword <span class="se">\</span>
-    -v postgresdb:/var/lib/postgresql/data <span class="se">\</span>
-    postgres
-</code></pre></div>
-<p>ตรวจสอบ Logs จะพบว่าไม่มีการ Init Database แล้ว Container สามารถอ่าน Data จาก Volume ได้เลย</p>
-<div class="highlight"><pre><span></span><code>docker container logs mypostgres
-</code></pre></div>
-<h2 id="example-2-using-data">Example 2 - Using Data</h2>
-<p>ตรวจสอบว่า <code>mypostgres</code> ทำงานอยู่ด้วยคำสั่ง <code>docker container ls</code></p>
-<h3 id="creating-management-ui">Creating Management UI</h3>
-<div class="highlight"><pre><span></span><code>docker run <span class="se">\</span>
-    --name cloudbeaver <span class="se">\</span>
-    --rm -it -p <span class="m">8090</span>:8978 <span class="se">\</span>
-    dbeaver/cloudbeaver:latest
-</code></pre></div>
-<p><code>--rm</code> คือให้ลบ Container ออกหลังจากทำงานเสร็จแล้ว</p>
-<h3 id="accessing-data">Accessing Data</h3>
-<p>เข้าเว็บที่ <a href="http://localhost:8090">http://localhost:8090</a> กรอกข้อมูล Setup เช่น Admin Username &amp; Password จากนั้น ตั้งค่า PostgresDB Connection ตัวอย่างตามรูป สาเหตุที่ต้องกรอกเป็น IP เพราะว่า Default Bridge Network ของ Docker ไม่มี DNS</p>
-<p><img alt="Postgres Connection" src="../images/postgres_connection.png" /></p>
-<p>กดปุ่ม Test Connection และ Save จากนั้นทดลองใช้งานว่ามีข้อมูลที่เราสร้างไว้ก่อนหน้านี้หรือไม่</p>
-<h2 id="bind-mounts">Bind Mounts</h2>
-<p>Bind Mounts คือการ Map local files หรือ folders สำหรับไปใช้งานบน Container มีประโยชน์ในกรณี</p>
+<h3 id="conditions">Conditions</h3>
+<p>ตรวจสอบก่อน <code>SET</code> ค่า</p>
 <ul>
-<li>พัฒนาซอฟต์แวร์ โดยให้ Source Code อยู่บนเครื่องเราแต่ให้สิทธิ Container อ่าน</li>
-<li>ตั้งค่าพารามิเตอร์ของ Container ผ่าน File</li>
+<li><code>XX</code> หมายถึง ถ้าไม่มี ไม่ต้องเซ็ต SET ค่า</li>
+<li><code>NX</code> หมายถึง ถ้าไม่มี ให้ SET ค่า</li>
 </ul>
-<p>Bind Mounts ใช้ Flag <code>-v</code> เหมือนกัน</p>
-<h2 id="example-3-nginx-bind-mounts">Example 3 - Nginx Bind Mounts</h2>
-<p>ทำการ Bind Mount Folder ไฟล์ HTML เพื่อให้ Container NGINX นำไปแสดงผล</p>
-<h2 id="bind-mounting-nginx">Bind Mounting NGINX</h2>
-<p>เริ่มต้นด้วยการสร้าง Folder <code>nginx-bind</code> และ <code>cd nginx-bind</code> จากนั้นรันคำสั่ง</p>
-<div class="highlight"><pre><span></span><code>docker container run <span class="se">\</span>
-    --name<span class="o">=</span>mywebserver <span class="se">\</span>
-    -d -p <span class="m">8080</span>:80 <span class="se">\</span>
-    -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/usr/share/nginx/html <span class="se">\</span>
-    nginx
+<div class="highlight"><pre><span></span><code>SET color blue XX
+SET color blue NX
 </code></pre></div>
-<p><code>$(pwd)</code> คือ Print Working Directory</p>
-<h2 id="modifying-html">Modifying HTML</h2>
-<p>ทดลองแก้ไขไฟล์ HTML เซฟ และ ทดสอบ Refresh ที่ Browser</p>
+<h3 id="cache-invalidation">Cache Invalidation</h3>
+<p>ทำให้ Cache หมดเวลาตามกำหนด</p>
+<p><code>EX 3600</code> หมายถึง หมดอายุ 3600 วินาที</p>
+<div class="highlight"><pre><span></span><code>SET user:jonathan:token 789kkjjxx EX 3600
+</code></pre></div>
+<h2 id="delete">Delete</h2>
+<div class="highlight"><pre><span></span><code>DEL user:jonathan:department
+</code></pre></div>
+<h2 id="data-types">Data Types</h2>
+<h3 id="lists">Lists</h3>
+<p>ปกติใช้เก็บพวกรายการต่างๆ เช่น Task Queues</p>
+<div class="highlight"><pre><span></span><code>RPUSH airflow:queue &quot;Task 1&quot; &quot;Task 2&quot; &quot;Task 3&quot; &quot;Task 4&quot;
+LRANGE airflow:queue 0 -1
+</code></pre></div>
+<p>สามารถดึง Element ออกจาก List ได้ด้วย <code>LPOP</code>, <code>RPOP</code></p>
+<div class="highlight"><pre><span></span><code>LPOP airflow:queue
+RPOP airflow:queue
+</code></pre></div>
+<h3 id="hashes">Hashes</h3>
+<p>ตัวอย่าง: ใช้เก็บพวก User Profiles สำหรับ Web Application โดย Hash ทุกสิ่งอย่างภายใต้ Key ของ User เวลาอ่านมาแสดงผลใน Web App ทำได้เลยสะดวก</p>
+<div class="highlight"><pre><span></span><code>HSET jonathan:profile title &quot;Bullshit Director&quot; company &quot;Submarine Electricity Minority&quot; city &quot;Bangkok&quot;
+HGET jonathan:profile title
+HGETALL
+</code></pre></div>
+<h3 id="sets">Sets</h3>
+<p>ใช้เก็บรายการที่ Unique ตามคุณสมบัติของ Set</p>
+<div class="highlight"><pre><span></span><code>SADD colors red blue yellow green black pink brown
+SISMEMBER colors dog
+SMEMBERS colors
+SPOP colors
+</code></pre></div>
 
               
             </article>
@@ -967,7 +903,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../use/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Basics" rel="prev">
+        <a href="../mongo/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MongoDB" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -976,20 +912,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Basics
+              MongoDB
             </div>
           </div>
         </a>
       
       
         
-        <a href="../networks/" class="md-footer__link md-footer__link--next" aria-label="Next: Networks" rel="next">
+        <a href="../neo4j/" class="md-footer__link md-footer__link--next" aria-label="Next: Neo4J" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Networks
+              Neo4J
             </div>
           </div>
           <div class="md-footer__button md-icon">
