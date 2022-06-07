@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.10">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.0">
     
     
       
@@ -17,15 +17,16 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.df45aa19.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fd896c8a.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
           
           
           <meta name="theme-color" content="#009485">
         
+      
       
     
     
@@ -845,29 +846,29 @@
 <li><strong>User Defined Bridge Network</strong> สามารถใช้ DNS Resolution ได้ หมายถึง สามารถใช้ชื่อ Container แทน IP Address ได้</li>
 </ul>
 <h3 id="inspect-bridge-network">Inspect Bridge Network</h3>
-<p><code>bash
-docker network inspect &lt;network_name&gt;</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker network inspect &lt;network_name&gt;
+</code></pre></div>
 <h3 id="create-bridge-network">Create Bridge Network</h3>
-<p><code>bash
-docker network create &lt;network_name&gt;</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker network create &lt;network_name&gt;
+</code></pre></div>
 <h3 id="remove-bridge-network">Remove Bridge Network</h3>
-<p><code>bash
-docker network rm &lt;network_name&gt;</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker network rm &lt;network_name&gt;
+</code></pre></div>
 <h3 id="connect-containers-to-bridge">Connect Containers to Bridge</h3>
-<p><code>bash
-docker container run --network &lt;network_name&gt; ...</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker container run --network &lt;network_name&gt; ...
+</code></pre></div>
 <h2 id="host-network">Host Network</h2>
 <p>Host Network คือ ระบบสื่อสารที่ Container ใช้ IP และ Port ของเครื่อง Docker Host เลย</p>
 <h3 id="connect-containers-to-host">Connect Containers to Host</h3>
 <p>วิธีการ Run Container ไม่จำเป็นต้องระบุ <code>--publish</code> หรือ <code>-p</code> เช่น</p>
-<p><code>bash
-docker container run -d --network host nginx</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker container run -d --network host nginx
+</code></pre></div>
 <p>สามารถเข้าเว็บได้ที่ <code>localhost:80</code> หรือ <code>ip_address_docker_host:80</code> ได้เลย</p>
 <h2 id="none-network">None Network</h2>
 <p>Container ไม่เชื่อมต่อกับ External Network และ ไม่สามารถคุยกับ Container อื่นได้</p>
 <h3 id="connect-containers-to-none">Connect Containers to None</h3>
-<p><code>bash
-docker container run -d --network none nginx</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker container run -d --network none nginx
+</code></pre></div>
 <h2 id="overlay">Overlay</h2>
 <p>เป็นระบบสื่อสารที่ Container ใช้คุยกันข้าม Docker Hosts จะใช้ Overlay Network ตอนทำงานกับ Container Orchestration ด้วย Docker Swarm
 โดยปกติเราจะเลือกใช้ Kubernetes เป็นส่วนใหญ่ แต่ในบางกรณี Docker Swarm มันใช้ง่ายกว่าและติดตั้งภายใต้ Infrastructure ภายในเร็วกว่า</p>
@@ -877,11 +878,12 @@ docker container run -d --network none nginx</code></p>
 </ul>
 <p><img alt="Overlay Network" src="../images/overlay_networks.png" /></p>
 <h3 id="creating-an-overlay-network">Creating an Overlay Network</h3>
-<p><code>bash
-docker network create -d overlay &lt;network_name&gt;</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker network create -d overlay &lt;network_name&gt;
+</code></pre></div>
 
               
             </article>
+            
           </div>
         </div>
         
@@ -889,7 +891,8 @@ docker network create -d overlay &lt;network_name&gt;</code></p>
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href="../meacloud/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MEA Cloud" rel="prev">
@@ -944,10 +947,10 @@ docker network create -d overlay &lt;network_name&gt;</code></p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b028fd86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="../../assets/javascripts/bundle.0f659f14.min.js"></script>
       
     
   </body>

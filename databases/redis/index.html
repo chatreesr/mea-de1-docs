@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.10">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.0">
     
     
       
@@ -17,15 +17,16 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.df45aa19.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fd896c8a.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
           
           
           <meta name="theme-color" content="#009485">
         
+      
       
     
     
@@ -827,72 +828,73 @@
 <li>ใช้ร่วมกับ Apache Kafka ในการทำ Real-time Analytics</li>
 </ul>
 <h2 id="redis-cli">Redis CLI</h2>
-<p><code>bash
-docker compose exec redis redis-cli</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker compose <span class="nb">exec</span> redis redis-cli
+</code></pre></div>
 <h2 id="createupdateread">Create/Update/Read</h2>
 <h3 id="setget">SET/GET</h3>
 <p>ครอบคลุมการใช้งาน Redis &gt; 70%</p>
-<p><code>text
-SET name "Jonathan"
-GET name</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>SET name &quot;Jonathan&quot;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>GET name
+</code></pre></div>
 <h3 id="namespaces">Namespaces</h3>
 <p>Redis มี Data Structure หลายแบบแต่ส่วนใหญ่ก็จะใช้งาน SET/GET เราสามารถแบ่ง Namespace เพื่อป้องกันชื่อ Key ซ้ำได้ โดยใช้ <code>:</code> (เป็น Convention ที่ใช้กัน ไม่ใช่สิ่งที่กำหนดตายตัวใน Redis)</p>
-<p><code>text
-SET user:jonathan:department DPD
-SET user:jonathan:age 46
-SET user:jonathan:vehicle Camry</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>SET user:jonathan:department DPD
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>SET user:jonathan:age 46
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>SET user:jonathan:vehicle Camry
+</code></pre></div>
 <h3 id="maths">Maths</h3>
 <p>ใช้ฟังก์ชั่นคณิตศาสตร์พื้นฐานกับ Redis ได้เช่น</p>
-<p>```text
-SET satisfactory_score 80
-INCR satisfactory_score
-DECR satisfactory_score</p>
-<p>INCRBY satisfactory_score 40
-DECRBY satisfactory_score 170
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>SET satisfactory_score 80
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>INCR satisfactory_score
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>DECR satisfactory_score
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>INCRBY satisfactory_score 40
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>DECRBY satisfactory_score 170
+</code></pre></div>
 <h3 id="conditions">Conditions</h3>
 <p>ตรวจสอบก่อน <code>SET</code> ค่า</p>
 <ul>
 <li><code>XX</code> หมายถึง ถ้าไม่มี ไม่ต้องเซ็ต SET ค่า</li>
 <li><code>NX</code> หมายถึง ถ้าไม่มี ให้ SET ค่า</li>
 </ul>
-<p><code>text
-SET color blue XX
-SET color blue NX</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>SET color blue XX
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>SET color blue NX
+</code></pre></div>
 <h3 id="cache-invalidation">Cache Invalidation</h3>
 <p>ทำให้ Cache หมดเวลาตามกำหนด</p>
 <p><code>EX 3600</code> หมายถึง หมดอายุ 3600 วินาที</p>
-<p><code>text
-SET user:jonathan:token 789kkjjxx EX 3600</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>SET user:jonathan:token 789kkjjxx EX 3600
+</code></pre></div>
 <h2 id="delete">Delete</h2>
-<p><code>text
-DEL user:jonathan:department</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>DEL user:jonathan:department
+</code></pre></div>
 <h2 id="data-types">Data Types</h2>
 <h3 id="lists">Lists</h3>
 <p>ปกติใช้เก็บพวกรายการต่างๆ เช่น Task Queues</p>
-<p><code>text
-RPUSH airflow:queue "Task 1" "Task 2" "Task 3" "Task 4"
-LRANGE airflow:queue 0 -1</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>RPUSH airflow:queue &quot;Task 1&quot; &quot;Task 2&quot; &quot;Task 3&quot; &quot;Task 4&quot;
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>LRANGE airflow:queue 0 -1
+</code></pre></div>
 <p>สามารถดึง Element ออกจาก List ได้ด้วย <code>LPOP</code>, <code>RPOP</code></p>
-<p><code>text
-LPOP airflow:queue
-RPOP airflow:queue</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>LPOP airflow:queue
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>RPOP airflow:queue
+</code></pre></div>
 <h3 id="hashes">Hashes</h3>
 <p>ตัวอย่าง: ใช้เก็บพวก User Profiles สำหรับ Web Application โดย Hash ทุกสิ่งอย่างภายใต้ Key ของ User เวลาอ่านมาแสดงผลใน Web App ทำได้เลยสะดวก</p>
-<p><code>text
-HSET jonathan:profile title "Bullshit Director" company "Submarine Electricity Minority" city "Bangkok"
-HGET jonathan:profile title
-HGETALL</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>HSET jonathan:profile title &quot;Bullshit Director&quot; company &quot;Submarine Electricity Minority&quot; city &quot;Bangkok&quot;
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>HGET jonathan:profile title
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>HGETALL
+</code></pre></div>
 <h3 id="sets">Sets</h3>
 <p>ใช้เก็บรายการที่ Unique ตามคุณสมบัติของ Set</p>
-<p><code>text
-SADD colors red blue yellow green black pink brown
-SISMEMBER colors dog
-SMEMBERS colors
-SPOP colors</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>SADD colors red blue yellow green black pink brown
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>SISMEMBER colors dog
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>SMEMBERS colors
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>SPOP colors
+</code></pre></div>
 
               
             </article>
+            
           </div>
         </div>
         
@@ -900,7 +902,8 @@ SPOP colors</code></p>
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href="../mongo/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MongoDB" rel="prev">
@@ -955,10 +958,10 @@ SPOP colors</code></p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b028fd86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="../../assets/javascripts/bundle.0f659f14.min.js"></script>
       
     
   </body>

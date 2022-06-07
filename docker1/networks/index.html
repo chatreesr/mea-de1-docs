@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.10">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.0">
     
     
       
@@ -17,15 +17,16 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.df45aa19.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fd896c8a.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
           
           
           <meta name="theme-color" content="#009485">
         
+      
       
     
     
@@ -915,21 +916,21 @@
 
 <h1 id="networks">Networks</h1>
 <p>Network คือ ระบบสื่อสารของ Container ถ้าไม่ได้ระบุ Docker Engine จะให้ Container อยู่ที่ Default Bridge Network โดยอัตโนมัติ คำสั่งที่ใช้บริหารจัดการคือ <code>network</code> เช่น</p>
-<p><code>bash
-docker network &lt;sub-command&gt; [options]</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker network &lt;sub-command&gt; <span class="o">[</span>options<span class="o">]</span>
+</code></pre></div>
 <p>โดยปกติเรามักจะจับกลุ่มให้ Application เดียวกันอยู่ภายใต้ Network เดียวกัน</p>
 <h2 id="concept">Concept</h2>
 <p><img alt="Networking" src="../images/networking.png" /></p>
 <h2 id="list-networks">List Networks</h2>
-<p><code>bash
-docker network ls</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker network ls
+</code></pre></div>
 <h2 id="check-containers-in-networks">Check Containers in Networks</h2>
-<p><code>bash
-docker network inspect &lt;network_id&gt;</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker network inspect &lt;network_id&gt;
+</code></pre></div>
 <p>ดูที่ Section Containers จะเห็นว่า Container ไหนอยู่ใน Network ใด</p>
 <h2 id="create-a-network">Create a Network</h2>
-<p><code>bash
-docker network create &lt;network_name&gt;</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker network create &lt;network_name&gt;
+</code></pre></div>
 <ul>
 <li>Default Network Driver จะเป็น Bridge ในอนาคตเราจะมีการใช้งาน Docker Swarm ซึ่งใช้ Overlay Network</li>
 <li>Network ที่สร้างขึ้นมาเองจะมี DNS Resolver ให้อัตโนมัติ หมายความว่าสามารถใช้ชื่อ Container แทน IP Address ได้เลย (<strong>Default Network ไม่มี DNS Resolver ให้</strong>)</li>
@@ -942,53 +943,53 @@ docker network create &lt;network_name&gt;</code></p>
 </ul>
 <h3 id="create-a-database-network">Create a Database Network</h3>
 <p>เริ่มด้วยการสร้าง Network</p>
-<p><code>bash
-docker network create db-dev</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker network create db-dev
+</code></pre></div>
 <h3 id="run-a-web-ui-within-network">Run a Web UI within Network</h3>
 <p>รัน Cloudbeaver UI (ตัวบริหารจัดการ Database บน Web) ด้วย <code>--network</code></p>
-<p><code>bash
-docker run \
-    --name cloudbeaver \
-    -d -it -p 8090:8978 \
-    --network db-dev \
-    dbeaver/cloudbeaver:latest</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker run <span class="se">\</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    --name cloudbeaver <span class="se">\</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    -d -it -p <span class="m">8090</span>:8978 <span class="se">\</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    --network db-dev <span class="se">\</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    dbeaver/cloudbeaver:latest
+</code></pre></div>
 <h3 id="run-a-postgresql-within-network">Run a PostgreSQL within Network</h3>
 <p>เหมือนด้านบน</p>
-<p><code>bash
-docker container run \
-    --name mypostgres \
-    -d -p 5432:5432 \
-    -e POSTGRES_PASSWORD=secretpassword \
-    -v postgresdb:/var/lib/postgresql/data \
-    --network db-dev \
-    postgres</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker container run <span class="se">\</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    --name mypostgres <span class="se">\</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    -d -p <span class="m">5432</span>:5432 <span class="se">\</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    -e <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>secretpassword <span class="se">\</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    -v postgresdb:/var/lib/postgresql/data <span class="se">\</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    --network db-dev <span class="se">\</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    postgres
+</code></pre></div>
 <h3 id="check">Check</h3>
 <p>ตรวจสอบโดยการเข้าเว็บ <a href="http://localhost:8090">http://localhost:8090</a> โดยเวลาระบุ hostname ให้ระบุชื่อ Container <code>mypostgres</code> ได้เลยเนื่องจาก Docker Engine จะทำการแปล <code>mypostgres</code> เป็น IP Address ให้อัตโนมัติ</p>
 <h2 id="example-2-dns-round-robin">Example 2 - DNS Round Robin</h2>
 <p>สมมติว่ามี Server Elasticsearch อยู่ 2 ตัว ต้องการทำ Load Balancer อย่างง่ายให้ Traffic ไปหา Server ทั้งคู่พอๆกัน ทำแบบหยาบๆสามารถใช้ <code>--net-alias</code> ของ Docker ได้ดังนี้</p>
 <h3 id="create-a-dns-network">Create a DNS Network</h3>
-<p><code>bash
-docker network create elastic-lb</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker network create elastic-lb
+</code></pre></div>
 <h3 id="add-containers">Add Containers</h3>
 <p>ใส่คำสั่ง <strong>สองครั้ง</strong> เพื่อสร้าง 2 Containers</p>
-<p><code>bash
-docker container run \
-    -d --network elastic-lb \
-    --net-alias search-cluster \
-    elasticsearch:2</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker container run <span class="se">\</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    -d --network elastic-lb <span class="se">\</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    --net-alias search-cluster <span class="se">\</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    elasticsearch:2
+</code></pre></div>
 <p><code>--net-alias</code> คือการบอกว่าให้ Map ชื่อ Container นี้กับชื่อที่ระบุใน <code>--net-alias</code> ในกรณีนี้คือ <code>search-cluster</code> เวลามีการเรียกใช้ <code>search-cluster</code> Docker จะ Forward Traffic ไปหา Server ทั้งสองตัวแบบสุ่ม</p>
 <h3 id="test-dns">Test DNS</h3>
 <p>ใช้วิธี Attach Alpine Linux เข้าไปที่ Network <code>elastic-lb</code> แล้วก็รันคำสั่ง <code>nslookup search-cluster</code> ในการตรวจสอบหมายเลข IP Address ที่ผูกอยู่กับชื่อ <code>search-cluster</code></p>
-<p><code>bash
-docker container run \
-    --rm --network elastic-lb \
-    alpine nslookup search-cluster</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker container run <span class="se">\</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    --rm --network elastic-lb <span class="se">\</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    alpine nslookup search-cluster
+</code></pre></div>
 <h3 id="call-elastic-api">Call Elastic API</h3>
 <p>ใช้วิธี Attach CentOS Linux เข้าไปที่ Network <code>elastic-lb</code> แล้วทดสอบการเรียกข้อมูลจาก Elasticsearch ด้วย <code>curl</code> (สาเหตุที่ใช้ CentOS เพราะว่ามี <code>curl</code> ติดตั้งมาแล้วพร้อมใช้ แต่ Alpine ไม่มี) <strong>ให้ทดสอบรันคำสั่งหลายๆครั้งเพื่อให้แน่ใจว่า Response มาจาก Server คนละตัว โดยสังเกตที่ name</strong></p>
-<p><code>bash
-docker container run \
-    --rm --network elastic-lb \
-    centos curl -s search-cluster:9200</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker container run <span class="se">\</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    --rm --network elastic-lb <span class="se">\</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    centos curl -s search-cluster:9200
+</code></pre></div>
 <h2 id="example-3-wordpress">Example 3 - Wordpress</h2>
 <p>ส่วนประกอบของ Wordpress คือ โปรแกรม Worpress ที่รันอยู่บน Webserver และ PHP กับ Database MySQL ขั้นตอนในการ Deploy คือ</p>
 <ul>
@@ -998,32 +999,32 @@ docker container run \
 </ul>
 <p>โดยปกติกรณีแบบนี้เราจะใช้ Docker Compose (อาทิตย์หน้า) ซึ่งจะบริหารจัดการง่ายกว่า แต่อันนี้เป็นตัวอย่างแบบไม่ใช้ Compose</p>
 <h3 id="create-a-wordpress-network">Create a Wordpress Network</h3>
-<p><code>bash
-docker network create wordpress-net</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker network create wordpress-net
+</code></pre></div>
 <h3 id="deploy-mysql">Deploy MySQL</h3>
 <p>เริ่มจากการ Deploy Database MySQL ก่อนด้วยคำสั่ง</p>
-<p><code>bash
-docker container run \
-    -d --name wordpress-db \
-    -e MYSQL_DATABASE=mywebsite-db \
-    -e MYSQL_USER=admin \
-    -e MYSQL_PASSWORD=wordpresspassword \
-    -e MYSQL_ROOT_PASSWORD=rootpassword \
-    -v wordpress-db:/var/lib/mysql \
-    --network wordpress-net \
-    mysql</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>docker container run <span class="se">\</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    -d --name wordpress-db <span class="se">\</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    -e <span class="nv">MYSQL_DATABASE</span><span class="o">=</span>mywebsite-db <span class="se">\</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    -e <span class="nv">MYSQL_USER</span><span class="o">=</span>admin <span class="se">\</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    -e <span class="nv">MYSQL_PASSWORD</span><span class="o">=</span>wordpresspassword <span class="se">\</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>rootpassword <span class="se">\</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    -v wordpress-db:/var/lib/mysql <span class="se">\</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    --network wordpress-net <span class="se">\</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    mysql
+</code></pre></div>
 <h3 id="deploy-wordpress">Deploy Wordpress</h3>
-<p><code>bash
-docker container run \
-    -d -p 8099:80 \
-    --name wordpress-site \
-    -e WORDPRESS_DB_HOST=wordpress-db \
-    -e WORDPRESS_DB_USER=admin \
-    -e WORDPRESS_DB_PASSWORD=wordpresspassword \
-    -e WORDPRESS_DB_NAME=mywebsite-db \
-    -v wordpress:/var/www/html \
-    --network wordpress-net \
-    wordpress</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker container run <span class="se">\</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    -d -p <span class="m">8099</span>:80 <span class="se">\</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    --name wordpress-site <span class="se">\</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    -e <span class="nv">WORDPRESS_DB_HOST</span><span class="o">=</span>wordpress-db <span class="se">\</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    -e <span class="nv">WORDPRESS_DB_USER</span><span class="o">=</span>admin <span class="se">\</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    -e <span class="nv">WORDPRESS_DB_PASSWORD</span><span class="o">=</span>wordpresspassword <span class="se">\</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    -e <span class="nv">WORDPRESS_DB_NAME</span><span class="o">=</span>mywebsite-db <span class="se">\</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    -v wordpress:/var/www/html <span class="se">\</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>    --network wordpress-net <span class="se">\</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>    wordpress
+</code></pre></div>
 <h3 id="test-wordpress">Test Wordpress</h3>
 <ul>
 <li>เปิดเว็บที่ <a href="http://localhost:8099">http://localhost:8099</a></li>
@@ -1033,6 +1034,7 @@ docker container run \
 
               
             </article>
+            
           </div>
         </div>
         
@@ -1040,7 +1042,8 @@ docker container run \
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href="../volumes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Volumes" rel="prev">
@@ -1095,10 +1098,10 @@ docker container run \
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b028fd86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="../../assets/javascripts/bundle.0f659f14.min.js"></script>
       
     
   </body>

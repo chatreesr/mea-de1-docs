@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.10">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.0">
     
     
       
@@ -17,15 +17,16 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.df45aa19.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fd896c8a.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
           
           
           <meta name="theme-color" content="#009485">
         
+      
       
     
     
@@ -1065,9 +1066,11 @@
 <p><img alt="Containerization" src="../images/containers.png" /></p>
 <h2 id="running-containers">Running Containers</h2>
 <p>คำสั่งการใช้งาน Docker มีรูปแบบ</p>
-<p><code>docker &lt;command&gt; &lt;sub-command&gt; [options]</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker &lt;command&gt; &lt;sub-command&gt; [options]
+</code></pre></div>
 <h3 id="starting-containers">Starting Containers</h3>
-<p><code>docker container run --name mywebserver --detach --publish 8080:80 nginx</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker container run --name mywebserver --detach --publish 8080:80 nginx
+</code></pre></div>
 <p>สิ่งที่เกิดขึ้นหลังป้อนคำสั่ง</p>
 <ul>
 <li>Docker ไปค้นหา Image (นึกถึงโปรแกรมสำเร็จรูปที่แพกเกจเรียบร้อย มีไลบรารี่ครบถ้วน พร้อมใช้งาน) บนเครื่องคอมที่เราใช้งาน</li>
@@ -1081,45 +1084,45 @@
 </ul>
 <h3 id="managing-containers">Managing Containers</h3>
 <p>การบริหารจัดการ Container ใช้กลุ่มคำสั่ง <code>container</code> เช่น</p>
-<p><code>bash
-docker container &lt;sub-command&gt;</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker container &lt;sub-command&gt;
+</code></pre></div>
 <h3 id="list-containers">List Containers</h3>
 <p>ดูเฉพาะ Container ที่ทำงานอยู่</p>
-<p><code>bash
-docker container ls</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker container ls
+</code></pre></div>
 <p>ดู Container ทั้งหมด (ทำงาน และ หยุดทำงาน)</p>
-<p><code>bash
-docker container ls -a</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker container ls -a
+</code></pre></div>
 <h3 id="stop-containers">Stop Containers</h3>
-<p><code>bash
-docker container stop mywebserver</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker container stop mywebserver
+</code></pre></div>
 <h3 id="remove-containers">Remove Containers</h3>
-<p><code>bash
-docker container rm mywebserver</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker container rm mywebserver
+</code></pre></div>
 <h3 id="container-logs">Container Logs</h3>
-<p><code>bash
-docker container logs mywebserver</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker container logs mywebserver
+</code></pre></div>
 <h3 id="container-ports">Container Ports</h3>
-<p><code>bash
-docker container port mywebserver</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker container port mywebserver
+</code></pre></div>
 <h3 id="container-processes">Container Processes</h3>
-<p><code>bash
-docker container top mywebserver</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker container top mywebserver
+</code></pre></div>
 <h3 id="resource-consumption">Resource Consumption</h3>
-<p><code>bash
-docker container stats mywebserver</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker container stats mywebserver
+</code></pre></div>
 <h3 id="inspect-containers">Inspect Containers</h3>
-<p><code>bash
-docker container inspect mywebserver</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker container inspect mywebserver
+</code></pre></div>
 <p>ตรวจสอบ IP Address ด้วยคำสั่ง</p>
-<p><code>bash
-docker container inspect \
-    --format '{{ .NetworkSettings.IPAddress }}' \
-    mywebserver</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>docker container inspect <span class="se">\</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    --format <span class="s1">&#39;{{ .NetworkSettings.IPAddress }}&#39;</span> <span class="se">\</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    mywebserver
+</code></pre></div>
 <p><code>'{{ .NetworkSettings.IPAddress }}'</code> คือ Go Template</p>
 <h3 id="access-containers">Access Containers</h3>
-<p><code>bash
-docker container exec -it mywebserver bash</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker container <span class="nb">exec</span> -it mywebserver bash
+</code></pre></div>
 <ul>
 <li><code>exec</code> คือคำสั่งให้รันโปรแกรมใน Container</li>
 <li><code>-it</code> คือ <code>interactive tty</code> นึกถึงการเข้าใช้งาน Shell</li>
@@ -1127,20 +1130,20 @@ docker container exec -it mywebserver bash</code></p>
 </ul>
 <h3 id="clean-up">Clean up</h3>
 <p>ลบทุกสิ่งอย่าง (ยกเว้น Volume)</p>
-<p><code>bash
-docker system prune -a</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker system prune -a
+</code></pre></div>
 <h2 id="example-1-postgresql">Example 1 - PostgreSQL</h2>
 <h3 id="starting-a-database">Starting a Database</h3>
-<p><code>bash
-docker container run \
-    --name mypostgres \
-    -e POSTGRES_PASSWORD=secretpassword \
-    -d -p 5432:5432 \
-    postgres</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>docker container run <span class="se">\</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    --name mypostgres <span class="se">\</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    -e <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>secretpassword <span class="se">\</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    -d -p <span class="m">5432</span>:5432 <span class="se">\</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    postgres
+</code></pre></div>
 <p><code>-e หรือ --env</code> คือ Environment Variables ที่ต้องใช้งานใน Container</p>
 <h3 id="accessing-psql">Accessing psql</h3>
-<p><code>bash
-docker container exec -it mypostgres psql -U postgres</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>docker container <span class="nb">exec</span> -it mypostgres psql -U postgres
+</code></pre></div>
 <p>คำสั่งพื้นฐาน <code>psql</code></p>
 <ol>
 <li><code>\l</code> หรือ <code>\l+</code> แสดงรายการ Database</li>
@@ -1157,32 +1160,33 @@ docker container exec -it mypostgres psql -U postgres</code></p>
 </ul>
 <p><img alt="Connect" src="../images/database_connect.png" /></p>
 <h3 id="stopping-the-database">Stopping the Database</h3>
-<p><code>bash
-docker container stop mypostgres</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>docker container stop mypostgres
+</code></pre></div>
 <h3 id="removing-the-database">Removing the Database</h3>
-<p><code>bash
-docker container rm mypostgres</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>docker container rm mypostgres
+</code></pre></div>
 <h2 id="example-2-web-server">Example 2 - Web Server</h2>
 <h3 id="starting-a-web-server">Starting a Web Server</h3>
-<p><code>bash
-docker container run --name mywebserver -d -p 8080:80 nginx</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>docker container run --name mywebserver -d -p <span class="m">8080</span>:80 nginx
+</code></pre></div>
 <h3 id="checking-container">Checking Container</h3>
 <p>เปิดเว็บ Browser <a href="http://localhost:8080">http://localhost:8080</a></p>
 <h3 id="changing-default-page">Changing Default Page</h3>
-<p><code>bash
-docker container exec -it mywebserver bash</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>docker container <span class="nb">exec</span> -it mywebserver bash
+</code></pre></div>
 <ol>
 <li>ติดตั้ง Text Editor <code>vim</code> ด้วยคำสั่ง <code>apt update &amp;&amp; apt install vim -y</code></li>
 <li>แก้ไขไฟล์ html <code>vim /usr/share/nginx/html/index.html</code></li>
 <li>กด Refresh ที่ Browserเพื่อตรวจสอบการแก้ไข</li>
 </ol>
 <h3 id="removing-the-web-server">Removing the Web Server</h3>
-<p><code>bash
-docker container rm -f mywebserver</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>docker container rm -f mywebserver
+</code></pre></div>
 <p><code>-f</code> คือ force บังคับ Remove โดยไม่ต้อง Stop ก่อน</p>
 
               
             </article>
+            
           </div>
         </div>
         
@@ -1190,7 +1194,8 @@ docker container rm -f mywebserver</code></p>
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href="../../apache-airflow/databases/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Databases" rel="prev">
@@ -1245,10 +1250,10 @@ docker container rm -f mywebserver</code></p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b028fd86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="../../assets/javascripts/bundle.0f659f14.min.js"></script>
       
     
   </body>
